@@ -1,15 +1,14 @@
 url = "https://restful-booker.herokuapp.com"
-headers = {'Content-Type: application/json'}
-auth = {'username' : 'admin', 'password' : 'password123'}
+headers = {'Content-Type': 'application/json'}
+auth = {'username': 'admin', 'password': 'password123'}
 booking = {
-    "firstname" : "Jim",
-    "lastname" : "Brown",
-    "totalprice" : 456,
+    "firstname" : "Marwa",
+    "lastname" : "Sami",
+    "totalprice" : 234,
     "depositpaid" : True,
     "bookingdates" : {
-        "checkin" : "2018-01-01",
-        "checkout" : "2022-01-01"
+        "checkin" : "2023-09-20",
+        "checkout" : "2024-12-15"
     },
-    "additionalneeds" : "Breakfast"
+    "additionalneeds" : "Dinner"
 }
-

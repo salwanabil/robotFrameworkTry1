@@ -1,72 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-08-31T14:08:53.209780" rpa="false" schemaversion="5">
-<suite id="s1" name="getAllMembers Data" source="C:\Users\DELL\Documents\Automation\Robot-Framework\Projects\Final-Good practices\Aug 24 -RF\STCS_API_RB_Testing\Resources\API\eSports\getAllMembers_Data.robot">
-<test id="s1-t1" name="Get Discover Clans" line="40">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-08-31T14:08:53.510722" level="INFO">Creating Session using : alias=discoverClansSession, url=https://qa.saudiesports.sa/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>discoverClansSession</arg>
-<arg>${base_url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-08-31T14:08:53.510722" elapsed="0.016582"/>
+<robot generator="Robot 7.1.1 (Python 3.12.3 on win32)" generated="2024-11-20T22:23:13.407692" rpa="false" schemaversion="5">
+<suite id="s1" name="eSportSuite" source="C:\Users\DELL\Desktop\Automation-RF\STCS_API_RB_Nov19\Tests\eSportSuite.robot">
+<test id="s1-t1" name="Get eSport Account-Details" line="75">
+<kw name="Login To Esport" owner="EsportKeywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:23:13.951345" level="INFO">${body} = {'username': 'admin@saudiesports.com', 'password': 'abc123', 'grant_type': 'password', 'client_id': 'WEB'}</msg>
+<var>${body}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<arg>grant_type=password</arg>
+<arg>client_id=WEB</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:23:13.950349" elapsed="0.001979"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-08-31T14:08:53.527304" level="INFO">${headers} = {'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MjUxMDUzNDEsImlhdCI6MTcyNTEwMTc0MSwiYXV0aF90aW1lIj...</msg>
+<msg time="2024-11-20T22:23:13.953327" level="INFO">${headers} = {'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'}</msg>
 <var>${headers}</var>
-<arg>Authorization=${bareerToken}</arg>
-<arg>Content-Type=application/json</arg>
+<arg>Content-Type=application/x-www-form-urlencoded</arg>
+<arg>Connection=keep-alive</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-08-31T14:08:53.527304" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-20T22:23:13.953327" elapsed="0.000000"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:23:13.954327" level="INFO">Creating Session using : alias=loginSessions, url=https://qa.saudiesports.sa, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>loginSessions</arg>
+<arg>${esport_base_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>disable_warnings=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:23:13.953327" elapsed="0.001000"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2024-08-31T14:08:54.317797" level="INFO">POST Request : url=https://qa.saudiesports.sa/api/team-club/v1/teams/discover 
- path_url=/api/team-club/v1/teams/discover 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MjUxMDUzNDEsImlhdCI6MTcyNTEwMTc0MSwiYXV0aF90aW1lIjoxNzI1MTAxNzQwLCJqdGkiOiI3YmFmMmJjMi02NDY5LTRlMzUtODk1Ni1lODk0OTJjYWU5MmUiLCJpc3MiOiJodHRwczovL3FhLnNhdWRpZXNwb3J0cy5zYS9hdXRoL3JlYWxtcy9jdXN0X2VzcG9ydHMuY29tIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjBlN2FjYTk3LTQ4MWQtNDExZC1iZmQ3LWM4ZWE0OTRmMDUzNiIsInR5cCI6IkJlYXJlciIsImF6cCI6IldFQiIsIm5vbmNlIjoiMmY4MjkwM2UtZWY5Mi00ODYwLThiMjUtZGMwNjY0NDkzYzI4Iiwic2Vzc2lvbl9zdGF0ZSI6IjFkNzgxODY3LTgxNGMtNDMzYi04NDA3LTIyNzliMjdhOTk0MiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiQ19VUF9WX08iLCJDX1JfVkFTX08iLCJDX1RfVUFSX08iLCJDX1VfQkxfTyIsIkNfSU5EX0xfTyIsIkNfQ0xfTVBfTyIsIkNfVF9VQUxfTyIsIkNfUl9TRF9PIiwiQ19PX0VfTyIsIkNfSU5SX0VfTyIsIkNfRVZfTF9PIiwiQ19JTkNfU0RfTyIsIkNfVVBfRF9PIiwiQ19QQVJfQ0FOX08iLCJDX1RDX0VfTyIsIkNfQ0xfRU1ZX08iLCJDX1BORV9MX08iLCJDX0NSUV9FX08iLCJDX1RfVl9PIiwiQ19QQVJfRV9MX08iLCJDX0NMX1ZNWV9PIiwidW1hX2F1dGhvcml6YXRpb24iLCJDX1BBUl9FX08iLCJDX0lOVV9MX08iLCJDX1VfUlNNX08iLCJDX1RfTVRBX08iLCJDX0RBU19WX08iLCJDX0lOQ19SQVNfTyIsIkNfRVZSX0VfTyIsIkNfSU5UX0xfTyIsIkNfTUVfQkxfTyIsIkNfVF9EU19PIiwiQ19DTF9NQV9PIiwiQ19UV19FX08iLCJDX01FX1VOQl9PIiwiQ19NRV9EU19PIiwiQ19BUFJfRV9PIiwiQ19WX0FTX08iLCJkZWZhdWx0LXJvbGVzLWN1c3RfZXNwb3J0cy5jb20iLCJDX0FMX0VYUF9PIiwiQ19DTF9WX08iLCJDX1RfQV9PIiwiQ19FVl9FWFBfTyIsIkNfUl9WQUxfTyIsIkNfRVZfRV9PIiwiQ19UX0FSX08iLCJDX1RfRV9PIiwiQ19DTF9FWFBfTyIsIkNfQ0xfRUFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19NRV9FWFBfTyIsIkNfUlNfRV9PIiwiQ19VX1VCTF9PIiwiQ19DTF9VQkxfTyIsIkNfVV9FWFBfTyIsIkNfVV9BX08iLCJDX1BORV9FX08iLCJDX1JfUkFTX08iLCJDX1RfUkNfTyIsIkNfUE5FX0FfTyIsIkNfSU5QX0xfTyIsIkNfUE5FX0NfTyIsIkNfUEFSX0xfTyIsIkNfSU5BX0xfTyIsIkNfT0JDX0FfTyIsIkNfVF9FWFBfTyIsIkNfQ0xfQkxfTyIsIkNfUEFSX0lTVV9PIiwiQ19NRV9FQVBfTyIsIkNfQ0xfQ0FMX08iLCJDX01FX1ZFUl9PIiwiQ19VX1ZfTyIsIkNfTUVfTUFfTyIsIkNfQVJDX0VfTyIsIkNfTUVfVkFMX08iLCJDX0NMX0RTX08iLCJDX0VWX0NBTl9PIiwiQ19UX0FSTF9PIiwiQ19OUl9FX08iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIiwic2lkIjoiMWQ3ODE4NjctODE0Yy00MzNiLTg0MDctMjI3OWIyN2E5OTQyIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInVsaWQiOiI3NzUzMWEwZi05Nzc0LTRiZTktOTE3YS01MjRmNTFhMmYzMTIiLCJuYW1lIjoiVGVzdGluZyBIb290bWFpbCBzYWx3YSB0ZXN0aW5nIHVwZGF0ZSB0ZXN0aW5nIGxvbmciLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIrMjAxMDkyNTc3ODE5IiwicmlkIjoiY3VzdF9lc3BvcnRzLmNvbSIsImdpdmVuX25hbWUiOiJUZXN0aW5nIEhvb3RtYWlsIHNhbHdhIHRlc3RpbmcgdXBkYXRlIHRlc3RpbmcgbG9uZyIsImVtYWlsIjoic2VmdGVzdHN0Y0Bob3RtYWlsLmNvbSIsImtleSI6ImN1c3RfZXNwb3J0cy5jb21fS0VZIiwiY2lkIjoiMV9TVENTX0NVU1QifQ.PIjOVvJog_X67UvFaOrvJnLO1c37tvkgc5qGvawM9AoyLZM4IbhZnI2ma1DRui9jYvFoWzOcT5TRpvXCQl09JVdFPc3dq16uODoAhw3vSlpl9lme9ts3MYQTMWm3Fxmw-EZqidByBXnIuro8EnEZK1kXPmcg4TsR2TSBXT29HQF9ttsiOTG9PPxs86wWu1jg5wHT4-LXxT6pUuy1yq3TD1f8zmim2QicrTd8YhS5PkaQxQHgDy3mpLgVieZAU3JxbIc0ag7oFqLt_bDEHr5ZvOOaqHtIUqktoSUkSXwr1hJ_Lqdlq6JilhS66MaLgMpZSxNjE18K4BqLJovs6f0DwA', 'Content-Type': 'application/json', 'Content-Length': '0'} 
- body=None 
+<msg time="2024-11-20T22:23:14.566883" level="INFO">POST Request : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ path_url=/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '83'} 
+ body=username=admin%40saudiesports.com&amp;password=abc123&amp;grant_type=password&amp;client_id=WEB 
  </msg>
-<msg time="2024-08-31T14:08:54.317797" level="INFO">POST Response : url=https://qa.saudiesports.sa/api/team-club/v1/teams/discover 
- status=400, reason= 
- headers={'Date': 'Sat, 31 Aug 2024 11:08:53 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'sef-entity': 'SEF', 'sef-error': 'ERROR_01'} 
- body=None 
+<msg time="2024-11-20T22:23:14.567892" level="INFO">POST Response : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 20 Nov 2024 20:23:13 GMT', 'Content-Type': 'application/json', 'Content-Length': '3934', 'Connection': 'keep-alive', 'Referrer-Policy': 'no-referrer', 'X-Frame-Options': 'SAMEORIGIN', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Content-Type-Options': 'nosniff', 'Set-Cookie': 'KEYCLOAK_LOCALE=en; Version=1; Path=/auth/realms/cust_esports.com/; Secure; HttpOnly, KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0; Path=/auth/realms/cust_esports.com/; HttpOnly', 'Pragma': 'no-cache', 'X-XSS-Protection': '1; mode=block'} 
+ body={"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc3OTMsImlhdCI6MTczMjEzNDE5MywianRpIjoiZjFiNzJjMzctOTdhNS00NTBjLTljMmUtNTUxZmYzZGFhMDg5IiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJXRUIiLCJzZXNzaW9uX3N0YXRlIjoiMzFjNzk5ZTItNzI0Mi00MWJjLWIyY2EtY2VkYzRlZjgwZDg1IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDX1VQX1ZfTyIsIkNfUl9WQVNfTyIsIkNfVF9VQVJfTyIsIkNfVV9CTF9PIiwiQ19JTkRfTF9PIiwiQ19DTF9NUF9PIiwiQ19UX1VBTF9PIiwiQ19BV0FSRF9TRF9PIiwiQ19SX1NEX08iLCJDX09fRV9PIiwiQ19JTlJfRV9PIiwiQ19FVl9MX08iLCJDX0lOQ19TRF9PIiwiQ19VUF9EX08iLCJDX1BBUl9DQU5fTyIsIkNfVENfRV9PIiwiQ19DTF9FTVlfTyIsIkNfUE5FX0xfTyIsIkNfQ1JRX0VfTyIsIkNfVF9WX08iLCJDX1BBUl9FX0xfTyIsIkNfQVdBUkRfRV9PIiwiQ19VX0RfTyIsIkNfQ0xfVk1ZX08iLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkNfUEFSX0VfTyIsIkNfSU5VX0xfTyIsIkNfQVdBUkRfVkRfTyIsIkNfVV9SU01fTyIsIkNfVF9NVEFfTyIsIkNfREFTX1ZfTyIsIkNfSU5DX1JBU19PIiwiQ19FVlJfRV9PIiwiQ19JTlRfTF9PIiwiQ19NRV9CTF9PIiwiQ19UX0RTX08iLCJDX0NMX01BX08iLCJDX0NPUl9FX08iLCJDX1RXX0VfTyIsIkNfTUVfVU5CX08iLCJDX01FX0RTX08iLCJDX0FQUl9FX08iLCJDX1ZfQVNfTyIsImRlZmF1bHQtcm9sZXMtY3VzdF9lc3BvcnRzLmNvbSIsIkNfQUxfRVhQX08iLCJDX0NMX1ZfTyIsIkNfVF9BX08iLCJDX0VWX0VYUF9PIiwiQ19SX1ZBTF9PIiwiQ19FVl9FX08iLCJDX1RfQVJfTyIsIkNfVF9FX08iLCJDX0NMX0VYUF9PIiwiQ19DTF9FQUxfTyIsIkNfQVdBUkRfVkFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19PX1ZfTyIsIkNfTUVfRVhQX08iLCJDX1JTX0VfTyIsIkNfVV9VQkxfTyIsIkVTUE9SVCIsIkNfQ0xfVUJMX08iLCJDX1VfRVhQX08iLCJDX1VfQV9PIiwiQ19QTkVfRV9PIiwiQ19SX1JBU19PIiwiQ19UX1JDX08iLCJDX1BORV9BX08iLCJDX0lOUF9MX08iLCJDX1BORV9DX08iLCJDX1BBUl9MX08iLCJDX0lOQV9MX08iLCJDX09CQ19BX08iLCJDX1RfRVhQX08iLCJDX0NMX0JMX08iLCJDX1BBUl9JU1VfTyIsIkNfQVdBUkRfUkFTX08iLCJDX01FX0VBUF9PIiwiQ19DTF9DQUxfTyIsIkNfTUVfVkVSX08iLCJDX1VfVl9PIiwiQ19NRV9NQV9PIiwiQ19BUkNfRV9PIiwiQ19NRV9WQUxfTyIsIkNfQ0xfRFNfTyIsIkNfRVZfQ0FOX08iLCJDX1RfQVJMX08iLCJDX05SX0VfTyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjMxYzc5OWUyLTcyNDItNDFiYy1iMmNhLWNlZGM0ZWY4MGQ4NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1bGlkIjoiNzc1MzFhMGYtOTc3NC00YmU5LTkxN2EtNTI0ZjUxYTJmMzEyIiwibmFtZSI6IlNFRiIsInByZWZlcnJlZF91c2VybmFtZSI6Iis5NjY1NTM5ODkzMzMiLCJsb2NhbGUiOiJlbiIsInJpZCI6ImN1c3RfZXNwb3J0cy5jb20iLCJnaXZlbl9uYW1lIjoiU0VGIiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6ImFkbWluQHNhdWRpZXNwb3J0cy5jb20iLCJrZXkiOiJjdXN0X2VzcG9ydHMuY29tX0tFWSIsImNpZCI6IjFfU1RDU19DVVNUIn0.lCO9b1LaLUcIuN4rynoEcGe1gXbdcB9SKe4OWoeiL2_5JAScvd0vwuJHv5nKwNp0rnIG7jb2t9Ge2qJEmRSSIMNya4TBT32MmtVeOKrIdLdPg6PnxOQQu-7Kuunf6hylqmwM8xLrtGhyLStHmDZ7xD9FPxOjhIZ9UzBT0aK7ZqwMpp-esAC6FsoHNoTUdwxq5OqZzTbNAHDtACdDDA3giR7PTKzwy0K48aFzXHOJsa484RtnSGxK4XAKrHxVeHLpabVLtWxazjJQIC8Bu4oUI0IbCoA1u59tLTPfvD83HVsTXmaSjeK6X9qfRK9EgbeYa7jLS-Zpd0kphCY_svgmgg","expires_in":3600,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmNGQ5ODUxYi0yMzk3LTQyYWEtODE0My1hYWQyNzM2ZWMxOGUifQ.eyJleHAiOjE3MzIxMzU5OTMsImlhdCI6MTczMjEzNDE5MywianRpIjoiZTNlOTNmOWQtMjlmMC00YTA5LWE2NTgtNGQzNjJjMjQ5MGZhIiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6Imh0dHBzOi8vcWEuc2F1ZGllc3BvcnRzLnNhL2F1dGgvcmVhbG1zL2N1c3RfZXNwb3J0cy5jb20iLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoiV0VCIiwic2Vzc2lvbl9zdGF0ZSI6IjMxYzc5OWUyLTcyNDItNDFiYy1iMmNhLWNlZGM0ZWY4MGQ4NSIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjMxYzc5OWUyLTcyNDItNDFiYy1iMmNhLWNlZGM0ZWY4MGQ4NSJ9.jVAMD5sO3-_sUx0D_bMfTGtp5ESCzR-f7EszwhSr260","token_type":"Bearer","not-before-policy":0,"session_state":"31c799e2-7242-41bc-b2ca-cedc4ef80d85","scope":"email profile"} 
  </msg>
-<msg time="2024-08-31T14:08:54.317797" level="INFO">C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'qa.saudiesports.sa'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2024-08-31T14:08:54.317797" level="FAIL">HTTPError: 400 Client Error:  for url: https://qa.saudiesports.sa/api/team-club/v1/teams/discover</msg>
+<msg time="2024-11-20T22:23:14.567892" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
-<arg>discoverClansSession</arg>
-<arg>/api/team-club/v1/teams/discover</arg>
-<arg>headers=${headers}</arg>
+<arg>loginSessions</arg>
+<arg>${Login_Service_Url}</arg>
+<arg>data=${body}</arg>
+<arg>expected_status=200</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="FAIL" start="2024-08-31T14:08:53.527304" elapsed="0.832285">HTTPError: 400 Client Error:  for url: https://qa.saudiesports.sa/api/team-club/v1/teams/discover</status>
+<status status="PASS" start="2024-11-20T22:23:13.954327" elapsed="0.613565"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-20T22:23:14.569891" level="INFO">${esport_token} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc3OTMsImlhdCI6MTczMjEzNDE5MywianRpIjoiZjFiNzJjMzctOTdhNS00NTBjLTljMmUt...</msg>
+<var>${esport_token}</var>
+<arg>${response.json()}[access_token]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-20T22:23:14.568892" elapsed="0.000999"/>
+</kw>
+<return>
+<value>${esport_token}</value>
+<status status="PASS" start="2024-11-20T22:23:14.569891" elapsed="0.000000"/>
+</return>
+<msg time="2024-11-20T22:23:14.570892" level="INFO">${bearerToken} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc3OTMsImlhdCI6MTczMjEzNDE5MywianRpIjoiZjFiNzJjMzctOTdhNS00NTBjLTljMmUt...</msg>
+<var>${bearerToken}</var>
+<arg>${adminUserName}</arg>
+<arg>${adminPassword}</arg>
+<status status="PASS" start="2024-11-20T22:23:13.949326" elapsed="0.621566"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:23:14.570892" level="INFO">Creating Session using : alias=accountDetailsSession, url=https://qa.saudiesports.sa, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>accountDetailsSession</arg>
+<arg>${esport_base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:23:14.570892" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:23:14.571895" level="INFO">${headers} = {'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc3OTMsImlhdCI6MTczMjEzNDE5MywianRpIjoiZjFiNz...</msg>
+<var>${headers}</var>
+<arg>Authorization=Bearer ${bearerToken}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:23:14.571895" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:23:15.312088" level="INFO">GET Request : url=https://qa.saudiesports.sa/api/uaa/user/account-details 
+ path_url=/api/uaa/user/account-details 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc3OTMsImlhdCI6MTczMjEzNDE5MywianRpIjoiZjFiNzJjMzctOTdhNS00NTBjLTljMmUtNTUxZmYzZGFhMDg5IiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJXRUIiLCJzZXNzaW9uX3N0YXRlIjoiMzFjNzk5ZTItNzI0Mi00MWJjLWIyY2EtY2VkYzRlZjgwZDg1IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDX1VQX1ZfTyIsIkNfUl9WQVNfTyIsIkNfVF9VQVJfTyIsIkNfVV9CTF9PIiwiQ19JTkRfTF9PIiwiQ19DTF9NUF9PIiwiQ19UX1VBTF9PIiwiQ19BV0FSRF9TRF9PIiwiQ19SX1NEX08iLCJDX09fRV9PIiwiQ19JTlJfRV9PIiwiQ19FVl9MX08iLCJDX0lOQ19TRF9PIiwiQ19VUF9EX08iLCJDX1BBUl9DQU5fTyIsIkNfVENfRV9PIiwiQ19DTF9FTVlfTyIsIkNfUE5FX0xfTyIsIkNfQ1JRX0VfTyIsIkNfVF9WX08iLCJDX1BBUl9FX0xfTyIsIkNfQVdBUkRfRV9PIiwiQ19VX0RfTyIsIkNfQ0xfVk1ZX08iLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkNfUEFSX0VfTyIsIkNfSU5VX0xfTyIsIkNfQVdBUkRfVkRfTyIsIkNfVV9SU01fTyIsIkNfVF9NVEFfTyIsIkNfREFTX1ZfTyIsIkNfSU5DX1JBU19PIiwiQ19FVlJfRV9PIiwiQ19JTlRfTF9PIiwiQ19NRV9CTF9PIiwiQ19UX0RTX08iLCJDX0NMX01BX08iLCJDX0NPUl9FX08iLCJDX1RXX0VfTyIsIkNfTUVfVU5CX08iLCJDX01FX0RTX08iLCJDX0FQUl9FX08iLCJDX1ZfQVNfTyIsImRlZmF1bHQtcm9sZXMtY3VzdF9lc3BvcnRzLmNvbSIsIkNfQUxfRVhQX08iLCJDX0NMX1ZfTyIsIkNfVF9BX08iLCJDX0VWX0VYUF9PIiwiQ19SX1ZBTF9PIiwiQ19FVl9FX08iLCJDX1RfQVJfTyIsIkNfVF9FX08iLCJDX0NMX0VYUF9PIiwiQ19DTF9FQUxfTyIsIkNfQVdBUkRfVkFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19PX1ZfTyIsIkNfTUVfRVhQX08iLCJDX1JTX0VfTyIsIkNfVV9VQkxfTyIsIkVTUE9SVCIsIkNfQ0xfVUJMX08iLCJDX1VfRVhQX08iLCJDX1VfQV9PIiwiQ19QTkVfRV9PIiwiQ19SX1JBU19PIiwiQ19UX1JDX08iLCJDX1BORV9BX08iLCJDX0lOUF9MX08iLCJDX1BORV9DX08iLCJDX1BBUl9MX08iLCJDX0lOQV9MX08iLCJDX09CQ19BX08iLCJDX1RfRVhQX08iLCJDX0NMX0JMX08iLCJDX1BBUl9JU1VfTyIsIkNfQVdBUkRfUkFTX08iLCJDX01FX0VBUF9PIiwiQ19DTF9DQUxfTyIsIkNfTUVfVkVSX08iLCJDX1VfVl9PIiwiQ19NRV9NQV9PIiwiQ19BUkNfRV9PIiwiQ19NRV9WQUxfTyIsIkNfQ0xfRFNfTyIsIkNfRVZfQ0FOX08iLCJDX1RfQVJMX08iLCJDX05SX0VfTyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjMxYzc5OWUyLTcyNDItNDFiYy1iMmNhLWNlZGM0ZWY4MGQ4NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1bGlkIjoiNzc1MzFhMGYtOTc3NC00YmU5LTkxN2EtNTI0ZjUxYTJmMzEyIiwibmFtZSI6IlNFRiIsInByZWZlcnJlZF91c2VybmFtZSI6Iis5NjY1NTM5ODkzMzMiLCJsb2NhbGUiOiJlbiIsInJpZCI6ImN1c3RfZXNwb3J0cy5jb20iLCJnaXZlbl9uYW1lIjoiU0VGIiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6ImFkbWluQHNhdWRpZXNwb3J0cy5jb20iLCJrZXkiOiJjdXN0X2VzcG9ydHMuY29tX0tFWSIsImNpZCI6IjFfU1RDU19DVVNUIn0.lCO9b1LaLUcIuN4rynoEcGe1gXbdcB9SKe4OWoeiL2_5JAScvd0vwuJHv5nKwNp0rnIG7jb2t9Ge2qJEmRSSIMNya4TBT32MmtVeOKrIdLdPg6PnxOQQu-7Kuunf6hylqmwM8xLrtGhyLStHmDZ7xD9FPxOjhIZ9UzBT0aK7ZqwMpp-esAC6FsoHNoTUdwxq5OqZzTbNAHDtACdDDA3giR7PTKzwy0K48aFzXHOJsa484RtnSGxK4XAKrHxVeHLpabVLtWxazjJQIC8Bu4oUI0IbCoA1u59tLTPfvD83HVsTXmaSjeK6X9qfRK9EgbeYa7jLS-Zpd0kphCY_svgmgg', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-11-20T22:23:15.313088" level="INFO">GET Response : url=https://qa.saudiesports.sa/api/uaa/user/account-details 
+ status=200, reason= 
+ headers={'Date': 'Wed, 20 Nov 2024 20:23:14 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Content-Encoding': 'gzip'} 
+ body={"email":"admin@saudiesports.com","id":"b6ec98b6-8069-48e6-8e2f-b662d270dc76","requiredActions":null,"enabled":false,"firstName":"SEF","lastName":null,"profileId":null,"profileName":null,"profileNameAr":null,"mobileNo":"553989333","levelId":"77531a0f-9774-4be9-917a-524f51a2f312","preferredLanguage":null,"createdBy":null,"updatedBy":null,"updatedDate":1690315636183,"createdDate":null,"status":null,"message":null,"levelName":null,"levelNameAr":null,"note":null,"reserved":true,"type":null,"pendingAdminEmail":null,"pendingEmailCreationDate":null,"password":null,"nationalityId":168,"countryCode":"+966","gender":"MALE","internalType":null,"lockReason":"كلمه مرور غير صحيحه","lockedBy":"النظام","lockedDate":1691481091517,"createdByName":null,"updatedByName":null,"nationality":"Saudi","nationalityAr":"سعودي","nationalityCode":"sa","country":{"id":168,"name":"Saudi Arabia","nameAr":"المملكة العربية السعودية","nameFr":"Arabie Saoudite","code":"sa","dialCode":"+966","nationality":"Saudi","nationalityAr":"سعودي","regex":"^(5)(5|0|3|6|4|9|1|8|7)([0-9]{7})$","flag":"iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAYAAACaq43EAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxMzM1RkUxODE3ODcxMUUyQTcxNDlDNEFCRkNENzc2NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozMEE2MkM3MDE3ODcxMUUyQTcxNDlDNEFCRkNENzc2NiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjEzMzVGRTE2MTc4NzExRTJBNzE0OUM0QUJGQ0Q3NzY2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjEzMzVGRTE3MTc4NzExRTJBNzE0OUM0QUJGQ0Q3NzY2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+VDw2aQAAAwhJREFUeNrEVttOE1EUXdNO72ALvQqIQYSIxIA+GCMvPJEYLzH+gN/hZ/jAL2jiB/jkgw+YeEkkgsRE4w0UrLTFdnqbzrTj2jNtANMpwgOc5uScM3PmrL3X2nufKlic/QlgiF3D8bR+9k21PcGe8VjAPTihprq/UgCrxd505h7aaFm771qGM/WoznOl8017v8L9Hu+eb/a3Hh5btMpCgABqUwcaZfg9Ps4b8BpVhAOnEPH64eNaFfCWCbXVhMfUoXBUXAAP9pgHRoJR3Bu7jbA/grWdLyjUS0jzWc2oYDw6iunkFFa2P6CglxBUQ9DNOm6dncPH4g+8+LWC19+eA+HEIT02ahiLnsGNsXlcy8wgrgbxieDJSBLzo3McU1gmqBCr09tUMIYdsjLcfxpR7m1aZk+PvbiZecAx0O1lhbTlawUk6eVkfBJb5SyGQgMo8blFzWPU8XtxHWkaoelFvM2uYSSSQCw4gDfZVfyu5YnQ9eiGu8fUrUFP8vUixPY4NVWocZ36DYfjWBi+iqnUNLZqO8hW8gj7wrgzsYD10iY+k5nxwXOUyzyCxtQrfWoE9y/eRZJePnz3CDOJCVyKn8er7HtkqN3S1jIKZg0+o4y52BV4yMCzjZcwabBXIlpReuTM4mypa/FgWvhJk3gnducqOVtfP5nIlTaQolGbpD5AT0MEqdE7g9RqzIQ0dS5UttFQvG64mjuw5CEtR0Nz8tnfb7Ng5y9ph87nDCJ7n53vlpO3AiZ7mGr2HF3TSnPXWA6TQxko8Pc5oLKWYDEbzihgYpwcLmCyR+Zkwd4L6yiVq6O1jkFG6mhfBnXOmzTIah+oyI86tmhAjMaVzSq+Mrh0Fhi7oh2tZLZbi4WElF5nLkuFMuiZAEmXIJL1H+bvODW/nLiAp+tLeLL6GAgNol1HDxlce7UWD4RG0a1TqxXsats0oNC4EAPRSwY00V/pef9oB3ssh0sQSf+3/nYuBoJZjOpqNedQrAZcL4f/p3ofkAt1nYj2hHfXB7QTvY+1tsbH+ddH+yvAAIKJO5Z5g0J2AAAAAElFTkSuQmCC"},"profilePictureId":"","clubProfilePictureId":null,"typeId":1,"typeCode":"ADMIN","userType":null,"dateOfBirth":null,"nationalId":null,"code":null,"assignAnotherAdmin":null,"assignedToClub":null,"counts":null,"verified":null,"verificationType":null,"verificationStatus":null,"verificationRequestId":null,"clubDto":null,"verificationRequestSystemId":null} 
+ </msg>
+<msg time="2024-11-20T22:23:15.314090" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>accountDetailsSession</arg>
+<arg>${accountDetails_url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:23:14.572892" elapsed="0.742200"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-11-20T22:23:15.317174" level="INFO">${status_code} = 200</msg>
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-11-20T22:23:15.315092" elapsed="0.002082"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:23:15.318180" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Status Code is : ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2024-08-31T14:08:54.359589" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-20T22:23:15.319186" elapsed="0.000987"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Response Contents are : ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2024-08-31T14:08:54.359589" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-20T22:23:15.320173" elapsed="0.002945"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Response Headers are : ${response.headers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2024-08-31T14:08:54.359589" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-20T22:23:15.324119" elapsed="0.001082"/>
 </kw>
-<status status="FAIL" start="2024-08-31T14:08:53.510722" elapsed="0.848867">HTTPError: 400 Client Error:  for url: https://qa.saudiesports.sa/api/team-club/v1/teams/discover</status>
+<status status="PASS" start="2024-11-20T22:23:13.948327" elapsed="1.376874"/>
 </test>
-<status status="FAIL" start="2024-08-31T14:08:53.235225" elapsed="1.129946"/>
+<status status="PASS" start="2024-11-20T22:23:13.430965" elapsed="1.896151"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="getAllMembers Data">getAllMembers Data</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="eSportSuite">eSportSuite</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-11-20T22:23:13.795766" level="WARN">Error in file 'C:\Users\DELL\Desktop\Automation-RF\STCS_API_RB_Nov19\Keywords\EsportKeywords.robot' on line 21: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
 </errors>
 </robot>

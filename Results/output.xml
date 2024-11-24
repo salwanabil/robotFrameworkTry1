@@ -1,0 +1,1624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.3 on win32)" generated="2024-11-20T22:26:00.334536" rpa="false" schemaversion="5">
+<suite id="s1" name="BookingSuite &amp; eSportSuite">
+<suite id="s1-s1" name="BookingSuite" source="C:\Users\DELL\Desktop\Automation-RF\STCS_API_RB_Nov19\tests\BookingSuite.robot">
+<test id="s1-s1-t1" name="TC1_ Booking - Get All Booking IDs" line="8">
+<kw name="Get all Bookings" owner="BookingKeywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:00.606998" level="INFO">Creating Session using : alias=getBookingSession, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>getBookingSession</arg>
+<arg>${restfulBooker_baseUrl}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:00.606998" elapsed="0.001000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:01.820574" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking 
+ path_url=/booking 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-11-20T22:26:01.821605" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1732134360&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=3Xf1Hu3j%2FkQGPW%2BdLRF9wi3v2tMr2%2FkEWz2f54vjlOU%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1732134360&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=3Xf1Hu3j%2FkQGPW%2BdLRF9wi3v2tMr2%2FkEWz2f54vjlOU%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '36946', 'Etag': 'W/"9052-tEgCiLn/LbuCZUFvi+Fsh4ZaiNg"', 'Date': 'Wed, 20 Nov 2024 20:26:00 GMT', 'Via': '1.1 vegur'} 
+ body=[{"bookingid":2007},{"bookingid":2877},{"bookingid":1797},{"bookingid":395},{"bookingid":977},{"bookingid":282},{"bookingid":561},{"bookingid":2890},{"bookingid":2120},{"bookingid":175},{"bookingid":2350},{"bookingid":2267},{"bookingid":484},{"bookingid":2666},{"bookingid":574},{"bookingid":2217},{"bookingid":1050},{"bookingid":1000},{"bookingid":1162},{"bookingid":527},{"bookingid":1110},{"bookingid":289},{"bookingid":1299},{"bookingid":1372},{"bookingid":933},{"bookingid":1150},{"bookingid":565},{"bookingid":2734},{"bookingid":70},{"bookingid":1558},{"bookingid":443},{"bookingid":802},{"bookingid":1735},{"bookingid":452},{"bookingid":1691},{"bookingid":528},{"bookingid":1874},{"bookingid":1384},{"bookingid":2219},{"bookingid":100},{"bookingid":368},{"bookingid":291},{"bookingid":1520},{"bookingid":1660},{"bookingid":924},{"bookingid":510},{"bookingid":1435},{"bookingid":2111},{"bookingid":2533},{"bookingid":2143},{"bookingid":2548},{"bookingid":372},{"bookingid":915},{"bookingid":756},{"bookingid":1798},{"bookingid":1584},{"bookingid":2003},{"bookingid":460},{"bookingid":1476},{"bookingid":456},{"bookingid":193},{"bookingid":957},{"bookingid":2503},{"bookingid":984},{"bookingid":2772},{"bookingid":86},{"bookingid":2498},{"bookingid":2328},{"bookingid":2837},{"bookingid":219},{"bookingid":2715},{"bookingid":1634},{"bookingid":590},{"bookingid":208},{"bookingid":2655},{"bookingid":2725},{"bookingid":1977},{"bookingid":178},{"bookingid":2879},{"bookingid":2830},{"bookingid":2287},{"bookingid":2847},{"bookingid":1279},{"bookingid":1895},{"bookingid":268},{"bookingid":2893},{"bookingid":534},{"bookingid":1702},{"bookingid":2800},{"bookingid":2112},{"bookingid":1821},{"bookingid":231},{"bookingid":994},{"bookingid":418},{"bookingid":472},{"bookingid":1985},{"bookingid":13},{"bookingid":342},{"bookingid":1782},{"bookingid":222},{"bookingid":1272},{"bookingid":276},{"bookingid":47},{"bookingid":210},{"bookingid":307},{"bookingid":2575},{"bookingid":2608},{"bookingid":2669},{"bookingid":266},{"bookingid":642},{"bookingid":2446},{"bookingid":405},{"bookingid":2831},{"bookingid":2780},{"bookingid":1378},{"bookingid":2451},{"bookingid":780},{"bookingid":1777},{"bookingid":1038},{"bookingid":2374},{"bookingid":842},{"bookingid":1978},{"bookingid":1244},{"bookingid":1747},{"bookingid":1941},{"bookingid":1633},{"bookingid":259},{"bookingid":759},{"bookingid":2172},{"bookingid":1490},{"bookingid":1467},{"bookingid":27},{"bookingid":2314},{"bookingid":1997},{"bookingid":2025},{"bookingid":2656},{"bookingid":1055},{"bookingid":1044},{"bookingid":609},{"bookingid":1912},{"bookingid":23},{"bookingid":558},{"bookingid":9},{"bookingid":2218},{"bookingid":2460},{"bookingid":1907},{"bookingid":2234},{"bookingid":2569},{"bookingid":1293},{"bookingid":919},{"bookingid":455},{"bookingid":66},{"bookingid":2709},{"bookingid":2164},{"bookingid":2261},{"bookingid":12},{"bookingid":1078},{"bookingid":1052},{"bookingid":1563},{"bookingid":2115},{"bookingid":1021},{"bookingid":742},{"bookingid":1937},{"bookingid":1401},{"bookingid":785},{"bookingid":2341},{"bookingid":831},{"bookingid":1668},{"bookingid":1387},{"bookingid":453},{"bookingid":285},{"bookingid":2400},{"bookingid":2027},{"bookingid":1033},{"bookingid":2559},{"bookingid":244},{"bookingid":1828},{"bookingid":2428},{"bookingid":2769},{"bookingid":1280},{"bookingid":606},{"bookingid":2441},{"bookingid":1951},{"bookingid":2562},{"bookingid":2402},{"bookingid":1975},{"bookingid":458},{"bookingid":445},{"bookingid":1080},{"bookingid":2467},{"bookingid":265},{"bookingid":319},{"bookingid":2117},{"bookingid":1353},{"bookingid":743},{"bookingid":234},{"bookingid":1659},{"bookingid":1429},{"bookingid":906},{"bookingid":1215},{"bookingid":2281},{"bookingid":2349},{"bookingid":313},{"bookingid":2742},{"bookingid":1278},{"bookingid":2727},{"bookingid":1474},{"bookingid":1773},{"bookingid":1249},{"bookingid":157},{"bookingid":1866},{"bookingid":620},{"bookingid":2684},{"bookingid":80},{"bookingid":1437},{"bookingid":2167},{"bookingid":2131},{"bookingid":326},{"bookingid":2224},{"bookingid":1542},{"bookingid":2265},{"bookingid":2815},{"bookingid":1771},{"bookingid":1351},{"bookingid":2767},{"bookingid":2445},{"bookingid":431},{"bookingid":2135},{"bookingid":499},{"bookingid":1549},{"bookingid":99},{"bookingid":2745},{"bookingid":1793},{"bookingid":671},{"bookingid":2668},{"bookingid":1059},{"bookingid":2030},{"bookingid":2386},{"bookingid":1159},{"bookingid":26},{"bookingid":2464},{"bookingid":1631},{"bookingid":121},{"bookingid":1090},{"bookingid":1195},{"bookingid":2442},{"bookingid":287},{"bookingid":1465},{"bookingid":2311},{"bookingid":1294},{"bookingid":1794},{"bookingid":2522},{"bookingid":857},{"bookingid":2849},{"bookingid":1175},{"bookingid":2613},{"bookingid":2077},{"bookingid":1287},{"bookingid":2526},{"bookingid":165},{"bookingid":1525},{"bookingid":382},{"bookingid":2793},{"bookingid":1965},{"bookingid":894},{"bookingid":2827},{"bookingid":2589},{"bookingid":1761},{"bookingid":2149},{"bookingid":2230},{"bookingid":61},{"bookingid":716},{"bookingid":709},{"bookingid":1296},{"bookingid":1531},{"bookingid":909},{"bookingid":847},{"bookingid":1243},{"bookingid":1622},{"bookingid":2128},{"bookingid":1830},{"bookingid":1550},{"bookingid":358},{"bookingid":2872},{"bookingid":494},{"bookingid":351},{"bookingid":2096},{"bookingid":1801},{"bookingid":2757},{"bookingid":1553},{"bookingid":2805},{"bookingid":896},{"bookingid":1506},{"bookingid":2657},{"bookingid":1349},{"bookingid":496},{"bookingid":1354},{"bookingid":330},{"bookingid":1217},{"bookingid":746},{"bookingid":2646},{"bookingid":2783},{"bookingid":1250},{"bookingid":2298},{"bookingid":1028},{"bookingid":2124},{"bookingid":680},{"bookingid":413},{"bookingid":1780},{"bookingid":523},{"bookingid":277},{"bookingid":1309},{"bookingid":1699},{"bookingid":2586},{"bookingid":1356},{"bookingid":1879},{"bookingid":64},{"bookingid":722},{"bookingid":2026},{"bookingid":1935},{"bookingid":1901},{"bookingid":232},{"bookingid":2018},{"bookingid":1338},{"bookingid":1475},{"bookingid":236},{"bookingid":1663},{"bookingid":1695},{"bookingid":207},{"bookingid":2237},{"bookingid":1105},{"bookingid":1682},{"bookingid":267},{"bookingid":106},{"bookingid":1238},{"bookingid":5},{"bookingid":2843},{"bookingid":1892},{"bookingid":119},{"bookingid":2315},{"bookingid":530},{"bookingid":2125},{"bookingid":336},{"bookingid":871},{"bookingid":2225},{"bookingid":1847},{"bookingid":2814},{"bookingid":2887},{"bookingid":2710},{"bookingid":1436},{"bookingid":1241},{"bookingid":914},{"bookingid":2104},{"bookingid":632},{"bookingid":184},{"bookingid":2722},{"bookingid":1212},{"bookingid":2799},{"bookingid":387},{"bookingid":2571},{"bookingid":2150},{"bookingid":1661},{"bookingid":1099},{"bookingid":40},{"bookingid":172},{"bookingid":261},{"bookingid":944},{"bookingid":2068},{"bookingid":866},{"bookingid":623},{"bookingid":1727},{"bookingid":627},{"bookingid":1776},{"bookingid":1358},{"bookingid":927},{"bookingid":789},{"bookingid":1921},{"bookingid":1335},{"bookingid":2631},{"bookingid":1647},{"bookingid":1462},{"bookingid":1027},{"bookingid":360},{"bookingid":1755},{"bookingid":736},{"bookingid":2497},{"bookingid":2371},{"bookingid":295},{"bookingid":867},{"bookingid":2366},{"bookingid":2195},{"bookingid":192},{"bookingid":1068},{"bookingid":2530},{"bookingid":613},{"bookingid":1095},{"bookingid":2223},{"bookingid":1108},{"bookingid":1204},{"bookingid":1165},{"bookingid":2707},{"bookingid":2073},{"bookingid":345},{"bookingid":2756},{"bookingid":2256},{"bookingid":1887},{"bookingid":678},{"bookingid":2634},{"bookingid":1802},{"bookingid":1579},{"bookingid":1545},{"bookingid":2512},{"bookingid":2009},{"bookingid":773},{"bookingid":398},{"bookingid":593},{"bookingid":2173},{"bookingid":2001},{"bookingid":576},{"bookingid":8},{"bookingid":1112},{"bookingid":339},{"bookingid":2860},{"bookingid":1565},{"bookingid":1815},{"bookingid":1655},{"bookingid":1118},{"bookingid":479},{"bookingid":2274},{"bookingid":880},{"bookingid":2507},{"bookingid":878},{"bookingid":2484},{"bookingid":2343},{"bookingid":185},{"bookingid":1708},{"bookingid":464},{"bookingid":861},{"bookingid":1502},{"bookingid":2144},{"bookingid":1684},{"bookingid":2632},{"bookingid":2468},{"bookingid":401},{"bookingid":1414},{"bookingid":2229},{"bookingid":424},{"bookingid":2746},{"bookingid":311},{"bookingid":767},{"bookingid":920},{"bookingid":116},{"bookingid":216},{"bookingid":1648},{"bookingid":2160},{"bookingid":2858},{"bookingid":750},{"bookingid":517},{"bookingid":258},{"bookingid":1071},{"bookingid":1995},{"bookingid":2142},{"bookingid":2088},{"bookingid":254},{"bookingid":43},{"bookingid":2},{"bookingid":1759},{"bookingid":2083},{"bookingid":2356},{"bookingid":2189},{"bookingid":2198},{"bookingid":1560},{"bookingid":860},{"bookingid":1527},{"bookingid":895},{"bookingid":1543},{"bookingid":1253},{"bookingid":1282},{"bookingid":2413},{"bookingid":993},{"bookingid":2670},{"bookingid":10},{"bookingid":588},{"bookingid":1111},{"bookingid":2055},{"bookingid":1834},{"bookingid":2509},{"bookingid":2099},{"bookingid":243},{"bookingid":1362},{"bookingid":1600},{"bookingid":1498},{"bookingid":37},{"bookingid":1303},{"bookingid":2876},{"bookingid":1677},{"bookingid":196},{"bookingid":1034},{"bookingid":1637},{"bookingid":1097},{"bookingid":989},{"bookingid":260},{"bookingid":1933},{"bookingid":886},{"bookingid":820},{"bookingid":1447},{"bookingid":2439},{"bookingid":2741},{"bookingid":2233},{"bookingid":1568},{"bookingid":2331},{"bookingid":1804},{"bookingid":793},{"bookingid":373},{"bookingid":1615},{"bookingid":2597},{"bookingid":433},{"bookingid":361},{"bookingid":589},{"bookingid":1313},{"bookingid":2766},{"bookingid":2714},{"bookingid":1394},{"bookingid":95},{"bookingid":2301},{"bookingid":1968},{"bookingid":822},{"bookingid":1810},{"bookingid":1403},{"bookingid":1962},{"bookingid":2459},{"bookingid":602},{"bookingid":2721},{"bookingid":2671},{"bookingid":2357},{"bookingid":114},{"bookingid":887},{"bookingid... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2024-11-20T22:26:01.822595" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>getBookingSession</arg>
+<arg>/booking</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:00.607998" elapsed="1.214597"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-11-20T22:26:01.824684" level="INFO">${status_code} = 200</msg>
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-11-20T22:26:01.822595" elapsed="0.002089"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:01.825680" elapsed="0.001989"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-11-20T22:26:01.829294" level="INFO">${res_body} = [{"bookingid":2007},{"bookingid":2877},{"bookingid":1797},{"bookingid":395},{"bookingid":977},{"bookingid":282},{"bookingid":561},{"bookingid":2890},{"bookingid":2120},{"bookingid":175},{"bookingid":2...</msg>
+<var>${res_body}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-11-20T22:26:01.827669" elapsed="0.001625"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${res_body}</arg>
+<arg>bookingid</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T22:26:01.829294" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:00.606998" elapsed="1.222296"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:00.605997" elapsed="1.223803"/>
+</test>
+<test id="s1-s1-t2" name="TC2_ Booking - GetBookingByBooking By Id" line="11">
+<kw name="Get Booking Data By Specific ID" owner="BookingKeywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:01.830813" level="INFO">Creating Session using : alias=getBookingByIdSession, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>getBookingByIdSession</arg>
+<arg>${restfulBooker_baseUrl}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:01.830813" elapsed="0.001055"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:01.831868" level="INFO">${header} = {'Accept': 'application/json'}</msg>
+<var>${header}</var>
+<arg>Accept=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:01.831868" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:02.844920" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking/165 
+ path_url=/booking/165 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-11-20T22:26:02.844920" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking/165 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1732134361&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=SlUuYr6hb6vIzouWojD6NYiqbSkhOR%2Blqivpmys2kjI%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1732134361&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=SlUuYr6hb6vIzouWojD6NYiqbSkhOR%2Blqivpmys2kjI%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '171', 'Etag': 'W/"ab-MG4aCOdqq15ogV4Uqb+rfjZOkQk"', 'Date': 'Wed, 20 Nov 2024 20:26:01 GMT', 'Via': '1.1 vegur'} 
+ body={"firstname":"Josh","lastname":"Allen","totalprice":111,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"super bowls"} 
+ </msg>
+<msg time="2024-11-20T22:26:02.844920" level="INFO">${get_response} = &lt;Response [200]&gt;</msg>
+<var>${get_response}</var>
+<arg>getBookingByIdSession</arg>
+<arg>${Booking_ENDPOINT}/${id}</arg>
+<arg>headers=${header}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:01.831868" elapsed="1.013052"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T22:26:02.846924" level="INFO">Getting Booking Data response: {"firstname":"Josh","lastname":"Allen","totalprice":111,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"super bowls"}</msg>
+<arg>Getting Booking Data response: ${get_response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T22:26:02.845923" elapsed="0.001001"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T22:26:02.846924" level="INFO">Successful getting data by posted booking id is 165</msg>
+<arg>Successful getting data by posted booking id is ${id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T22:26:02.846924" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${get_response}</value>
+<status status="PASS" start="2024-11-20T22:26:02.847930" elapsed="0.000000"/>
+</return>
+<msg time="2024-11-20T22:26:02.847930" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${global_booking_id}</arg>
+<status status="PASS" start="2024-11-20T22:26:01.830813" elapsed="1.017117"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-11-20T22:26:02.849889" level="INFO">${status_code} = 200</msg>
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-11-20T22:26:02.848833" elapsed="0.001056"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:02.850926" elapsed="0.000908"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-11-20T22:26:02.853829" level="INFO">${res_body} = {"firstname":"Josh","lastname":"Allen","totalprice":111,"depositpaid":true,"bookingdates":{"checkin":"2018-01-01","checkout":"2019-01-01"},"additionalneeds":"super bowls"}</msg>
+<var>${res_body}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-11-20T22:26:02.851834" elapsed="0.001995"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${res_body}</arg>
+<arg>firstname</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-20T22:26:02.853829" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:01.829800" elapsed="1.025029"/>
+</test>
+<test id="s1-s1-t3" name="TC3_ Booking - CreateBooking Then Verify Posted Data Are Get" line="20">
+<kw name="Create Booking" owner="BookingKeywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:02.858943" level="INFO">${booking_dates} = {'checkin': '2024-03-14', 'checkout': '2024-05-01'}</msg>
+<var>${booking_dates}</var>
+<arg>checkin=2024-03-14</arg>
+<arg>checkout=2024-05-01</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:02.858943" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:02.860041" level="INFO">${body} = {'firstname': 'Omar', 'lastname': 'Salam', 'totalprice': '3434', 'depositpaid': 'false', 'bookingdates': {'checkin': '2024-03-14', 'checkout': '2024-05-01'}, 'additionalneeds': 'Dinner'}</msg>
+<var>${body}</var>
+<arg>firstname=Omar</arg>
+<arg>lastname=Salam</arg>
+<arg>totalprice=3434</arg>
+<arg>depositpaid=false</arg>
+<arg>bookingdates=${booking_dates}</arg>
+<arg>additionalneeds=Dinner</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:02.858943" elapsed="0.001098"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:02.860041" level="INFO">Creating Session using : alias=POST, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>POST</arg>
+<arg>${restfulBooker_baseUrl}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:02.860041" elapsed="0.001100"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:03.489572" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/booking 
+ path_url=/booking 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '186', 'Content-Type': 'application/json'} 
+ body=b'{"firstname": "Omar", "lastname": "Salam", "totalprice": "3434", "depositpaid": "false", "bookingdates": {"checkin": "2024-03-14", "checkout": "2024-05-01"}, "additionalneeds": "Dinner"}' 
+ </msg>
+<msg time="2024-11-20T22:26:03.489572" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/booking 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1732134362&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=pyFJLPzOYrBARw%2Fd%2Bmopcdt1AbMb%2Fh9ZQ5V%2BAl8E%2F5E%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1732134362&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=pyFJLPzOYrBARw%2Fd%2Bmopcdt1AbMb%2Fh9ZQ5V%2BAl8E%2F5E%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '196', 'Etag': 'W/"c4-X2mLGm/kjsXKa1O8usETfp4+QK8"', 'Date': 'Wed, 20 Nov 2024 20:26:02 GMT', 'Via': '1.1 vegur'} 
+ body={"bookingid":2904,"booking":{"firstname":"Omar","lastname":"Salam","totalprice":3434,"depositpaid":true,"bookingdates":{"checkin":"2024-03-14","checkout":"2024-05-01"},"additionalneeds":"Dinner"}} 
+ </msg>
+<msg time="2024-11-20T22:26:03.490573" level="INFO">${post_response} = &lt;Response [200]&gt;</msg>
+<var>${post_response}</var>
+<arg>POST</arg>
+<arg>${Booking_ENDPOINT}</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:02.861141" elapsed="0.629432"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-11-20T22:26:03.490573" elapsed="0.001002"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-20T22:26:03.493567" level="INFO">${booking_Id} = 2904</msg>
+<var>${booking_Id}</var>
+<arg>${post_response.json()}[bookingid]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-20T22:26:03.491575" elapsed="0.001992"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T22:26:03.493567" level="INFO">Posted BookingID value is 2904</msg>
+<arg>Posted BookingID value is ${booking_Id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T22:26:03.493567" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${booking_Id}</value>
+<status status="PASS" start="2024-11-20T22:26:03.493567" elapsed="0.000000"/>
+</return>
+<msg time="2024-11-20T22:26:03.494568" level="INFO">${booking_Id} = 2904</msg>
+<var>${booking_Id}</var>
+<status status="PASS" start="2024-11-20T22:26:02.858443" elapsed="0.636125"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T22:26:03.494995" level="INFO">Verifying that posted data are then fetched by created booking id: 2904</msg>
+<arg>Verifying that posted data are then fetched by created booking id: ${booking_Id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T22:26:03.494995" elapsed="0.000000"/>
+</kw>
+<kw name="Get Booking Data By Specific ID" owner="BookingKeywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:03.498016" level="INFO">Creating Session using : alias=getBookingByIdSession, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>getBookingByIdSession</arg>
+<arg>${restfulBooker_baseUrl}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:03.497027" elapsed="0.000989"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:03.499029" level="INFO">${header} = {'Accept': 'application/json'}</msg>
+<var>${header}</var>
+<arg>Accept=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:03.498016" elapsed="0.001013"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:04.483133" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking/2904 
+ path_url=/booking/2904 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-11-20T22:26:04.483133" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking/2904 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1732134363&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=IChky14TuWXXh3DV5C2KCZn5Zv4wcEIB2zTkAJITn%2FE%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1732134363&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=IChky14TuWXXh3DV5C2KCZn5Zv4wcEIB2zTkAJITn%2FE%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '167', 'Etag': 'W/"a7-habsOeszCnTc97eUUTOdC2cPRcI"', 'Date': 'Wed, 20 Nov 2024 20:26:03 GMT', 'Via': '1.1 vegur'} 
+ body={"firstname":"Omar","lastname":"Salam","totalprice":3434,"depositpaid":true,"bookingdates":{"checkin":"2024-03-14","checkout":"2024-05-01"},"additionalneeds":"Dinner"} 
+ </msg>
+<msg time="2024-11-20T22:26:04.484167" level="INFO">${get_response} = &lt;Response [200]&gt;</msg>
+<var>${get_response}</var>
+<arg>getBookingByIdSession</arg>
+<arg>${Booking_ENDPOINT}/${id}</arg>
+<arg>headers=${header}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:03.499029" elapsed="0.985138"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T22:26:04.485164" level="INFO">Getting Booking Data response: {"firstname":"Omar","lastname":"Salam","totalprice":3434,"depositpaid":true,"bookingdates":{"checkin":"2024-03-14","checkout":"2024-05-01"},"additionalneeds":"Dinner"}</msg>
+<arg>Getting Booking Data response: ${get_response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T22:26:04.484167" elapsed="0.000997"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T22:26:04.486165" level="INFO">Successful getting data by posted booking id is 2904</msg>
+<arg>Successful getting data by posted booking id is ${id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T22:26:04.486165" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${get_response}</value>
+<status status="PASS" start="2024-11-20T22:26:04.486165" elapsed="0.000000"/>
+</return>
+<arg>${booking_Id}</arg>
+<status status="PASS" start="2024-11-20T22:26:03.496024" elapsed="0.991141"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:02.856837" elapsed="1.630328"/>
+</test>
+<test id="s1-s1-t4" name="TC4_ Delete Booking by passing booking ID" line="25">
+<kw name="Create Booking" owner="BookingKeywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:04.491152" level="INFO">${booking_dates} = {'checkin': '2024-03-14', 'checkout': '2024-05-01'}</msg>
+<var>${booking_dates}</var>
+<arg>checkin=2024-03-14</arg>
+<arg>checkout=2024-05-01</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:04.490153" elapsed="0.000999"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:04.492160" level="INFO">${body} = {'firstname': 'Omar', 'lastname': 'Salam', 'totalprice': '3434', 'depositpaid': 'false', 'bookingdates': {'checkin': '2024-03-14', 'checkout': '2024-05-01'}, 'additionalneeds': 'Dinner'}</msg>
+<var>${body}</var>
+<arg>firstname=Omar</arg>
+<arg>lastname=Salam</arg>
+<arg>totalprice=3434</arg>
+<arg>depositpaid=false</arg>
+<arg>bookingdates=${booking_dates}</arg>
+<arg>additionalneeds=Dinner</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:04.491152" elapsed="0.001008"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:04.493163" level="INFO">Creating Session using : alias=POST, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>POST</arg>
+<arg>${restfulBooker_baseUrl}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:04.492160" elapsed="0.001003"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:05.302283" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/booking 
+ path_url=/booking 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '186', 'Content-Type': 'application/json'} 
+ body=b'{"firstname": "Omar", "lastname": "Salam", "totalprice": "3434", "depositpaid": "false", "bookingdates": {"checkin": "2024-03-14", "checkout": "2024-05-01"}, "additionalneeds": "Dinner"}' 
+ </msg>
+<msg time="2024-11-20T22:26:05.302283" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/booking 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1732134364&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=%2FXQYiP0cbNaRZKQmcBZo6S1HlK60bwka5DDrFJ2PWss%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1732134364&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=%2FXQYiP0cbNaRZKQmcBZo6S1HlK60bwka5DDrFJ2PWss%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '196', 'Etag': 'W/"c4-6QVTCoxGtN7tJ7kRtfpF41w/tTo"', 'Date': 'Wed, 20 Nov 2024 20:26:04 GMT', 'Via': '1.1 vegur'} 
+ body={"bookingid":2918,"booking":{"firstname":"Omar","lastname":"Salam","totalprice":3434,"depositpaid":true,"bookingdates":{"checkin":"2024-03-14","checkout":"2024-05-01"},"additionalneeds":"Dinner"}} 
+ </msg>
+<msg time="2024-11-20T22:26:05.302283" level="INFO">${post_response} = &lt;Response [200]&gt;</msg>
+<var>${post_response}</var>
+<arg>POST</arg>
+<arg>${Booking_ENDPOINT}</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:04.493163" elapsed="0.809120"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-11-20T22:26:05.303281" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-20T22:26:05.305278" level="INFO">${booking_Id} = 2918</msg>
+<var>${booking_Id}</var>
+<arg>${post_response.json()}[bookingid]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-20T22:26:05.303281" elapsed="0.001997"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T22:26:05.306273" level="INFO">Posted BookingID value is 2918</msg>
+<arg>Posted BookingID value is ${booking_Id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T22:26:05.305278" elapsed="0.000995"/>
+</kw>
+<return>
+<value>${booking_Id}</value>
+<status status="PASS" start="2024-11-20T22:26:05.306273" elapsed="0.000000"/>
+</return>
+<msg time="2024-11-20T22:26:05.307274" level="INFO">${booking_Id} = 2918</msg>
+<var>${booking_Id}</var>
+<status status="PASS" start="2024-11-20T22:26:04.489153" elapsed="0.818121"/>
+</kw>
+<kw name="Get Booking Data By Specific ID" owner="BookingKeywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:05.309269" level="INFO">Creating Session using : alias=getBookingByIdSession, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>getBookingByIdSession</arg>
+<arg>${restfulBooker_baseUrl}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:05.309269" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:05.310283" level="INFO">${header} = {'Accept': 'application/json'}</msg>
+<var>${header}</var>
+<arg>Accept=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:05.310283" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:06.224473" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking/2918 
+ path_url=/booking/2918 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-11-20T22:26:06.224473" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking/2918 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1732134365&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=TfOFsLwcXbobkXUTFuvUhVonTFDXLQCNaJBwpMGBmuU%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1732134365&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=TfOFsLwcXbobkXUTFuvUhVonTFDXLQCNaJBwpMGBmuU%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '167', 'Etag': 'W/"a7-habsOeszCnTc97eUUTOdC2cPRcI"', 'Date': 'Wed, 20 Nov 2024 20:26:05 GMT', 'Via': '1.1 vegur'} 
+ body={"firstname":"Omar","lastname":"Salam","totalprice":3434,"depositpaid":true,"bookingdates":{"checkin":"2024-03-14","checkout":"2024-05-01"},"additionalneeds":"Dinner"} 
+ </msg>
+<msg time="2024-11-20T22:26:06.224473" level="INFO">${get_response} = &lt;Response [200]&gt;</msg>
+<var>${get_response}</var>
+<arg>getBookingByIdSession</arg>
+<arg>${Booking_ENDPOINT}/${id}</arg>
+<arg>headers=${header}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:05.310283" elapsed="0.914190"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T22:26:06.226470" level="INFO">Getting Booking Data response: {"firstname":"Omar","lastname":"Salam","totalprice":3434,"depositpaid":true,"bookingdates":{"checkin":"2024-03-14","checkout":"2024-05-01"},"additionalneeds":"Dinner"}</msg>
+<arg>Getting Booking Data response: ${get_response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T22:26:06.225474" elapsed="0.000996"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T22:26:06.227477" level="INFO">Successful getting data by posted booking id is 2918</msg>
+<arg>Successful getting data by posted booking id is ${id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T22:26:06.227477" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${get_response}</value>
+<status status="PASS" start="2024-11-20T22:26:06.227477" elapsed="0.000997"/>
+</return>
+<arg>${booking_Id}</arg>
+<status status="PASS" start="2024-11-20T22:26:05.308274" elapsed="0.920200"/>
+</kw>
+<kw name="Delete Booking" owner="BookingKeywords">
+<kw name="Get token" owner="BookingKeywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:06.232471" level="INFO">${body} = {'username': 'admin', 'password': 'password123'}</msg>
+<var>${body}</var>
+<arg>username=admin</arg>
+<arg>password=password123</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:06.232471" elapsed="0.000000"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:07.248057" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/auth 
+ path_url=/auth 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '48', 'Content-Type': 'application/json'} 
+ body=b'{"username": "admin", "password": "password123"}' 
+ </msg>
+<msg time="2024-11-20T22:26:07.248057" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/auth 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1732134366&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=uqULGzo3OXnADDhR8vOjC5no6ZG0UIlWVDNaDclPWWM%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1732134366&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=uqULGzo3OXnADDhR8vOjC5no6ZG0UIlWVDNaDclPWWM%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '27', 'Etag': 'W/"1b-9iaptYAy9/nc50cd7Bd9rgl/4A0"', 'Date': 'Wed, 20 Nov 2024 20:26:06 GMT', 'Via': '1.1 vegur'} 
+ body={"token":"c53b843aa979a95"} 
+ </msg>
+<msg time="2024-11-20T22:26:07.248057" level="INFO">${auth_response} = &lt;Response [200]&gt;</msg>
+<var>${auth_response}</var>
+<arg>${restfulBooker_baseUrl}/auth</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-11-20T22:26:06.233475" elapsed="1.014582"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-20T22:26:07.250070" level="INFO">${bookingAuthToken} = c53b843aa979a95</msg>
+<var>${bookingAuthToken}</var>
+<arg>${auth_response.json()}[token]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-20T22:26:07.249073" elapsed="0.000997"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-20T22:26:07.251073" level="INFO">token is set: c53b843aa979a95</msg>
+<arg>token is set: ${bookingAuthToken}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-20T22:26:07.250070" elapsed="0.001003"/>
+</kw>
+<return>
+<value>${bookingAuthToken}</value>
+<status status="PASS" start="2024-11-20T22:26:07.251073" elapsed="0.000000"/>
+</return>
+<msg time="2024-11-20T22:26:07.251073" level="INFO">${token} = c53b843aa979a95</msg>
+<var>${token}</var>
+<status status="PASS" start="2024-11-20T22:26:06.231473" elapsed="1.019600"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:07.252072" level="INFO">Creating Session using : alias=deleteBookingSession, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>deleteBookingSession</arg>
+<arg>${restfulBooker_baseUrl}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:07.251073" elapsed="0.000999"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:07.253074" level="INFO">${header} = {'Content-Type': 'application/json', 'Cookie': 'token=c53b843aa979a95'}</msg>
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Cookie=token=${token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:07.252072" elapsed="0.001002"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:08.273064" level="INFO">DELETE Request : url=https://restful-booker.herokuapp.com/booking/2918 
+ path_url=/booking/2918 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Cookie': 'token=c53b843aa979a95', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2024-11-20T22:26:08.273064" level="INFO">DELETE Response : url=https://restful-booker.herokuapp.com/booking/2918 
+ status=201, reason=Created 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1732134367&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=dRYUxeF0WUQ60EdKNbqt6RsQ%2BNwml8x29tQl8cW6mVg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1732134367&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=dRYUxeF0WUQ60EdKNbqt6RsQ%2BNwml8x29tQl8cW6mVg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '7', 'Etag': 'W/"7-rM9AyJuqT6iOan/xHh+AW+7K/T8"', 'Date': 'Wed, 20 Nov 2024 20:26:07 GMT', 'Via': '1.1 vegur'} 
+ body=Created 
+ </msg>
+<msg time="2024-11-20T22:26:08.276148" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>deleteBookingSession</arg>
+<arg>${Booking_ENDPOINT}/${id}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:07.253074" elapsed="1.023074"/>
+</kw>
+<arg>${booking_Id}</arg>
+<status status="PASS" start="2024-11-20T22:26:06.230474" elapsed="2.045674"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:04.488157" elapsed="3.789004"/>
+</test>
+<test id="s1-s1-t5" name="TC_5_Reading Json Data" line="30">
+<kw name="Reading Data From JSon File" owner="BookingKeywords">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2024-11-20T22:26:08.281060" level="INFO">${json_obj} = {'firstname': 'Marwa', 'lastname': 'Adam', 'totalprice': 1900, 'depositpaid': 'False', 'bookingdates': {'checkin': '2025-09-30', 'checkout': '2026-12-05'}, 'additionalneeds': 'Super'}</msg>
+<var>${json_obj}</var>
+<arg>${json_file_path}</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.280066" elapsed="0.000994"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Start READING DATA HERE As BELOW:</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.281060" elapsed="0.001007"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-11-20T22:26:08.326983" level="INFO">${first_name} = ['Marwa']</msg>
+<var>${first_name}</var>
+<arg>${json_obj}</arg>
+<arg>$.firstname</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-11-20T22:26:08.282067" elapsed="0.044916"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${first_name[0]}</arg>
+<arg>Marwa</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.326983" elapsed="0.001999"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>First Name is : ${first_name[0]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.328982" elapsed="0.002004"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-11-20T22:26:08.367011" level="INFO">${lastname} = ['Adam']</msg>
+<var>${lastname}</var>
+<arg>${json_obj}</arg>
+<arg>$.lastname</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-11-20T22:26:08.330986" elapsed="0.036025"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${lastname[0]}</arg>
+<arg>Adam</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.367011" elapsed="0.001024"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Last Name is : ${lastname[0]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.369033" elapsed="0.001001"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-11-20T22:26:08.407033" level="INFO">${totalprice} = [1900]</msg>
+<var>${totalprice}</var>
+<arg>${json_obj}</arg>
+<arg>$.totalprice</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-11-20T22:26:08.370941" elapsed="0.036092"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-11-20T22:26:08.407993" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${totalprice[0]}</arg>
+<arg>1900</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.407033" elapsed="0.001997"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Total Price is : ${totalprice}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.409030" elapsed="0.001387"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-11-20T22:26:08.466159" level="INFO">${depositpaid} = ['False']</msg>
+<var>${depositpaid}</var>
+<arg>${json_obj}</arg>
+<arg>$.depositpaid</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-11-20T22:26:08.410417" elapsed="0.055742"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${depositpaid[0]}</arg>
+<arg>False</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.467192" elapsed="0.000991"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Deposit Paid : ${depositpaid[0]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.468183" elapsed="0.002003"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-11-20T22:26:08.504285" level="INFO">${bookingdates_checkin} = ['2025-09-30']</msg>
+<var>${bookingdates_checkin}</var>
+<arg>${json_obj}</arg>
+<arg>$.bookingdates.checkin</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-11-20T22:26:08.470186" elapsed="0.034099"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>checkout date is: ${bookingdates_checkin[0]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.504285" elapsed="0.001888"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${bookingdates_checkin[0]}</arg>
+<arg>2025-09-30</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.506173" elapsed="0.002012"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-11-20T22:26:08.544583" level="INFO">${bookingdates_checkout} = ['2026-12-05']</msg>
+<var>${bookingdates_checkout}</var>
+<arg>${json_obj}</arg>
+<arg>$.bookingdates.checkout</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-11-20T22:26:08.508185" elapsed="0.037399"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>checkout date is: ${bookingdates_checkout[0]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.545584" elapsed="0.002014"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${bookingdates_checkout[0]}</arg>
+<arg>2026-12-05</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.547598" elapsed="0.001988"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Data Readed Successfully and Validated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.549586" elapsed="0.001175"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:08.279059" elapsed="0.271702"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:08.278061" elapsed="0.273294"/>
+</test>
+<test id="s1-s1-t6" name="TC_6_Create Booking From Json Data" line="33">
+<kw name="Post Booking Using Json Data" owner="BookingKeywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:08.554376" level="INFO">Creating Session using : alias=booker, url=https://restful-booker.herokuapp.com, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>booker</arg>
+<arg>url=${restfulBooker_baseUrl}</arg>
+<arg>headers=${headers}</arg>
+<arg>disable_warnings=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:08.554376" elapsed="0.000997"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:09.398393" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/booking 
+ path_url=/booking 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '180'} 
+ body=b'{"firstname": "Marwa", "lastname": "Sami", "totalprice": 234, "depositpaid": true, "bookingdates": {"checkin": "2023-09-20", "checkout": "2024-12-15"}, "additionalneeds": "Dinner"}' 
+ </msg>
+<msg time="2024-11-20T22:26:09.398393" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/booking 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1732134368&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=29XORtBKPtzv5ndE2pQ93rl5kM3rdzM4d1jtXkGUFi8%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1732134368&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=29XORtBKPtzv5ndE2pQ93rl5kM3rdzM4d1jtXkGUFi8%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '195', 'Etag': 'W/"c3-jl+QTikJfRIndhL546kjRUkNsME"', 'Date': 'Wed, 20 Nov 2024 20:26:08 GMT', 'Via': '1.1 vegur'} 
+ body={"bookingid":2956,"booking":{"firstname":"Marwa","lastname":"Sami","totalprice":234,"depositpaid":true,"bookingdates":{"checkin":"2023-09-20","checkout":"2024-12-15"},"additionalneeds":"Dinner"}} 
+ </msg>
+<msg time="2024-11-20T22:26:09.398393" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>booker</arg>
+<arg>/booking</arg>
+<arg>json=${booking}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:08.555373" elapsed="0.843020"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-11-20T22:26:09.399392" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:09.603366" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking/2956 
+ path_url=/booking/2956 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-11-20T22:26:09.603366" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking/2956 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1732134368&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=29XORtBKPtzv5ndE2pQ93rl5kM3rdzM4d1jtXkGUFi8%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1732134368&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=29XORtBKPtzv5ndE2pQ93rl5kM3rdzM4d1jtXkGUFi8%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '166', 'Etag': 'W/"a6-lPapVk2H7zffQa9pAWfpRt+9RHc"', 'Date': 'Wed, 20 Nov 2024 20:26:08 GMT', 'Via': '1.1 vegur'} 
+ body={"firstname":"Marwa","lastname":"Sami","totalprice":234,"depositpaid":true,"bookingdates":{"checkin":"2023-09-20","checkout":"2024-12-15"},"additionalneeds":"Dinner"} 
+ </msg>
+<msg time="2024-11-20T22:26:09.603366" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>booker</arg>
+<arg>/booking/${response.json()}[bookingid]</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:09.399392" elapsed="0.203974"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response.json()}[lastname]</arg>
+<arg>${booking}[lastname]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:09.604366" elapsed="0.001996"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response.json()}[firstname]</arg>
+<arg>${booking}[firstname]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:09.606362" elapsed="0.002207"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${response.json()}[totalprice]</arg>
+<arg>${booking}[totalprice]</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-11-20T22:26:09.608569" elapsed="0.000999"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response.json()}[depositpaid]</arg>
+<arg>${booking}[depositpaid]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-11-20T22:26:09.610568" elapsed="0.001004"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response.json()}[bookingdates][checkin]</arg>
+<arg>${booking}[bookingdates][checkin]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:09.611572" elapsed="0.000997"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response.json()}[bookingdates][checkout]</arg>
+<arg>${booking}[bookingdates][checkout]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:09.613569" elapsed="0.001000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response.json()}[additionalneeds]</arg>
+<arg>${booking}[additionalneeds]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:09.614569" elapsed="0.001999"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:08.553372" elapsed="1.063196"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:08.552378" elapsed="1.064190"/>
+</test>
+<status status="PASS" start="2024-11-20T22:26:00.372058" elapsed="9.246555"/>
+</suite>
+<suite id="s1-s2" name="eSportSuite" source="C:\Users\DELL\Desktop\Automation-RF\STCS_API_RB_Nov19\tests\eSportSuite.robot">
+<test id="s1-s2-t1" name="Log in to esport" line="17">
+<kw name="Login To Esport" owner="EsportKeywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:09.948801" level="INFO">${body} = {'username': 'admin@saudiesports.com', 'password': 'abc123', 'grant_type': 'password', 'client_id': 'WEB'}</msg>
+<var>${body}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<arg>grant_type=password</arg>
+<arg>client_id=WEB</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:09.947800" elapsed="0.001001"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:09.949802" level="INFO">${headers} = {'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'}</msg>
+<var>${headers}</var>
+<arg>Content-Type=application/x-www-form-urlencoded</arg>
+<arg>Connection=keep-alive</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:09.948801" elapsed="0.001001"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:09.950801" level="INFO">Creating Session using : alias=loginSessions, url=https://qa.saudiesports.sa, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>loginSessions</arg>
+<arg>${esport_base_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>disable_warnings=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:09.949802" elapsed="0.000999"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:10.820487" level="INFO">POST Request : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ path_url=/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '83'} 
+ body=username=admin%40saudiesports.com&amp;password=abc123&amp;grant_type=password&amp;client_id=WEB 
+ </msg>
+<msg time="2024-11-20T22:26:10.820487" level="INFO">POST Response : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 20 Nov 2024 20:26:09 GMT', 'Content-Type': 'application/json', 'Content-Length': '3934', 'Connection': 'keep-alive', 'Referrer-Policy': 'no-referrer', 'X-Frame-Options': 'SAMEORIGIN', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Content-Type-Options': 'nosniff', 'Set-Cookie': 'KEYCLOAK_LOCALE=en; Version=1; Path=/auth/realms/cust_esports.com/; Secure; HttpOnly, KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0; Path=/auth/realms/cust_esports.com/; HttpOnly', 'Pragma': 'no-cache', 'X-XSS-Protection': '1; mode=block'} 
+ body={"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NjksImlhdCI6MTczMjEzNDM2OSwianRpIjoiYjQ3Mzk3ZTktZjFjMC00ZWU1LWFjNmItOTQ4NWZiMjllYjk2IiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJXRUIiLCJzZXNzaW9uX3N0YXRlIjoiMDIxZGY3ZDAtNzEwYy00ZDRjLTkwODYtMDBiZTk0N2QyYjE5IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDX1VQX1ZfTyIsIkNfUl9WQVNfTyIsIkNfVF9VQVJfTyIsIkNfVV9CTF9PIiwiQ19JTkRfTF9PIiwiQ19DTF9NUF9PIiwiQ19UX1VBTF9PIiwiQ19BV0FSRF9TRF9PIiwiQ19SX1NEX08iLCJDX09fRV9PIiwiQ19JTlJfRV9PIiwiQ19FVl9MX08iLCJDX0lOQ19TRF9PIiwiQ19VUF9EX08iLCJDX1BBUl9DQU5fTyIsIkNfVENfRV9PIiwiQ19DTF9FTVlfTyIsIkNfUE5FX0xfTyIsIkNfQ1JRX0VfTyIsIkNfVF9WX08iLCJDX1BBUl9FX0xfTyIsIkNfQVdBUkRfRV9PIiwiQ19VX0RfTyIsIkNfQ0xfVk1ZX08iLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkNfUEFSX0VfTyIsIkNfSU5VX0xfTyIsIkNfQVdBUkRfVkRfTyIsIkNfVV9SU01fTyIsIkNfVF9NVEFfTyIsIkNfREFTX1ZfTyIsIkNfSU5DX1JBU19PIiwiQ19FVlJfRV9PIiwiQ19JTlRfTF9PIiwiQ19NRV9CTF9PIiwiQ19UX0RTX08iLCJDX0NMX01BX08iLCJDX0NPUl9FX08iLCJDX1RXX0VfTyIsIkNfTUVfVU5CX08iLCJDX01FX0RTX08iLCJDX0FQUl9FX08iLCJDX1ZfQVNfTyIsImRlZmF1bHQtcm9sZXMtY3VzdF9lc3BvcnRzLmNvbSIsIkNfQUxfRVhQX08iLCJDX0NMX1ZfTyIsIkNfVF9BX08iLCJDX0VWX0VYUF9PIiwiQ19SX1ZBTF9PIiwiQ19FVl9FX08iLCJDX1RfQVJfTyIsIkNfVF9FX08iLCJDX0NMX0VYUF9PIiwiQ19DTF9FQUxfTyIsIkNfQVdBUkRfVkFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19PX1ZfTyIsIkNfTUVfRVhQX08iLCJDX1JTX0VfTyIsIkNfVV9VQkxfTyIsIkVTUE9SVCIsIkNfQ0xfVUJMX08iLCJDX1VfRVhQX08iLCJDX1VfQV9PIiwiQ19QTkVfRV9PIiwiQ19SX1JBU19PIiwiQ19UX1JDX08iLCJDX1BORV9BX08iLCJDX0lOUF9MX08iLCJDX1BORV9DX08iLCJDX1BBUl9MX08iLCJDX0lOQV9MX08iLCJDX09CQ19BX08iLCJDX1RfRVhQX08iLCJDX0NMX0JMX08iLCJDX1BBUl9JU1VfTyIsIkNfQVdBUkRfUkFTX08iLCJDX01FX0VBUF9PIiwiQ19DTF9DQUxfTyIsIkNfTUVfVkVSX08iLCJDX1VfVl9PIiwiQ19NRV9NQV9PIiwiQ19BUkNfRV9PIiwiQ19NRV9WQUxfTyIsIkNfQ0xfRFNfTyIsIkNfRVZfQ0FOX08iLCJDX1RfQVJMX08iLCJDX05SX0VfTyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjAyMWRmN2QwLTcxMGMtNGQ0Yy05MDg2LTAwYmU5NDdkMmIxOSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1bGlkIjoiNzc1MzFhMGYtOTc3NC00YmU5LTkxN2EtNTI0ZjUxYTJmMzEyIiwibmFtZSI6IlNFRiIsInByZWZlcnJlZF91c2VybmFtZSI6Iis5NjY1NTM5ODkzMzMiLCJsb2NhbGUiOiJlbiIsInJpZCI6ImN1c3RfZXNwb3J0cy5jb20iLCJnaXZlbl9uYW1lIjoiU0VGIiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6ImFkbWluQHNhdWRpZXNwb3J0cy5jb20iLCJrZXkiOiJjdXN0X2VzcG9ydHMuY29tX0tFWSIsImNpZCI6IjFfU1RDU19DVVNUIn0.H6qo_HtGCO5qSTAGvmHqmpxs0mhfDlR4a8JuCKjq_ZPekXLrF97svDVbuQBNybGUz-EoTK9rH5poMAVpXzTERY5qDDu6oueiU83CZ--pEfKprVPQoBMlasVCqgAlEnuQ7wecUzBF1qCOV_WgaqnF9__sl_v3jfmQ0zKHSjEKM-gjeOSmsJkxFQfJNj8x_puGxIYMAyrVshwTDZERxvpLOPwr5UVc0QKHRJ5gbk6biDCfNj2fIMt5IFzm-TUSB8mkrEIhHKORD6f2oaZfdFG8TOOR9ZihYVwrpCFOlNSnFWRMUb2socjACjwKoUt_oRLnyMsB5V4StjpC1cPVigXx1g","expires_in":3600,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmNGQ5ODUxYi0yMzk3LTQyYWEtODE0My1hYWQyNzM2ZWMxOGUifQ.eyJleHAiOjE3MzIxMzYxNjksImlhdCI6MTczMjEzNDM2OSwianRpIjoiZGQwYWY1YzAtMWI4ZC00ZDU2LWJjOWUtOTEwZWExOGZiYjBkIiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6Imh0dHBzOi8vcWEuc2F1ZGllc3BvcnRzLnNhL2F1dGgvcmVhbG1zL2N1c3RfZXNwb3J0cy5jb20iLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoiV0VCIiwic2Vzc2lvbl9zdGF0ZSI6IjAyMWRmN2QwLTcxMGMtNGQ0Yy05MDg2LTAwYmU5NDdkMmIxOSIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjAyMWRmN2QwLTcxMGMtNGQ0Yy05MDg2LTAwYmU5NDdkMmIxOSJ9.jouS5WiJtLMggjgxN6ajlyuKUBP_vh01XvWj61lt-dQ","token_type":"Bearer","not-before-policy":0,"session_state":"021df7d0-710c-4d4c-9086-00be947d2b19","scope":"email profile"} 
+ </msg>
+<msg time="2024-11-20T22:26:10.821491" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>loginSessions</arg>
+<arg>${Login_Service_Url}</arg>
+<arg>data=${body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:09.950801" elapsed="0.870690"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-20T22:26:10.824490" level="INFO">${esport_token} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NjksImlhdCI6MTczMjEzNDM2OSwianRpIjoiYjQ3Mzk3ZTktZjFjMC00ZWU1LWFjNmIt...</msg>
+<var>${esport_token}</var>
+<arg>${response.json()}[access_token]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-20T22:26:10.821491" elapsed="0.002999"/>
+</kw>
+<return>
+<value>${esport_token}</value>
+<status status="PASS" start="2024-11-20T22:26:10.824490" elapsed="0.000000"/>
+</return>
+<arg>${adminUserName}</arg>
+<arg>${adminPassword}</arg>
+<status status="PASS" start="2024-11-20T22:26:09.945803" elapsed="0.878687"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:09.944803" elapsed="0.881688"/>
+</test>
+<test id="s1-s2-t2" name="Get Discover Members" line="21">
+<kw name="Login To Esport" owner="EsportKeywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:10.830503" level="INFO">${body} = {'username': 'admin@saudiesports.com', 'password': 'abc123', 'grant_type': 'password', 'client_id': 'WEB'}</msg>
+<var>${body}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<arg>grant_type=password</arg>
+<arg>client_id=WEB</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:10.829501" elapsed="0.001002"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:10.831501" level="INFO">${headers} = {'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'}</msg>
+<var>${headers}</var>
+<arg>Content-Type=application/x-www-form-urlencoded</arg>
+<arg>Connection=keep-alive</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:10.830503" elapsed="0.000998"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:10.832508" level="INFO">Creating Session using : alias=loginSessions, url=https://qa.saudiesports.sa, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>loginSessions</arg>
+<arg>${esport_base_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>disable_warnings=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:10.831501" elapsed="0.001007"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:11.556051" level="INFO">POST Request : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ path_url=/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '83'} 
+ body=username=admin%40saudiesports.com&amp;password=abc123&amp;grant_type=password&amp;client_id=WEB 
+ </msg>
+<msg time="2024-11-20T22:26:11.556051" level="INFO">POST Response : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 20 Nov 2024 20:26:10 GMT', 'Content-Type': 'application/json', 'Content-Length': '3934', 'Connection': 'keep-alive', 'Referrer-Policy': 'no-referrer', 'X-Frame-Options': 'SAMEORIGIN', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Content-Type-Options': 'nosniff', 'Set-Cookie': 'KEYCLOAK_LOCALE=en; Version=1; Path=/auth/realms/cust_esports.com/; Secure; HttpOnly, KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0; Path=/auth/realms/cust_esports.com/; HttpOnly', 'Pragma': 'no-cache', 'X-XSS-Protection': '1; mode=block'} 
+ body={"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzAsImlhdCI6MTczMjEzNDM3MCwianRpIjoiNjBmNTczN2YtY2Y4Yi00NjE2LWIzMTgtOTBkNjJmOWEwNzIyIiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJXRUIiLCJzZXNzaW9uX3N0YXRlIjoiMzJmZTExNjEtNzNiMi00NGZjLWJkMjUtZWE3NmYzZmQ1MTYxIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDX1VQX1ZfTyIsIkNfUl9WQVNfTyIsIkNfVF9VQVJfTyIsIkNfVV9CTF9PIiwiQ19JTkRfTF9PIiwiQ19DTF9NUF9PIiwiQ19UX1VBTF9PIiwiQ19BV0FSRF9TRF9PIiwiQ19SX1NEX08iLCJDX09fRV9PIiwiQ19JTlJfRV9PIiwiQ19FVl9MX08iLCJDX0lOQ19TRF9PIiwiQ19VUF9EX08iLCJDX1BBUl9DQU5fTyIsIkNfVENfRV9PIiwiQ19DTF9FTVlfTyIsIkNfUE5FX0xfTyIsIkNfQ1JRX0VfTyIsIkNfVF9WX08iLCJDX1BBUl9FX0xfTyIsIkNfQVdBUkRfRV9PIiwiQ19VX0RfTyIsIkNfQ0xfVk1ZX08iLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkNfUEFSX0VfTyIsIkNfSU5VX0xfTyIsIkNfQVdBUkRfVkRfTyIsIkNfVV9SU01fTyIsIkNfVF9NVEFfTyIsIkNfREFTX1ZfTyIsIkNfSU5DX1JBU19PIiwiQ19FVlJfRV9PIiwiQ19JTlRfTF9PIiwiQ19NRV9CTF9PIiwiQ19UX0RTX08iLCJDX0NMX01BX08iLCJDX0NPUl9FX08iLCJDX1RXX0VfTyIsIkNfTUVfVU5CX08iLCJDX01FX0RTX08iLCJDX0FQUl9FX08iLCJDX1ZfQVNfTyIsImRlZmF1bHQtcm9sZXMtY3VzdF9lc3BvcnRzLmNvbSIsIkNfQUxfRVhQX08iLCJDX0NMX1ZfTyIsIkNfVF9BX08iLCJDX0VWX0VYUF9PIiwiQ19SX1ZBTF9PIiwiQ19FVl9FX08iLCJDX1RfQVJfTyIsIkNfVF9FX08iLCJDX0NMX0VYUF9PIiwiQ19DTF9FQUxfTyIsIkNfQVdBUkRfVkFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19PX1ZfTyIsIkNfTUVfRVhQX08iLCJDX1JTX0VfTyIsIkNfVV9VQkxfTyIsIkVTUE9SVCIsIkNfQ0xfVUJMX08iLCJDX1VfRVhQX08iLCJDX1VfQV9PIiwiQ19QTkVfRV9PIiwiQ19SX1JBU19PIiwiQ19UX1JDX08iLCJDX1BORV9BX08iLCJDX0lOUF9MX08iLCJDX1BORV9DX08iLCJDX1BBUl9MX08iLCJDX0lOQV9MX08iLCJDX09CQ19BX08iLCJDX1RfRVhQX08iLCJDX0NMX0JMX08iLCJDX1BBUl9JU1VfTyIsIkNfQVdBUkRfUkFTX08iLCJDX01FX0VBUF9PIiwiQ19DTF9DQUxfTyIsIkNfTUVfVkVSX08iLCJDX1VfVl9PIiwiQ19NRV9NQV9PIiwiQ19BUkNfRV9PIiwiQ19NRV9WQUxfTyIsIkNfQ0xfRFNfTyIsIkNfRVZfQ0FOX08iLCJDX1RfQVJMX08iLCJDX05SX0VfTyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjMyZmUxMTYxLTczYjItNDRmYy1iZDI1LWVhNzZmM2ZkNTE2MSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1bGlkIjoiNzc1MzFhMGYtOTc3NC00YmU5LTkxN2EtNTI0ZjUxYTJmMzEyIiwibmFtZSI6IlNFRiIsInByZWZlcnJlZF91c2VybmFtZSI6Iis5NjY1NTM5ODkzMzMiLCJsb2NhbGUiOiJlbiIsInJpZCI6ImN1c3RfZXNwb3J0cy5jb20iLCJnaXZlbl9uYW1lIjoiU0VGIiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6ImFkbWluQHNhdWRpZXNwb3J0cy5jb20iLCJrZXkiOiJjdXN0X2VzcG9ydHMuY29tX0tFWSIsImNpZCI6IjFfU1RDU19DVVNUIn0.XFtML-FhaX2u2ijJrqPvOxjow39abfNko1etNkEJ8Fuc5GRrnp9XDuVYBrYn--jB6pQDLn84sV-t-iaXkJU6YbzTKdxlAJ73lvdgRHjRSxsfyibgwYw3ORFB3I3TjrIqD0Ov6cwVSrwAiVgfp4ZKTVP16M8k6bNX_VlXg4gRhnGOrRJFNL1dR8jWI6GmpuO-QNlpus9gFeK4lmWv-Ai-4MLwHYNKKkgWatuSaroQPDxm8DDessHbHjUz5NYGIQWGEzzmFlcj0G6raokGxeeKx7ZgajH1V3C8nCT9FbYikzTnxB2Q_9ZhH2hLdvWS2bIUyfYNfCbJ3M5F7mKyxM8pNA","expires_in":3600,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmNGQ5ODUxYi0yMzk3LTQyYWEtODE0My1hYWQyNzM2ZWMxOGUifQ.eyJleHAiOjE3MzIxMzYxNzAsImlhdCI6MTczMjEzNDM3MCwianRpIjoiNGRmZTQ2MWUtNWFmMS00Yzk5LTkzZTQtNDYwYTQ2MGY0NTAxIiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6Imh0dHBzOi8vcWEuc2F1ZGllc3BvcnRzLnNhL2F1dGgvcmVhbG1zL2N1c3RfZXNwb3J0cy5jb20iLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoiV0VCIiwic2Vzc2lvbl9zdGF0ZSI6IjMyZmUxMTYxLTczYjItNDRmYy1iZDI1LWVhNzZmM2ZkNTE2MSIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjMyZmUxMTYxLTczYjItNDRmYy1iZDI1LWVhNzZmM2ZkNTE2MSJ9.xZA-t-8_zsFpcmxloHlds-IlyUTi9pEDpYN8Ua6G8pw","token_type":"Bearer","not-before-policy":0,"session_state":"32fe1161-73b2-44fc-bd25-ea76f3fd5161","scope":"email profile"} 
+ </msg>
+<msg time="2024-11-20T22:26:11.557070" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>loginSessions</arg>
+<arg>${Login_Service_Url}</arg>
+<arg>data=${body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:10.833504" elapsed="0.723566"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-20T22:26:11.559330" level="INFO">${esport_token} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzAsImlhdCI6MTczMjEzNDM3MCwianRpIjoiNjBmNTczN2YtY2Y4Yi00NjE2LWIzMTgt...</msg>
+<var>${esport_token}</var>
+<arg>${response.json()}[access_token]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-20T22:26:11.557070" elapsed="0.002260"/>
+</kw>
+<return>
+<value>${esport_token}</value>
+<status status="PASS" start="2024-11-20T22:26:11.560179" elapsed="0.000000"/>
+</return>
+<msg time="2024-11-20T22:26:11.560179" level="INFO">${bearerToken} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzAsImlhdCI6MTczMjEzNDM3MCwianRpIjoiNjBmNTczN2YtY2Y4Yi00NjE2LWIzMTgt...</msg>
+<var>${bearerToken}</var>
+<arg>${adminUserName}</arg>
+<arg>${adminPassword}</arg>
+<status status="PASS" start="2024-11-20T22:26:10.828498" elapsed="0.731681"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:11.562215" level="INFO">Creating Session using : alias=discoverMembersSessions, url=https://qa.saudiesports.sa, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>discoverMembersSessions</arg>
+<arg>${esport_base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:11.561195" elapsed="0.001020"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:11.564191" level="INFO">${headers} = {'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzAsImlhdCI6MTczMjEzNDM3MCwianRpIjoiNjBmNT...</msg>
+<var>${headers}</var>
+<arg>Authorization=Bearer ${bearerToken}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:11.563192" elapsed="0.000999"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:13.087188" level="INFO">GET Request : url=https://qa.saudiesports.sa/api/team-club/v1/members/discover-members 
+ path_url=/api/team-club/v1/members/discover-members 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzAsImlhdCI6MTczMjEzNDM3MCwianRpIjoiNjBmNTczN2YtY2Y4Yi00NjE2LWIzMTgtOTBkNjJmOWEwNzIyIiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJXRUIiLCJzZXNzaW9uX3N0YXRlIjoiMzJmZTExNjEtNzNiMi00NGZjLWJkMjUtZWE3NmYzZmQ1MTYxIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDX1VQX1ZfTyIsIkNfUl9WQVNfTyIsIkNfVF9VQVJfTyIsIkNfVV9CTF9PIiwiQ19JTkRfTF9PIiwiQ19DTF9NUF9PIiwiQ19UX1VBTF9PIiwiQ19BV0FSRF9TRF9PIiwiQ19SX1NEX08iLCJDX09fRV9PIiwiQ19JTlJfRV9PIiwiQ19FVl9MX08iLCJDX0lOQ19TRF9PIiwiQ19VUF9EX08iLCJDX1BBUl9DQU5fTyIsIkNfVENfRV9PIiwiQ19DTF9FTVlfTyIsIkNfUE5FX0xfTyIsIkNfQ1JRX0VfTyIsIkNfVF9WX08iLCJDX1BBUl9FX0xfTyIsIkNfQVdBUkRfRV9PIiwiQ19VX0RfTyIsIkNfQ0xfVk1ZX08iLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkNfUEFSX0VfTyIsIkNfSU5VX0xfTyIsIkNfQVdBUkRfVkRfTyIsIkNfVV9SU01fTyIsIkNfVF9NVEFfTyIsIkNfREFTX1ZfTyIsIkNfSU5DX1JBU19PIiwiQ19FVlJfRV9PIiwiQ19JTlRfTF9PIiwiQ19NRV9CTF9PIiwiQ19UX0RTX08iLCJDX0NMX01BX08iLCJDX0NPUl9FX08iLCJDX1RXX0VfTyIsIkNfTUVfVU5CX08iLCJDX01FX0RTX08iLCJDX0FQUl9FX08iLCJDX1ZfQVNfTyIsImRlZmF1bHQtcm9sZXMtY3VzdF9lc3BvcnRzLmNvbSIsIkNfQUxfRVhQX08iLCJDX0NMX1ZfTyIsIkNfVF9BX08iLCJDX0VWX0VYUF9PIiwiQ19SX1ZBTF9PIiwiQ19FVl9FX08iLCJDX1RfQVJfTyIsIkNfVF9FX08iLCJDX0NMX0VYUF9PIiwiQ19DTF9FQUxfTyIsIkNfQVdBUkRfVkFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19PX1ZfTyIsIkNfTUVfRVhQX08iLCJDX1JTX0VfTyIsIkNfVV9VQkxfTyIsIkVTUE9SVCIsIkNfQ0xfVUJMX08iLCJDX1VfRVhQX08iLCJDX1VfQV9PIiwiQ19QTkVfRV9PIiwiQ19SX1JBU19PIiwiQ19UX1JDX08iLCJDX1BORV9BX08iLCJDX0lOUF9MX08iLCJDX1BORV9DX08iLCJDX1BBUl9MX08iLCJDX0lOQV9MX08iLCJDX09CQ19BX08iLCJDX1RfRVhQX08iLCJDX0NMX0JMX08iLCJDX1BBUl9JU1VfTyIsIkNfQVdBUkRfUkFTX08iLCJDX01FX0VBUF9PIiwiQ19DTF9DQUxfTyIsIkNfTUVfVkVSX08iLCJDX1VfVl9PIiwiQ19NRV9NQV9PIiwiQ19BUkNfRV9PIiwiQ19NRV9WQUxfTyIsIkNfQ0xfRFNfTyIsIkNfRVZfQ0FOX08iLCJDX1RfQVJMX08iLCJDX05SX0VfTyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjMyZmUxMTYxLTczYjItNDRmYy1iZDI1LWVhNzZmM2ZkNTE2MSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1bGlkIjoiNzc1MzFhMGYtOTc3NC00YmU5LTkxN2EtNTI0ZjUxYTJmMzEyIiwibmFtZSI6IlNFRiIsInByZWZlcnJlZF91c2VybmFtZSI6Iis5NjY1NTM5ODkzMzMiLCJsb2NhbGUiOiJlbiIsInJpZCI6ImN1c3RfZXNwb3J0cy5jb20iLCJnaXZlbl9uYW1lIjoiU0VGIiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6ImFkbWluQHNhdWRpZXNwb3J0cy5jb20iLCJrZXkiOiJjdXN0X2VzcG9ydHMuY29tX0tFWSIsImNpZCI6IjFfU1RDU19DVVNUIn0.XFtML-FhaX2u2ijJrqPvOxjow39abfNko1etNkEJ8Fuc5GRrnp9XDuVYBrYn--jB6pQDLn84sV-t-iaXkJU6YbzTKdxlAJ73lvdgRHjRSxsfyibgwYw3ORFB3I3TjrIqD0Ov6cwVSrwAiVgfp4ZKTVP16M8k6bNX_VlXg4gRhnGOrRJFNL1dR8jWI6GmpuO-QNlpus9gFeK4lmWv-Ai-4MLwHYNKKkgWatuSaroQPDxm8DDessHbHjUz5NYGIQWGEzzmFlcj0G6raokGxeeKx7ZgajH1V3C8nCT9FbYikzTnxB2Q_9ZhH2hLdvWS2bIUyfYNfCbJ3M5F7mKyxM8pNA', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-11-20T22:26:13.087188" level="INFO">GET Response : url=https://qa.saudiesports.sa/api/team-club/v1/members/discover-members 
+ status=200, reason= 
+ headers={'Date': 'Wed, 20 Nov 2024 20:26:12 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Content-Encoding': 'gzip'} 
+ body={"players":[{"userSystemId":"cb27c59b-ea19-44e4-8fb2-1d336d9677fc","picture":null,"name":"yopfadel","profileTypeCode":"PLAYER","memberCode":"PLY_14719311","teamsCount":0,"verified":true,"verificationType":{"id":2,"code":"CLUB_CONTRACT","color":"BLUE","name":"Verified By Club Contract","nameAr":"متعاقد مع نادي"},"clansCount":0,"club":[],"isInvitationEnabled":true,"rank":{"id":1414,"code":"Rookie","name":"Rookie","nameAr":"Rookie","rank":1},"game":{"id":1,"name":"Apex Legends","nameAr":"Apex Legends","gameOrder":null,"isVerifiedGame":null,"code":"APEX_LEGENDS"}},{"userSystemId":"a0c027c1-a131-45f6-858c-b0600042c4ce","picture":null,"name":"ahmedf","profileTypeCode":"PLAYER","memberCode":"PLY_80175123","teamsCount":2,"verified":true,"verificationType":{"id":1,"code":"SEF","color":"GOLD","name":"Verified By SEF Admin","nameAr":"تم التحقق عبر مسؤولي SEF"},"clansCount":2,"club":[],"isInvitationEnabled":true,"rank":null,"game":null},{"userSystemId":"a5e92420-b55b-4223-b221-83f9f92586e9","picture":null,"name":"yasmine player","profileTypeCode":"PLAYER","memberCode":"PLY_47090386","teamsCount":3,"verified":true,"verificationType":{"id":1,"code":"SEF","color":"GOLD","name":"Verified By SEF Admin","nameAr":"تم التحقق عبر مسؤولي SEF"},"clansCount":1,"club":[{"clubName":"El yasmine sports club tt","clubNameAr":"نادى الياسمين للرياضات نن","clubLogo":"esports/67c8f8c0-a246-4403-9240-f57181b90279__letter &amp; event.png","createdAt":1715462687000,"membersCount":8,"teamsCount":1},{"clubName":"testid","clubNameAr":"ت ست اى دى","clubLogo":"esports/5bbf418d-0b59-40a0-b637-7aae1d095e01__IMG_6434.jpg","createdAt":1715258778000,"membersCount":8,"teamsCount":1}],"isInvitationEnabled":true,"rank":{"id":1414,"code":"Rookie","name":"Rookie","nameAr":"Rookie","rank":1},"game":{"id":1,"name":"Apex Legends","nameAr":"Apex Legends","gameOrder":null,"isVerifiedGame":null,"code":"APEX_LEGENDS"}},{"userSystemId":"cb3103f9-000c-4e10-b11a-d8d662920c2a","picture":null,"name":"fadelplayerrr","profileTypeCode":"PLAYER","memberCode":"PLY_88679776","teamsCount":0,"verified":true,"verificationType":{"id":2,"code":"CLUB_CONTRACT","color":"BLUE","name":"Verified By Club Contract","nameAr":"متعاقد مع نادي"},"clansCount":0,"club":[],"isInvitationEnabled":true,"rank":{"id":1414,"code":"Rookie","name":"Rookie","nameAr":"Rookie","rank":1},"game":{"id":1,"name":"Apex Legends","nameAr":"Apex Legends","gameOrder":null,"isVerifiedGame":null,"code":"APEX_LEGENDS"}}],"coaches":[{"userSystemId":"de9ac377-9d8e-4b96-a7b4-4b5960e41c5b","picture":"","name":"MOH OSSAMA ahmed","profileTypeCode":"COACH","memberCode":"COH_69887583","teamsCount":0,"verified":true,"verificationType":{"id":3,"code":"VERIFICATION_REQUEST","color":"GREEN","name":"Verified By Request","nameAr":"تم التحقق بناء على طلب"},"clansCount":0,"club":[],"isInvitationEnabled":true,"rank":{"id":1414,"code":"Rookie","name":"Rookie","nameAr":"Rookie","rank":1},"game":{"id":1,"name":"Apex Legends","nameAr":"Apex Legends","gameOrder":null,"isVerifiedGame":null,"code":"APEX_LEGENDS"}},{"userSystemId":"11a04b6c-bde7-4ba9-b3ed-6050c885699d","picture":"","name":"yara coach edit","profileTypeCode":"COACH","memberCode":"COH_73955161","teamsCount":1,"verified":true,"verificationType":{"id":1,"code":"SEF","color":"GOLD","name":"Verified By SEF Admin","nameAr":"تم التحقق عبر مسؤولي SEF"},"clansCount":1,"club":[],"isInvitationEnabled":true,"rank":{"id":1390,"code":"Diamond","name":"Diamond","nameAr":"Diamond","rank":6},"game":{"id":1,"name":"Apex Legends","nameAr":"Apex Legends","gameOrder":null,"isVerifiedGame":null,"code":"APEX_LEGENDS"}},{"userSystemId":"1d562e99-cda8-4115-958a-20d2e8dde871","picture":"","name":"coach yasmine","profileTypeCode":"COACH","memberCode":"COH_58803658","teamsCount":3,"verified":true,"verificationType":{"id":1,"code":"SEF","color":"GOLD","name":"Verified By SEF Admin","nameAr":"تم التحقق عبر مسؤولي SEF"},"clansCount":1,"club":[{"clubName":"El yasmine sports club tt","clubNameAr":"نادى الياسمين للرياضات نن","clubLogo":"esports/67c8f8c0-a246-4403-9240-f57181b90279__letter &amp; event.png","createdAt":1715462687000,"membersCount":8,"teamsCount":1},{"clubName":"testid","clubNameAr":"ت ست اى دى","clubLogo":"esports/5bbf418d-0b59-40a0-b637-7aae1d095e01__IMG_6434.jpg","createdAt":1715258778000,"membersCount":8,"teamsCount":1}],"isInvitationEnabled":true,"rank":{"id":1414,"code":"Rookie","name":"Rookie","nameAr":"Rookie","rank":1},"game":{"id":1,"name":"Apex Legends","nameAr":"Apex Legends","gameOrder":null,"isVerifiedGame":null,"code":"APEX_LEGENDS"}},{"userSystemId":"ced3065a-32c9-40f8-9577-9f0692ce4468","picture":null,"name":"NFVph","profileTypeCode":"COACH","memberCode":"COH_73794637","teamsCount":0,"verified":true,"verificationType":{"id":3,"code":"VERIFICATION_REQUEST","color":"GREEN","name":"Verified By Request","nameAr":"تم التحقق بناء على طلب"},"clansCount":0,"club":[],"isInvitationEnabled":true,"rank":{"id":1463,"code":"Tin_1","name":"Tin 1","nameAr":"Tin 1","rank":2},"game":{"id":4,"name":"Brawlhalla","nameAr":"Brawlhalla","gameOrder":null,"isVerifiedGame":null,"code":"BRAWLHALLA"}}],"referees":[{"userSystemId":"75d70bf5-0bf1-4f91-9173-0414c8e98466","picture":null,"name":"Ossama","profileTypeCode":"REFEREE","memberCode":"REF_71764422","teamsCount":0,"verified":true,"verificationType":{"id":3,"code":"VERIFICATION_REQUEST","color":"GREEN","name":"Verified By Request","nameAr":"تم التحقق بناء على طلب"},"clansCount":0,"club":[],"isInvitationEnabled":true,"rank":{"id":1413,"code":"Bronze","name":"Bronze","nameAr":"Bronze","rank":2},"game":{"id":1,"name":"Apex Legends","nameAr":"Apex Legends","gameOrder":null,"isVerifiedGame":null,"code":"APEX_LEGENDS"}},{"userSystemId":"20130695-852f-4980-99df-62cf37b019a4","picture":null,"name":"referee gadid tany","profileTypeCode":"REFEREE","memberCode":"REF_57795062","teamsCount":1,"verified":true,"verificationType":{"id":3,"code":"VERIFICATION_REQUEST","color":"GREEN","name":"Verified By Request","nameAr":"تم التحقق بناء على طلب"},"clansCount":0,"club":[{"clubName":"well club changed","clubNameAr":"نادى ويل تغيير","clubLogo":"esports/da72ce0b-5e3f-4266-9126-9045b5cc9599__pyramid1 (1).JPG","createdAt":1702904205000,"membersCount":12,"teamsCount":4}],"isInvitationEnabled":true,"rank":{"id":1393,"code":"Silver","name":"Silver","nameAr":"Silver","rank":3},"game":{"id":1,"name":"Apex Legends","nameAr":"Apex Legends","gameOrder":null,"isVerifiedGame":null,"code":"APEX_LEGENDS"}},{"userSystemId":"2939e5fb-a83f-4227-bb9f-65d0193ac8d1","picture":null,"name":"event referee","profileTypeCode":"REFEREE","memberCode":"REF_38041073","teamsCount":2,"verified":true,"verificationType":{"id":3,"code":"VERIFICATION_REQUEST","color":"GREEN","name":"Verified By Request","nameAr":"تم التحقق بناء على طلب"},"clansCount":0,"club":[{"clubName":"test esport","clubNameAr":"تيست اي سبورت","clubLogo":"esports/b03d76a8-edce-403f-a1aa-363487a4c7f4__1600px_COLOURBOX39672248 (1).jpg","createdAt":1707296412000,"membersCount":8,"teamsCount":13},{"clubName":"test esport","clubNameAr":"تيست اي سبورت","clubLogo":"esports/b03d76a8-edce-403f-a1aa-363487a4c7f4__1600px_COLOURBOX39672248 (1).jpg","createdAt":1707296412000,"membersCount":8,"teamsCount":13}],"isInvitationEnabled":true,"rank":{"id":1413,"code":"Bronze","name":"Bronze","nameAr":"Bronze","rank":2},"game":{"id":1,"name":"Apex Legends","nameAr":"Apex Legends","gameOrder":null,"isVerifiedGame":null,"code":"APEX_LEGENDS"}},{"userSystemId":"3f39317f-7e6a-443d-afbb-4df642acef24","picture":null,"name":"yasmine referee three","profileTypeCode":"REFEREE","memberCode":"REF_11441835","teamsCount":2,"verified":true,"verificationType":{"id":3,"code":"VERIFICATION_REQUEST","color":"GREEN","name":"Verified By Request","nameAr":"تم التحقق بناء على طلب"},"clansCount":0,"club":[{"clubName":"test esport","clubNameAr":"تيست اي سبورت","clubLogo":"esports/b03d76a8-edce-403f-a1aa-363487a4c7f4__1600px_COLOURBOX39672248 (1).jpg","createdAt":1707296412000,"membersCount":8,"teamsCount":13},{"clubName":"El yasmine sports club tt","clubNameAr":"نادى الياسمين للرياضات نن","clubLogo":"esports/67c8f8c0-a246-4403-9240-f57181b90279__letter &amp; event.png","createdAt":1715462687000,"membersCount":8,"teamsCount":1}],"isInvitationEnabled":true,"rank":{"id":1463,"code":"Tin_1","name":"Tin 1","nameAr":"Tin 1","rank":2},"game":{"id":4,"name":"Brawlhalla","nameAr":"Brawlhalla","gameOrder":null,"isVerifiedGame":null,"code":"BRAWLHALLA"}}],"teamManagers":[{"userSystemId":"a28fcae9-4f87-4e1c-a21c-dcf3716a2c32","picture":null,"name":"radwa","profileTypeCode":"TEAM_MANAGER","memberCode":"TMM_58432086","teamsCount":0,"verified":true,"verificationType":{"id":1,"code":"SEF","color":"GOLD","name":"Verified By SEF Admin","nameAr":"تم التحقق عبر مسؤولي SEF"},"clansCount":0,"club":[],"isInvitationEnabled":true,"rank":null,"game":{"id":2,"name":"Apex Legends Mobile","nameAr":"Apex Legends Mobile","gameOrder":null,"isVerifiedGame":null,"code":"APEX_LEGENDS_MOBILE"}},{"userSystemId":"e65671b8-7b28-4940-87a5-05a0d1ef319f","picture":"","name":"editRadwaUser","profileTypeCode":"TEAM_MANAGER","memberCode":"TMM_06330183","teamsCount":0,"verified":true,"verificationType":{"id":1,"code":"SEF","color":"GOLD","name":"Verified By SEF Admin","nameAr":"تم التحقق عبر مسؤولي SEF"},"clansCount":0,"club":[],"isInvitationEnabled":true,"rank":null,"game":null},{"userSystemId":"e6079883-5223-4564-acbe-921745f15126","picture":"","name":"tamer sn","profileTypeCode":"TEAM_MANAGER","memberCode":"TMM_34957974","teamsCount":1,"verified":true,"verificationType":{"id":1,"code":"SEF","color":"GOLD","name":"Verified By SEF Admin","nameAr":"تم التحقق عبر مسؤولي SEF"},"clansCount":1,"club":[],"isInvitationEnabled":true,"rank":null,"game":null},{"userSystemId":"fed73f8a-6b42-4c42-aebc-e23bd57691a3","picture":"esports/acddf59d-805e-4985-bfde-94f0cfe550c2__aljaziteam.jpg","name":"Alitti TM","profileTypeCode":"TEAM_MANAGER","memberCode":"TMM_22017346","teamsCount":2,"verified":true,"verificationType":{"id":1,"code":"SEF","color":"GOLD",... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2024-11-20T22:26:13.088190" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>discoverMembersSessions</arg>
+<arg>${discover_members_url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:11.565191" elapsed="1.522999"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-11-20T22:26:13.091188" level="INFO">${status_code} = 200</msg>
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-11-20T22:26:13.090175" elapsed="0.002011"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:13.092186" elapsed="0.001001"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code is : ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:13.093187" elapsed="0.000998"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Contents are : ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:13.095175" elapsed="0.018799"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Headers are : ${response.headers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:13.113974" elapsed="0.002006"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:10.827499" elapsed="2.288665"/>
+</test>
+<test id="s1-s2-t3" name="Get eSport Organization structure" line="34">
+<kw name="Login To Esport" owner="EsportKeywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:13.117179" level="INFO">${body} = {'username': 'admin@saudiesports.com', 'password': 'abc123', 'grant_type': 'password', 'client_id': 'WEB'}</msg>
+<var>${body}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<arg>grant_type=password</arg>
+<arg>client_id=WEB</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:13.117179" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:13.118198" level="INFO">${headers} = {'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'}</msg>
+<var>${headers}</var>
+<arg>Content-Type=application/x-www-form-urlencoded</arg>
+<arg>Connection=keep-alive</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:13.117179" elapsed="0.001019"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:13.119194" level="INFO">Creating Session using : alias=loginSessions, url=https://qa.saudiesports.sa, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>loginSessions</arg>
+<arg>${esport_base_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>disable_warnings=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:13.118198" elapsed="0.000996"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:13.820926" level="INFO">POST Request : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ path_url=/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '83'} 
+ body=username=admin%40saudiesports.com&amp;password=abc123&amp;grant_type=password&amp;client_id=WEB 
+ </msg>
+<msg time="2024-11-20T22:26:13.820926" level="INFO">POST Response : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 20 Nov 2024 20:26:12 GMT', 'Content-Type': 'application/json', 'Content-Length': '3934', 'Connection': 'keep-alive', 'Referrer-Policy': 'no-referrer', 'X-Frame-Options': 'SAMEORIGIN', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Content-Type-Options': 'nosniff', 'Set-Cookie': 'KEYCLOAK_LOCALE=en; Version=1; Path=/auth/realms/cust_esports.com/; Secure; HttpOnly, KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0; Path=/auth/realms/cust_esports.com/; HttpOnly', 'Pragma': 'no-cache', 'X-XSS-Protection': '1; mode=block'} 
+ body={"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzIsImlhdCI6MTczMjEzNDM3MiwianRpIjoiNzllMTVlYzQtNjAyZS00MDViLWJkOWEtNmE0OWY5Y2NlYTFmIiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJXRUIiLCJzZXNzaW9uX3N0YXRlIjoiMTljNjhlYWEtMzI1Ny00ZGViLTg0ZDAtNTIxZTMzMTRlYWMyIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDX1VQX1ZfTyIsIkNfUl9WQVNfTyIsIkNfVF9VQVJfTyIsIkNfVV9CTF9PIiwiQ19JTkRfTF9PIiwiQ19DTF9NUF9PIiwiQ19UX1VBTF9PIiwiQ19BV0FSRF9TRF9PIiwiQ19SX1NEX08iLCJDX09fRV9PIiwiQ19JTlJfRV9PIiwiQ19FVl9MX08iLCJDX0lOQ19TRF9PIiwiQ19VUF9EX08iLCJDX1BBUl9DQU5fTyIsIkNfVENfRV9PIiwiQ19DTF9FTVlfTyIsIkNfUE5FX0xfTyIsIkNfQ1JRX0VfTyIsIkNfVF9WX08iLCJDX1BBUl9FX0xfTyIsIkNfQVdBUkRfRV9PIiwiQ19VX0RfTyIsIkNfQ0xfVk1ZX08iLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkNfUEFSX0VfTyIsIkNfSU5VX0xfTyIsIkNfQVdBUkRfVkRfTyIsIkNfVV9SU01fTyIsIkNfVF9NVEFfTyIsIkNfREFTX1ZfTyIsIkNfSU5DX1JBU19PIiwiQ19FVlJfRV9PIiwiQ19JTlRfTF9PIiwiQ19NRV9CTF9PIiwiQ19UX0RTX08iLCJDX0NMX01BX08iLCJDX0NPUl9FX08iLCJDX1RXX0VfTyIsIkNfTUVfVU5CX08iLCJDX01FX0RTX08iLCJDX0FQUl9FX08iLCJDX1ZfQVNfTyIsImRlZmF1bHQtcm9sZXMtY3VzdF9lc3BvcnRzLmNvbSIsIkNfQUxfRVhQX08iLCJDX0NMX1ZfTyIsIkNfVF9BX08iLCJDX0VWX0VYUF9PIiwiQ19SX1ZBTF9PIiwiQ19FVl9FX08iLCJDX1RfQVJfTyIsIkNfVF9FX08iLCJDX0NMX0VYUF9PIiwiQ19DTF9FQUxfTyIsIkNfQVdBUkRfVkFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19PX1ZfTyIsIkNfTUVfRVhQX08iLCJDX1JTX0VfTyIsIkNfVV9VQkxfTyIsIkVTUE9SVCIsIkNfQ0xfVUJMX08iLCJDX1VfRVhQX08iLCJDX1VfQV9PIiwiQ19QTkVfRV9PIiwiQ19SX1JBU19PIiwiQ19UX1JDX08iLCJDX1BORV9BX08iLCJDX0lOUF9MX08iLCJDX1BORV9DX08iLCJDX1BBUl9MX08iLCJDX0lOQV9MX08iLCJDX09CQ19BX08iLCJDX1RfRVhQX08iLCJDX0NMX0JMX08iLCJDX1BBUl9JU1VfTyIsIkNfQVdBUkRfUkFTX08iLCJDX01FX0VBUF9PIiwiQ19DTF9DQUxfTyIsIkNfTUVfVkVSX08iLCJDX1VfVl9PIiwiQ19NRV9NQV9PIiwiQ19BUkNfRV9PIiwiQ19NRV9WQUxfTyIsIkNfQ0xfRFNfTyIsIkNfRVZfQ0FOX08iLCJDX1RfQVJMX08iLCJDX05SX0VfTyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjE5YzY4ZWFhLTMyNTctNGRlYi04NGQwLTUyMWUzMzE0ZWFjMiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1bGlkIjoiNzc1MzFhMGYtOTc3NC00YmU5LTkxN2EtNTI0ZjUxYTJmMzEyIiwibmFtZSI6IlNFRiIsInByZWZlcnJlZF91c2VybmFtZSI6Iis5NjY1NTM5ODkzMzMiLCJsb2NhbGUiOiJlbiIsInJpZCI6ImN1c3RfZXNwb3J0cy5jb20iLCJnaXZlbl9uYW1lIjoiU0VGIiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6ImFkbWluQHNhdWRpZXNwb3J0cy5jb20iLCJrZXkiOiJjdXN0X2VzcG9ydHMuY29tX0tFWSIsImNpZCI6IjFfU1RDU19DVVNUIn0.WFuqXEuP4whgV6yOFWkM8R-5K_p5tTOqj-Cdz5Daec1DlasojMZZJ_zmMv_yFvxFoG2Q06LbbROmzfm77z-Nzxlxa0AUXBvRnHckwF2LxTSny0sW9e2jYXBaB7hIikVoESTVoDB74oL6jpGa4B_Ap64QYxSWK0dUvHVFOKwEZCAU-fC73W5b2uUCZ_ibMc6NSAx4HcV7av0agkcaeHnYvjgTFoX8LU4LCaP9wpsDQ3j_OCmXJaL9QdEQZOYZvRd2WlPSEOt6uDNyQM7ro_g4sLQI6AQUrCe3xt-Tx9nocc64vWfpzSK1rA0lhDZvfCFMixJPXHjBg5FBmzUKIWLqtQ","expires_in":3600,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmNGQ5ODUxYi0yMzk3LTQyYWEtODE0My1hYWQyNzM2ZWMxOGUifQ.eyJleHAiOjE3MzIxMzYxNzIsImlhdCI6MTczMjEzNDM3MiwianRpIjoiZWE2ODJiMTUtODQxZi00ZmI3LWI3NGUtZmU5NDUyZTE5MmFhIiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6Imh0dHBzOi8vcWEuc2F1ZGllc3BvcnRzLnNhL2F1dGgvcmVhbG1zL2N1c3RfZXNwb3J0cy5jb20iLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoiV0VCIiwic2Vzc2lvbl9zdGF0ZSI6IjE5YzY4ZWFhLTMyNTctNGRlYi04NGQwLTUyMWUzMzE0ZWFjMiIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjE5YzY4ZWFhLTMyNTctNGRlYi04NGQwLTUyMWUzMzE0ZWFjMiJ9.bsBgOwPJSXJIekNN87eZ4qL2muud9sw54PU-ml6Y0gg","token_type":"Bearer","not-before-policy":0,"session_state":"19c68eaa-3257-4deb-84d0-521e3314eac2","scope":"email profile"} 
+ </msg>
+<msg time="2024-11-20T22:26:13.821922" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>loginSessions</arg>
+<arg>${Login_Service_Url}</arg>
+<arg>data=${body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:13.119194" elapsed="0.702728"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-20T22:26:13.823935" level="INFO">${esport_token} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzIsImlhdCI6MTczMjEzNDM3MiwianRpIjoiNzllMTVlYzQtNjAyZS00MDViLWJkOWEt...</msg>
+<var>${esport_token}</var>
+<arg>${response.json()}[access_token]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-20T22:26:13.822930" elapsed="0.001005"/>
+</kw>
+<return>
+<value>${esport_token}</value>
+<status status="PASS" start="2024-11-20T22:26:13.824936" elapsed="0.000000"/>
+</return>
+<msg time="2024-11-20T22:26:13.824936" level="INFO">${bearerToken} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzIsImlhdCI6MTczMjEzNDM3MiwianRpIjoiNzllMTVlYzQtNjAyZS00MDViLWJkOWEt...</msg>
+<var>${bearerToken}</var>
+<arg>${adminUserName}</arg>
+<arg>${adminPassword}</arg>
+<status status="PASS" start="2024-11-20T22:26:13.117179" elapsed="0.707757"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:13.825924" level="INFO">Creating Session using : alias=discoverMembersSessions, url=https://qa.saudiesports.sa, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>discoverMembersSessions</arg>
+<arg>${esport_base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:13.825924" elapsed="0.001008"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:13.827933" level="INFO">${headers} = {'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzIsImlhdCI6MTczMjEzNDM3MiwianRpIjoiNzllMT...</msg>
+<var>${headers}</var>
+<arg>Authorization=Bearer ${bearerToken}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:13.826932" elapsed="0.001001"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:14.623716" level="INFO">GET Request : url=https://qa.saudiesports.sa/api/customer/v1/organization-level/org 
+ path_url=/api/customer/v1/organization-level/org 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzIsImlhdCI6MTczMjEzNDM3MiwianRpIjoiNzllMTVlYzQtNjAyZS00MDViLWJkOWEtNmE0OWY5Y2NlYTFmIiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJXRUIiLCJzZXNzaW9uX3N0YXRlIjoiMTljNjhlYWEtMzI1Ny00ZGViLTg0ZDAtNTIxZTMzMTRlYWMyIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDX1VQX1ZfTyIsIkNfUl9WQVNfTyIsIkNfVF9VQVJfTyIsIkNfVV9CTF9PIiwiQ19JTkRfTF9PIiwiQ19DTF9NUF9PIiwiQ19UX1VBTF9PIiwiQ19BV0FSRF9TRF9PIiwiQ19SX1NEX08iLCJDX09fRV9PIiwiQ19JTlJfRV9PIiwiQ19FVl9MX08iLCJDX0lOQ19TRF9PIiwiQ19VUF9EX08iLCJDX1BBUl9DQU5fTyIsIkNfVENfRV9PIiwiQ19DTF9FTVlfTyIsIkNfUE5FX0xfTyIsIkNfQ1JRX0VfTyIsIkNfVF9WX08iLCJDX1BBUl9FX0xfTyIsIkNfQVdBUkRfRV9PIiwiQ19VX0RfTyIsIkNfQ0xfVk1ZX08iLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkNfUEFSX0VfTyIsIkNfSU5VX0xfTyIsIkNfQVdBUkRfVkRfTyIsIkNfVV9SU01fTyIsIkNfVF9NVEFfTyIsIkNfREFTX1ZfTyIsIkNfSU5DX1JBU19PIiwiQ19FVlJfRV9PIiwiQ19JTlRfTF9PIiwiQ19NRV9CTF9PIiwiQ19UX0RTX08iLCJDX0NMX01BX08iLCJDX0NPUl9FX08iLCJDX1RXX0VfTyIsIkNfTUVfVU5CX08iLCJDX01FX0RTX08iLCJDX0FQUl9FX08iLCJDX1ZfQVNfTyIsImRlZmF1bHQtcm9sZXMtY3VzdF9lc3BvcnRzLmNvbSIsIkNfQUxfRVhQX08iLCJDX0NMX1ZfTyIsIkNfVF9BX08iLCJDX0VWX0VYUF9PIiwiQ19SX1ZBTF9PIiwiQ19FVl9FX08iLCJDX1RfQVJfTyIsIkNfVF9FX08iLCJDX0NMX0VYUF9PIiwiQ19DTF9FQUxfTyIsIkNfQVdBUkRfVkFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19PX1ZfTyIsIkNfTUVfRVhQX08iLCJDX1JTX0VfTyIsIkNfVV9VQkxfTyIsIkVTUE9SVCIsIkNfQ0xfVUJMX08iLCJDX1VfRVhQX08iLCJDX1VfQV9PIiwiQ19QTkVfRV9PIiwiQ19SX1JBU19PIiwiQ19UX1JDX08iLCJDX1BORV9BX08iLCJDX0lOUF9MX08iLCJDX1BORV9DX08iLCJDX1BBUl9MX08iLCJDX0lOQV9MX08iLCJDX09CQ19BX08iLCJDX1RfRVhQX08iLCJDX0NMX0JMX08iLCJDX1BBUl9JU1VfTyIsIkNfQVdBUkRfUkFTX08iLCJDX01FX0VBUF9PIiwiQ19DTF9DQUxfTyIsIkNfTUVfVkVSX08iLCJDX1VfVl9PIiwiQ19NRV9NQV9PIiwiQ19BUkNfRV9PIiwiQ19NRV9WQUxfTyIsIkNfQ0xfRFNfTyIsIkNfRVZfQ0FOX08iLCJDX1RfQVJMX08iLCJDX05SX0VfTyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjE5YzY4ZWFhLTMyNTctNGRlYi04NGQwLTUyMWUzMzE0ZWFjMiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1bGlkIjoiNzc1MzFhMGYtOTc3NC00YmU5LTkxN2EtNTI0ZjUxYTJmMzEyIiwibmFtZSI6IlNFRiIsInByZWZlcnJlZF91c2VybmFtZSI6Iis5NjY1NTM5ODkzMzMiLCJsb2NhbGUiOiJlbiIsInJpZCI6ImN1c3RfZXNwb3J0cy5jb20iLCJnaXZlbl9uYW1lIjoiU0VGIiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6ImFkbWluQHNhdWRpZXNwb3J0cy5jb20iLCJrZXkiOiJjdXN0X2VzcG9ydHMuY29tX0tFWSIsImNpZCI6IjFfU1RDU19DVVNUIn0.WFuqXEuP4whgV6yOFWkM8R-5K_p5tTOqj-Cdz5Daec1DlasojMZZJ_zmMv_yFvxFoG2Q06LbbROmzfm77z-Nzxlxa0AUXBvRnHckwF2LxTSny0sW9e2jYXBaB7hIikVoESTVoDB74oL6jpGa4B_Ap64QYxSWK0dUvHVFOKwEZCAU-fC73W5b2uUCZ_ibMc6NSAx4HcV7av0agkcaeHnYvjgTFoX8LU4LCaP9wpsDQ3j_OCmXJaL9QdEQZOYZvRd2WlPSEOt6uDNyQM7ro_g4sLQI6AQUrCe3xt-Tx9nocc64vWfpzSK1rA0lhDZvfCFMixJPXHjBg5FBmzUKIWLqtQ', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-11-20T22:26:14.623716" level="INFO">GET Response : url=https://qa.saudiesports.sa/api/customer/v1/organization-level/org 
+ status=200, reason= 
+ headers={'Date': 'Wed, 20 Nov 2024 20:26:13 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Content-Encoding': 'gzip'} 
+ body=[{"name":"Region","nameAr":"منطقة","systemId":"f3533467-3d9e-4755-aebd-9c4d95b91422","customerId":"1_STCS_CUST","parentLevelId":null,"createdBy":null,"createdDate":1675860011471,"lastModifiedBy":"476853fe-fecc-438d-9972-b4160d33fd10","lastModifiedDate":1706750169260,"organizationLevelDTOList":[{"name":"General Region","nameAr":"منطقة عامة","systemId":"77531a0f-9774-4be9-917a-524f51a2f312","customerId":"1_STCS_CUST","levelSystemId":"f3533467-3d9e-4755-aebd-9c4d95b91422","createdDate":1675860011480,"lastModifiedDate":1675860011480}]},{"name":"level new","nameAr":"نيو ليفيل","systemId":"8207385f-7977-41b6-9cca-edf3c0fd9e29","customerId":"1_STCS_CUST","parentLevelId":"f3533467-3d9e-4755-aebd-9c4d95b91422","createdBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","createdDate":1676290383273,"lastModifiedBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","lastModifiedDate":1676290383273,"organizationLevelDTOList":[{"name":"item","nameAr":"ايتيم","systemId":"67a3a2cd-8f68-47c5-a07e-fdb1ee78afcc","customerId":"1_STCS_CUST","parentLevelDataSystemId":"77531a0f-9774-4be9-917a-524f51a2f312","levelSystemId":"8207385f-7977-41b6-9cca-edf3c0fd9e29","createdBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","createdDate":1676290399679,"lastModifiedBy":"b6ec98b6-8069-48e6-8e2f-b662d270dc76","lastModifiedDate":1694686460647},{"name":"itemm","nameAr":"تتييت","systemId":"728ba669-9d23-46af-b0d5-4c001c3c6484","customerId":"1_STCS_CUST","parentLevelDataSystemId":"77531a0f-9774-4be9-917a-524f51a2f312","levelSystemId":"8207385f-7977-41b6-9cca-edf3c0fd9e29","createdBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","createdDate":1676290414815,"lastModifiedBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","lastModifiedDate":1676290414815},{"name":"itemmm","nameAr":"يييي","systemId":"e7e38440-c053-452e-a83b-5ee7f1342582","customerId":"1_STCS_CUST","parentLevelDataSystemId":"77531a0f-9774-4be9-917a-524f51a2f312","levelSystemId":"8207385f-7977-41b6-9cca-edf3c0fd9e29","createdBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","createdDate":1676290427464,"lastModifiedBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","lastModifiedDate":1676290427464},{"name":"itemmmm","nameAr":"يسس","systemId":"b50635a9-a218-4e8d-887f-a54fcffcd41c","customerId":"1_STCS_CUST","parentLevelDataSystemId":"77531a0f-9774-4be9-917a-524f51a2f312","levelSystemId":"8207385f-7977-41b6-9cca-edf3c0fd9e29","createdBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","createdDate":1676290438739,"lastModifiedBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","lastModifiedDate":1676290438739},{"name":"iteme","nameAr":"تستست","systemId":"3b6fa6c3-5734-425d-b1b2-a1247b5b676c","customerId":"1_STCS_CUST","parentLevelDataSystemId":"77531a0f-9774-4be9-917a-524f51a2f312","levelSystemId":"8207385f-7977-41b6-9cca-edf3c0fd9e29","createdBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","createdDate":1676290481567,"lastModifiedBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","lastModifiedDate":1676290481567},{"name":"itemmmmmm","nameAr":"ًثصصيسي","systemId":"395f2019-13e9-4900-8b03-6d4b15c65541","customerId":"1_STCS_CUST","parentLevelDataSystemId":"77531a0f-9774-4be9-917a-524f51a2f312","levelSystemId":"8207385f-7977-41b6-9cca-edf3c0fd9e29","createdBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","createdDate":1676290527595,"lastModifiedBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","lastModifiedDate":1676290527595},{"name":"itemn","nameAr":"تننص","systemId":"69708898-1d17-42c6-aa03-e55eadf181f4","customerId":"1_STCS_CUST","parentLevelDataSystemId":"77531a0f-9774-4be9-917a-524f51a2f312","levelSystemId":"8207385f-7977-41b6-9cca-edf3c0fd9e29","createdBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","createdDate":1676290539780,"lastModifiedBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","lastModifiedDate":1676290539780},{"name":"itemnm","nameAr":"ايتيمم","systemId":"670831ca-af63-4421-a509-7b4950b23f13","customerId":"1_STCS_CUST","parentLevelDataSystemId":"77531a0f-9774-4be9-917a-524f51a2f312","levelSystemId":"8207385f-7977-41b6-9cca-edf3c0fd9e29","createdBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","createdDate":1676290552721,"lastModifiedBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","lastModifiedDate":1676290552721}]},{"name":"test","nameAr":"تيست","systemId":"151cb40e-3ae5-44b3-a058-735b0359a43d","customerId":"1_STCS_CUST","parentLevelId":"8207385f-7977-41b6-9cca-edf3c0fd9e29","createdBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","createdDate":1676290451116,"lastModifiedBy":"7f5688a6-03a6-4c34-97a3-cf0751df1c8f","lastModifiedDate":1676290451116,"organizationLevelDTOList":[{"name":"eeee","nameAr":"شسيشسي","systemId":"0c152eb4-1f99-4582-a642-2bc37433048a","customerId":"1_STCS_CUST","parentLevelDataSystemId":"67a3a2cd-8f68-47c5-a07e-fdb1ee78afcc","levelSystemId":"151cb40e-3ae5-44b3-a058-735b0359a43d","createdBy":"b6ec98b6-8069-48e6-8e2f-b662d270dc76","createdDate":1694688927223,"lastModifiedBy":"b6ec98b6-8069-48e6-8e2f-b662d270dc76","lastModifiedDate":1694688927223},{"name":"second item","nameAr":"سكند ايتم","systemId":"c8306168-1db0-44c2-9e20-e315734364a4","customerId":"1_STCS_CUST","parentLevelDataSystemId":"67a3a2cd-8f68-47c5-a07e-fdb1ee78afcc","levelSystemId":"151cb40e-3ae5-44b3-a058-735b0359a43d","createdBy":"b6ec98b6-8069-48e6-8e2f-b662d270dc76","createdDate":1723120138513,"lastModifiedBy":"b6ec98b6-8069-48e6-8e2f-b662d270dc76","lastModifiedDate":1723120138513}]},{"name":"new lvl","nameAr":"نيو لفل","systemId":"2f52e5fc-e84d-4fd7-aec4-6c3777a8a483","customerId":"1_STCS_CUST","parentLevelId":"151cb40e-3ae5-44b3-a058-735b0359a43d","createdBy":"b6ec98b6-8069-48e6-8e2f-b662d270dc76","createdDate":1723119974993,"lastModifiedBy":"b6ec98b6-8069-48e6-8e2f-b662d270dc76","lastModifiedDate":1723119974993,"organizationLevelDTOList":[{"name":"sadasd","nameAr":"صثقصثق","systemId":"5d3e6c1c-58d4-4ddb-bf3b-7e2832129db7","customerId":"1_STCS_CUST","parentLevelDataSystemId":"c8306168-1db0-44c2-9e20-e315734364a4","levelSystemId":"2f52e5fc-e84d-4fd7-aec4-6c3777a8a483","createdBy":"b6ec98b6-8069-48e6-8e2f-b662d270dc76","createdDate":1723120340083,"lastModifiedBy":"b6ec98b6-8069-48e6-8e2f-b662d270dc76","lastModifiedDate":1723120340083}]},{"name":"shahnda","nameAr":"شهندة","systemId":"e60cb811-f21c-4d6c-8afc-abbc2c821488","customerId":"1_STCS_CUST","parentLevelId":"2f52e5fc-e84d-4fd7-aec4-6c3777a8a483","createdBy":"b6ec98b6-8069-48e6-8e2f-b662d270dc76","createdDate":1723120382593,"lastModifiedBy":"b6ec98b6-8069-48e6-8e2f-b662d270dc76","lastModifiedDate":1723120382593,"organizationLevelDTOList":[{"name":"jki","nameAr":"هخهخ","systemId":"ccdbf173-fbda-4be9-828a-6efef827dee2","customerId":"1_STCS_CUST","parentLevelDataSystemId":"5d3e6c1c-58d4-4ddb-bf3b-7e2832129db7","levelSystemId":"e60cb811-f21c-4d6c-8afc-abbc2c821488","createdBy":"b6ec98b6-8069-48e6-8e2f-b662d270dc76","createdDate":1723120401854,"lastModifiedBy":"b6ec98b6-8069-48e6-8e2f-b662d270dc76","lastModifiedDate":1723120401854}]}] 
+ </msg>
+<msg time="2024-11-20T22:26:14.624825" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>discoverMembersSessions</arg>
+<arg>${organization_url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:13.828931" elapsed="0.795894"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-11-20T22:26:14.626785" level="INFO">${status_code} = 200</msg>
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-11-20T22:26:14.625735" elapsed="0.001050"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:14.627828" elapsed="0.000920"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code is : ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:14.628748" elapsed="0.001984"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Contents are : ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:14.630732" elapsed="0.004998"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Headers are : ${response.headers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:14.635730" elapsed="0.002001"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:13.116164" elapsed="1.524567"/>
+</test>
+<test id="s1-s2-t4" name="Get eSport Penality Management - Penalities list" line="48">
+<kw name="Login To Esport" owner="EsportKeywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:14.644045" level="INFO">${body} = {'username': 'admin@saudiesports.com', 'password': 'abc123', 'grant_type': 'password', 'client_id': 'WEB'}</msg>
+<var>${body}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<arg>grant_type=password</arg>
+<arg>client_id=WEB</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:14.643045" elapsed="0.001000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:14.645045" level="INFO">${headers} = {'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'}</msg>
+<var>${headers}</var>
+<arg>Content-Type=application/x-www-form-urlencoded</arg>
+<arg>Connection=keep-alive</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:14.644045" elapsed="0.001000"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:14.646046" level="INFO">Creating Session using : alias=loginSessions, url=https://qa.saudiesports.sa, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>loginSessions</arg>
+<arg>${esport_base_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>disable_warnings=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:14.645045" elapsed="0.001001"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:15.441033" level="INFO">POST Request : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ path_url=/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '83'} 
+ body=username=admin%40saudiesports.com&amp;password=abc123&amp;grant_type=password&amp;client_id=WEB 
+ </msg>
+<msg time="2024-11-20T22:26:15.441033" level="INFO">POST Response : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 20 Nov 2024 20:26:14 GMT', 'Content-Type': 'application/json', 'Content-Length': '3934', 'Connection': 'keep-alive', 'Referrer-Policy': 'no-referrer', 'X-Frame-Options': 'SAMEORIGIN', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Content-Type-Options': 'nosniff', 'Set-Cookie': 'KEYCLOAK_LOCALE=en; Version=1; Path=/auth/realms/cust_esports.com/; Secure; HttpOnly, KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0; Path=/auth/realms/cust_esports.com/; HttpOnly', 'Pragma': 'no-cache', 'X-XSS-Protection': '1; mode=block'} 
+ body={"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzQsImlhdCI6MTczMjEzNDM3NCwianRpIjoiMDA0YTI2ZGItMmMxNS00ZjAwLTk3ZWEtZTczZTk3MjUyMDVjIiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJXRUIiLCJzZXNzaW9uX3N0YXRlIjoiZDc0NTY2ZjctMzNmYS00NGNkLWExZWUtZTE1ZjcwYjZhNjVhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDX1VQX1ZfTyIsIkNfUl9WQVNfTyIsIkNfVF9VQVJfTyIsIkNfVV9CTF9PIiwiQ19JTkRfTF9PIiwiQ19DTF9NUF9PIiwiQ19UX1VBTF9PIiwiQ19BV0FSRF9TRF9PIiwiQ19SX1NEX08iLCJDX09fRV9PIiwiQ19JTlJfRV9PIiwiQ19FVl9MX08iLCJDX0lOQ19TRF9PIiwiQ19VUF9EX08iLCJDX1BBUl9DQU5fTyIsIkNfVENfRV9PIiwiQ19DTF9FTVlfTyIsIkNfUE5FX0xfTyIsIkNfQ1JRX0VfTyIsIkNfVF9WX08iLCJDX1BBUl9FX0xfTyIsIkNfQVdBUkRfRV9PIiwiQ19VX0RfTyIsIkNfQ0xfVk1ZX08iLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkNfUEFSX0VfTyIsIkNfSU5VX0xfTyIsIkNfQVdBUkRfVkRfTyIsIkNfVV9SU01fTyIsIkNfVF9NVEFfTyIsIkNfREFTX1ZfTyIsIkNfSU5DX1JBU19PIiwiQ19FVlJfRV9PIiwiQ19JTlRfTF9PIiwiQ19NRV9CTF9PIiwiQ19UX0RTX08iLCJDX0NMX01BX08iLCJDX0NPUl9FX08iLCJDX1RXX0VfTyIsIkNfTUVfVU5CX08iLCJDX01FX0RTX08iLCJDX0FQUl9FX08iLCJDX1ZfQVNfTyIsImRlZmF1bHQtcm9sZXMtY3VzdF9lc3BvcnRzLmNvbSIsIkNfQUxfRVhQX08iLCJDX0NMX1ZfTyIsIkNfVF9BX08iLCJDX0VWX0VYUF9PIiwiQ19SX1ZBTF9PIiwiQ19FVl9FX08iLCJDX1RfQVJfTyIsIkNfVF9FX08iLCJDX0NMX0VYUF9PIiwiQ19DTF9FQUxfTyIsIkNfQVdBUkRfVkFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19PX1ZfTyIsIkNfTUVfRVhQX08iLCJDX1JTX0VfTyIsIkNfVV9VQkxfTyIsIkVTUE9SVCIsIkNfQ0xfVUJMX08iLCJDX1VfRVhQX08iLCJDX1VfQV9PIiwiQ19QTkVfRV9PIiwiQ19SX1JBU19PIiwiQ19UX1JDX08iLCJDX1BORV9BX08iLCJDX0lOUF9MX08iLCJDX1BORV9DX08iLCJDX1BBUl9MX08iLCJDX0lOQV9MX08iLCJDX09CQ19BX08iLCJDX1RfRVhQX08iLCJDX0NMX0JMX08iLCJDX1BBUl9JU1VfTyIsIkNfQVdBUkRfUkFTX08iLCJDX01FX0VBUF9PIiwiQ19DTF9DQUxfTyIsIkNfTUVfVkVSX08iLCJDX1VfVl9PIiwiQ19NRV9NQV9PIiwiQ19BUkNfRV9PIiwiQ19NRV9WQUxfTyIsIkNfQ0xfRFNfTyIsIkNfRVZfQ0FOX08iLCJDX1RfQVJMX08iLCJDX05SX0VfTyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6ImQ3NDU2NmY3LTMzZmEtNDRjZC1hMWVlLWUxNWY3MGI2YTY1YSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1bGlkIjoiNzc1MzFhMGYtOTc3NC00YmU5LTkxN2EtNTI0ZjUxYTJmMzEyIiwibmFtZSI6IlNFRiIsInByZWZlcnJlZF91c2VybmFtZSI6Iis5NjY1NTM5ODkzMzMiLCJsb2NhbGUiOiJlbiIsInJpZCI6ImN1c3RfZXNwb3J0cy5jb20iLCJnaXZlbl9uYW1lIjoiU0VGIiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6ImFkbWluQHNhdWRpZXNwb3J0cy5jb20iLCJrZXkiOiJjdXN0X2VzcG9ydHMuY29tX0tFWSIsImNpZCI6IjFfU1RDU19DVVNUIn0.KBqS-DaiTSMCyz6Oofg6Zlt5Xt2x_Ae8JJlMY8OCSDMYmfKlesddIMdLOK9_2_qX2wG-K7WBc98pMd43fql7LFxbCRmL2F5W6IZYv_E7plUr80XVpIWid-fzWHUmq5A7Ab-dS7DqVGGuH_2X8yvi-grlomL1JL0GQ6Ys4JkszaRPyJFQQfSVbMDeDZgWcb2YZIiJa-Ak8nNlCH9Gk6sAOA_qHnHADtgRUAlQACzajYWBPJdn-HTwikImhJjpq-jWgPCXIieNuP9W2hvr4E5WxxjhXH0oyHq0suSW2BPi6uN7se6nYANVa_wYDVBNMzbSHbKsN5FU0UV9uzVFq7Fw9g","expires_in":3600,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmNGQ5ODUxYi0yMzk3LTQyYWEtODE0My1hYWQyNzM2ZWMxOGUifQ.eyJleHAiOjE3MzIxMzYxNzQsImlhdCI6MTczMjEzNDM3NCwianRpIjoiYTQ4OTI0ODUtN2VkNi00OWQ4LTkzYTEtN2Q1ODUyYTM0Mzk5IiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6Imh0dHBzOi8vcWEuc2F1ZGllc3BvcnRzLnNhL2F1dGgvcmVhbG1zL2N1c3RfZXNwb3J0cy5jb20iLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoiV0VCIiwic2Vzc2lvbl9zdGF0ZSI6ImQ3NDU2NmY3LTMzZmEtNDRjZC1hMWVlLWUxNWY3MGI2YTY1YSIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6ImQ3NDU2NmY3LTMzZmEtNDRjZC1hMWVlLWUxNWY3MGI2YTY1YSJ9.WL-Vzr4VSTjX7sL6TZw9YOfO-i44Z32qd-bnlTeIrS8","token_type":"Bearer","not-before-policy":0,"session_state":"d74566f7-33fa-44cd-a1ee-e15f70b6a65a","scope":"email profile"} 
+ </msg>
+<msg time="2024-11-20T22:26:15.441033" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>loginSessions</arg>
+<arg>${Login_Service_Url}</arg>
+<arg>data=${body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:14.647045" elapsed="0.793988"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-20T22:26:15.443025" level="INFO">${esport_token} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzQsImlhdCI6MTczMjEzNDM3NCwianRpIjoiMDA0YTI2ZGItMmMxNS00ZjAwLTk3ZWEt...</msg>
+<var>${esport_token}</var>
+<arg>${response.json()}[access_token]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-20T22:26:15.442025" elapsed="0.001000"/>
+</kw>
+<return>
+<value>${esport_token}</value>
+<status status="PASS" start="2024-11-20T22:26:15.443025" elapsed="0.000000"/>
+</return>
+<msg time="2024-11-20T22:26:15.444108" level="INFO">${bearerToken} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzQsImlhdCI6MTczMjEzNDM3NCwianRpIjoiMDA0YTI2ZGItMmMxNS00ZjAwLTk3ZWEt...</msg>
+<var>${bearerToken}</var>
+<arg>${adminUserName}</arg>
+<arg>${adminPassword}</arg>
+<status status="PASS" start="2024-11-20T22:26:14.642032" elapsed="0.802076"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:15.445020" level="INFO">Creating Session using : alias=PenalitySessions, url=https://qa.saudiesports.sa, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>PenalitySessions</arg>
+<arg>${esport_base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:15.444108" elapsed="0.000912"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:15.445940" level="INFO">${headers} = {'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzQsImlhdCI6MTczMjEzNDM3NCwianRpIjoiMDA0YT...</msg>
+<var>${headers}</var>
+<arg>Authorization=Bearer ${bearerToken}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:15.445940" elapsed="0.001117"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:16.055893" level="INFO">GET Request : url=https://qa.saudiesports.sa/api/penalty/v1/penalty 
+ path_url=/api/penalty/v1/penalty 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzQsImlhdCI6MTczMjEzNDM3NCwianRpIjoiMDA0YTI2ZGItMmMxNS00ZjAwLTk3ZWEtZTczZTk3MjUyMDVjIiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJXRUIiLCJzZXNzaW9uX3N0YXRlIjoiZDc0NTY2ZjctMzNmYS00NGNkLWExZWUtZTE1ZjcwYjZhNjVhIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDX1VQX1ZfTyIsIkNfUl9WQVNfTyIsIkNfVF9VQVJfTyIsIkNfVV9CTF9PIiwiQ19JTkRfTF9PIiwiQ19DTF9NUF9PIiwiQ19UX1VBTF9PIiwiQ19BV0FSRF9TRF9PIiwiQ19SX1NEX08iLCJDX09fRV9PIiwiQ19JTlJfRV9PIiwiQ19FVl9MX08iLCJDX0lOQ19TRF9PIiwiQ19VUF9EX08iLCJDX1BBUl9DQU5fTyIsIkNfVENfRV9PIiwiQ19DTF9FTVlfTyIsIkNfUE5FX0xfTyIsIkNfQ1JRX0VfTyIsIkNfVF9WX08iLCJDX1BBUl9FX0xfTyIsIkNfQVdBUkRfRV9PIiwiQ19VX0RfTyIsIkNfQ0xfVk1ZX08iLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkNfUEFSX0VfTyIsIkNfSU5VX0xfTyIsIkNfQVdBUkRfVkRfTyIsIkNfVV9SU01fTyIsIkNfVF9NVEFfTyIsIkNfREFTX1ZfTyIsIkNfSU5DX1JBU19PIiwiQ19FVlJfRV9PIiwiQ19JTlRfTF9PIiwiQ19NRV9CTF9PIiwiQ19UX0RTX08iLCJDX0NMX01BX08iLCJDX0NPUl9FX08iLCJDX1RXX0VfTyIsIkNfTUVfVU5CX08iLCJDX01FX0RTX08iLCJDX0FQUl9FX08iLCJDX1ZfQVNfTyIsImRlZmF1bHQtcm9sZXMtY3VzdF9lc3BvcnRzLmNvbSIsIkNfQUxfRVhQX08iLCJDX0NMX1ZfTyIsIkNfVF9BX08iLCJDX0VWX0VYUF9PIiwiQ19SX1ZBTF9PIiwiQ19FVl9FX08iLCJDX1RfQVJfTyIsIkNfVF9FX08iLCJDX0NMX0VYUF9PIiwiQ19DTF9FQUxfTyIsIkNfQVdBUkRfVkFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19PX1ZfTyIsIkNfTUVfRVhQX08iLCJDX1JTX0VfTyIsIkNfVV9VQkxfTyIsIkVTUE9SVCIsIkNfQ0xfVUJMX08iLCJDX1VfRVhQX08iLCJDX1VfQV9PIiwiQ19QTkVfRV9PIiwiQ19SX1JBU19PIiwiQ19UX1JDX08iLCJDX1BORV9BX08iLCJDX0lOUF9MX08iLCJDX1BORV9DX08iLCJDX1BBUl9MX08iLCJDX0lOQV9MX08iLCJDX09CQ19BX08iLCJDX1RfRVhQX08iLCJDX0NMX0JMX08iLCJDX1BBUl9JU1VfTyIsIkNfQVdBUkRfUkFTX08iLCJDX01FX0VBUF9PIiwiQ19DTF9DQUxfTyIsIkNfTUVfVkVSX08iLCJDX1VfVl9PIiwiQ19NRV9NQV9PIiwiQ19BUkNfRV9PIiwiQ19NRV9WQUxfTyIsIkNfQ0xfRFNfTyIsIkNfRVZfQ0FOX08iLCJDX1RfQVJMX08iLCJDX05SX0VfTyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6ImQ3NDU2NmY3LTMzZmEtNDRjZC1hMWVlLWUxNWY3MGI2YTY1YSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1bGlkIjoiNzc1MzFhMGYtOTc3NC00YmU5LTkxN2EtNTI0ZjUxYTJmMzEyIiwibmFtZSI6IlNFRiIsInByZWZlcnJlZF91c2VybmFtZSI6Iis5NjY1NTM5ODkzMzMiLCJsb2NhbGUiOiJlbiIsInJpZCI6ImN1c3RfZXNwb3J0cy5jb20iLCJnaXZlbl9uYW1lIjoiU0VGIiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6ImFkbWluQHNhdWRpZXNwb3J0cy5jb20iLCJrZXkiOiJjdXN0X2VzcG9ydHMuY29tX0tFWSIsImNpZCI6IjFfU1RDU19DVVNUIn0.KBqS-DaiTSMCyz6Oofg6Zlt5Xt2x_Ae8JJlMY8OCSDMYmfKlesddIMdLOK9_2_qX2wG-K7WBc98pMd43fql7LFxbCRmL2F5W6IZYv_E7plUr80XVpIWid-fzWHUmq5A7Ab-dS7DqVGGuH_2X8yvi-grlomL1JL0GQ6Ys4JkszaRPyJFQQfSVbMDeDZgWcb2YZIiJa-Ak8nNlCH9Gk6sAOA_qHnHADtgRUAlQACzajYWBPJdn-HTwikImhJjpq-jWgPCXIieNuP9W2hvr4E5WxxjhXH0oyHq0suSW2BPi6uN7se6nYANVa_wYDVBNMzbSHbKsN5FU0UV9uzVFq7Fw9g', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-11-20T22:26:16.056975" level="INFO">GET Response : url=https://qa.saudiesports.sa/api/penalty/v1/penalty 
+ status=200, reason= 
+ headers={'Date': 'Wed, 20 Nov 2024 20:26:15 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Content-Encoding': 'gzip'} 
+ body={"content":[{"systemId":"b55759d3-79ca-4ca9-9cff-c4009994aa01","businessId":"P000000677","type":"SUSPENSION","appealStatus":"APPROVED","penaltyStatus":null,"entity":"MEMBER","entitySystemId":"47b5e70b-a4a3-46a7-99ca-c7f1552dcc61","entityName":"player X salwa","entityNameAr":null,"reason":"ddd","duration":{"from":1726704000000,"to":1727222400000},"createdAt":1726656836000,"createdByName":null,"appealDeadline":1726876800000},{"systemId":"687cc62f-75b8-4feb-bd11-eda199493e79","businessId":"P000000676","type":"WARNING","appealStatus":null,"penaltyStatus":null,"entity":"MEMBER","entitySystemId":"47b5e70b-a4a3-46a7-99ca-c7f1552dcc61","entityName":"player X salwa","entityNameAr":null,"reason":"ss","duration":{"from":null,"to":null},"createdAt":1726656718000,"createdByName":null,"appealDeadline":0},{"systemId":"6a6f209c-cd10-45f4-a8e3-d14c227e5d5f","businessId":"P000000675","type":"WARNING","appealStatus":null,"penaltyStatus":null,"entity":"CLUB","entitySystemId":"5543a48e-0126-4eb4-9519-d6f86aa61b17","entityName":"yasmine sports club","entityNameAr":"yasmine sports club","reason":"test test","duration":{"from":null,"to":null},"createdAt":1719220702000,"createdByName":null,"appealDeadline":0},{"systemId":"75845d32-34bf-45c1-9727-216a70c4f877","businessId":"P000000674","type":"WARNING","appealStatus":null,"penaltyStatus":null,"entity":"CLUB","entitySystemId":"606465c7-e19b-4835-ab30-fb1a16bc89bb","entityName":"new","entityNameAr":"سبسيب","reason":"fdsafdsafdsa fdsafdsafdsfds fdasfdsafdsa","duration":{"from":null,"to":null},"createdAt":1719218874000,"createdByName":null,"appealDeadline":0},{"systemId":"d3ddc6de-774c-4a6a-a9e2-cebb391324b8","businessId":"P000000673","type":"WARNING","appealStatus":null,"penaltyStatus":null,"entity":"TEAM","entitySystemId":"dd13bc99-eccb-47a3-8f64-3a6525c66a37","entityName":"asfsafdsfsdg","entityNameAr":"بشيسبيسبس","reason":"dfsafdsafdsafdsa fdsaafdsfdsaafdsfdsa","duration":{"from":null,"to":null},"createdAt":1719218845000,"createdByName":null,"appealDeadline":0},{"systemId":"8c5a8e7b-b22f-4d02-acf8-d6e3e8da140e","businessId":"P000000672","type":"WARNING","appealStatus":null,"penaltyStatus":null,"entity":"CLUB","entitySystemId":"3153b999-34a8-4a64-aafc-786277f8b6d4","entityName":"testid","entityNameAr":"ت ست اى دى","reason":"fdsfdsfdsafdsa","duration":{"from":null,"to":null},"createdAt":1719181423000,"createdByName":null,"appealDeadline":0},{"systemId":"0df46f7e-bf5f-4b33-9974-c97f6b90687b","businessId":"P000000671","type":"WARNING","appealStatus":null,"penaltyStatus":null,"entity":"CLUB","entitySystemId":"b65aea86-2792-4820-b50f-44e8f1df2684","entityName":"test new name","entityNameAr":"نيو نيم","reason":"dfdfdsafdsafdsa fdsafdsa","duration":{"from":null,"to":null},"createdAt":1719179264000,"createdByName":null,"appealDeadline":0},{"systemId":"d73e377b-2589-4d6e-af21-ab5a1153129a","businessId":"P000000670","type":"WARNING","appealStatus":null,"penaltyStatus":null,"entity":"CLUB","entitySystemId":"c4323823-df8f-4b5d-ad21-ac25f4ec87c8","entityName":"El yasmine sports club tt","entityNameAr":"نادى الياسمين للرياضات نن","reason":"asdfasdf\n\n\nfasdfasdf","duration":{"from":null,"to":null},"createdAt":1716982172000,"createdByName":null,"appealDeadline":0},{"systemId":"b7ced6b3-0af2-46ef-9213-27f2246ebafc","businessId":"P000000669","type":"WARNING","appealStatus":null,"penaltyStatus":null,"entity":"CLUB","entitySystemId":"b65aea86-2792-4820-b50f-44e8f1df2684","entityName":"test new name","entityNameAr":"نيو نيم","reason":"-jejfe\n-efkflelf efefkenfkef ef ef\n-efefe","duration":{"from":null,"to":null},"createdAt":1716886405000,"createdByName":null,"appealDeadline":0},{"systemId":"a40182b3-bfe1-4347-9aaf-b7f4cb93cab3","businessId":"P000000668","type":"SUSPENSION","appealStatus":null,"penaltyStatus":null,"entity":"CLUB","entitySystemId":"38ddf315-9699-42b9-8e8a-c347ca5dbe0d","entityName":"araby cub","entityNameAr":"العربى كلوب","reason":"dsss","duration":{"from":1718755200000,"to":1719360000000},"createdAt":1716275772000,"createdByName":null,"appealDeadline":1716854400000}],"pageable":{"sort":{"sorted":true,"unsorted":false,"empty":false},"offset":0,"pageNumber":0,"pageSize":10,"unpaged":false,"paged":true},"totalElements":677,"last":false,"totalPages":68,"sort":{"sorted":true,"unsorted":false,"empty":false},"size":10,"number":0,"numberOfElements":10,"first":true,"empty":false} 
+ </msg>
+<msg time="2024-11-20T22:26:16.057244" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>PenalitySessions</arg>
+<arg>${penality_url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:15.447057" elapsed="0.610187"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-11-20T22:26:16.059298" level="INFO">${status_code} = 200</msg>
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-11-20T22:26:16.058297" elapsed="0.002095"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:16.060392" elapsed="0.000918"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code is : ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:16.061310" elapsed="0.001987"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Contents are : ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:16.064300" elapsed="0.003998"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Headers are : ${response.headers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:16.071295" elapsed="0.003535"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:14.642032" elapsed="1.432798"/>
+</test>
+<test id="s1-s2-t5" name="Get eSport Penality Management - Penalities Filtered By Name" line="61">
+<kw name="Login To Esport" owner="EsportKeywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:16.076862" level="INFO">${body} = {'username': 'admin@saudiesports.com', 'password': 'abc123', 'grant_type': 'password', 'client_id': 'WEB'}</msg>
+<var>${body}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<arg>grant_type=password</arg>
+<arg>client_id=WEB</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:16.075827" elapsed="0.001035"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:16.076862" level="INFO">${headers} = {'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'}</msg>
+<var>${headers}</var>
+<arg>Content-Type=application/x-www-form-urlencoded</arg>
+<arg>Connection=keep-alive</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:16.076862" elapsed="0.000986"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:16.077848" level="INFO">Creating Session using : alias=loginSessions, url=https://qa.saudiesports.sa, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>loginSessions</arg>
+<arg>${esport_base_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>disable_warnings=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:16.077848" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:16.735416" level="INFO">POST Request : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ path_url=/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '83'} 
+ body=username=admin%40saudiesports.com&amp;password=abc123&amp;grant_type=password&amp;client_id=WEB 
+ </msg>
+<msg time="2024-11-20T22:26:16.735416" level="INFO">POST Response : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 20 Nov 2024 20:26:15 GMT', 'Content-Type': 'application/json', 'Content-Length': '3934', 'Connection': 'keep-alive', 'Referrer-Policy': 'no-referrer', 'X-Frame-Options': 'SAMEORIGIN', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Content-Type-Options': 'nosniff', 'Set-Cookie': 'KEYCLOAK_LOCALE=en; Version=1; Path=/auth/realms/cust_esports.com/; Secure; HttpOnly, KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0; Path=/auth/realms/cust_esports.com/; HttpOnly', 'Pragma': 'no-cache', 'X-XSS-Protection': '1; mode=block'} 
+ body={"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzUsImlhdCI6MTczMjEzNDM3NSwianRpIjoiNWQ5Y2U3NTUtM2I1OC00NTM4LTg3NzAtNjI3ODNkNDlkZTM4IiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJXRUIiLCJzZXNzaW9uX3N0YXRlIjoiYzYzM2YzMGUtMmQ2Zi00Y2NiLThiYjMtYzhlZTJmZWRjYTdlIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDX1VQX1ZfTyIsIkNfUl9WQVNfTyIsIkNfVF9VQVJfTyIsIkNfVV9CTF9PIiwiQ19JTkRfTF9PIiwiQ19DTF9NUF9PIiwiQ19UX1VBTF9PIiwiQ19BV0FSRF9TRF9PIiwiQ19SX1NEX08iLCJDX09fRV9PIiwiQ19JTlJfRV9PIiwiQ19FVl9MX08iLCJDX0lOQ19TRF9PIiwiQ19VUF9EX08iLCJDX1BBUl9DQU5fTyIsIkNfVENfRV9PIiwiQ19DTF9FTVlfTyIsIkNfUE5FX0xfTyIsIkNfQ1JRX0VfTyIsIkNfVF9WX08iLCJDX1BBUl9FX0xfTyIsIkNfQVdBUkRfRV9PIiwiQ19VX0RfTyIsIkNfQ0xfVk1ZX08iLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkNfUEFSX0VfTyIsIkNfSU5VX0xfTyIsIkNfQVdBUkRfVkRfTyIsIkNfVV9SU01fTyIsIkNfVF9NVEFfTyIsIkNfREFTX1ZfTyIsIkNfSU5DX1JBU19PIiwiQ19FVlJfRV9PIiwiQ19JTlRfTF9PIiwiQ19NRV9CTF9PIiwiQ19UX0RTX08iLCJDX0NMX01BX08iLCJDX0NPUl9FX08iLCJDX1RXX0VfTyIsIkNfTUVfVU5CX08iLCJDX01FX0RTX08iLCJDX0FQUl9FX08iLCJDX1ZfQVNfTyIsImRlZmF1bHQtcm9sZXMtY3VzdF9lc3BvcnRzLmNvbSIsIkNfQUxfRVhQX08iLCJDX0NMX1ZfTyIsIkNfVF9BX08iLCJDX0VWX0VYUF9PIiwiQ19SX1ZBTF9PIiwiQ19FVl9FX08iLCJDX1RfQVJfTyIsIkNfVF9FX08iLCJDX0NMX0VYUF9PIiwiQ19DTF9FQUxfTyIsIkNfQVdBUkRfVkFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19PX1ZfTyIsIkNfTUVfRVhQX08iLCJDX1JTX0VfTyIsIkNfVV9VQkxfTyIsIkVTUE9SVCIsIkNfQ0xfVUJMX08iLCJDX1VfRVhQX08iLCJDX1VfQV9PIiwiQ19QTkVfRV9PIiwiQ19SX1JBU19PIiwiQ19UX1JDX08iLCJDX1BORV9BX08iLCJDX0lOUF9MX08iLCJDX1BORV9DX08iLCJDX1BBUl9MX08iLCJDX0lOQV9MX08iLCJDX09CQ19BX08iLCJDX1RfRVhQX08iLCJDX0NMX0JMX08iLCJDX1BBUl9JU1VfTyIsIkNfQVdBUkRfUkFTX08iLCJDX01FX0VBUF9PIiwiQ19DTF9DQUxfTyIsIkNfTUVfVkVSX08iLCJDX1VfVl9PIiwiQ19NRV9NQV9PIiwiQ19BUkNfRV9PIiwiQ19NRV9WQUxfTyIsIkNfQ0xfRFNfTyIsIkNfRVZfQ0FOX08iLCJDX1RfQVJMX08iLCJDX05SX0VfTyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6ImM2MzNmMzBlLTJkNmYtNGNjYi04YmIzLWM4ZWUyZmVkY2E3ZSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1bGlkIjoiNzc1MzFhMGYtOTc3NC00YmU5LTkxN2EtNTI0ZjUxYTJmMzEyIiwibmFtZSI6IlNFRiIsInByZWZlcnJlZF91c2VybmFtZSI6Iis5NjY1NTM5ODkzMzMiLCJsb2NhbGUiOiJlbiIsInJpZCI6ImN1c3RfZXNwb3J0cy5jb20iLCJnaXZlbl9uYW1lIjoiU0VGIiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6ImFkbWluQHNhdWRpZXNwb3J0cy5jb20iLCJrZXkiOiJjdXN0X2VzcG9ydHMuY29tX0tFWSIsImNpZCI6IjFfU1RDU19DVVNUIn0.ZVYuC1sz0KlS1-Ce-5-66GS_rLEkB9r_67oAmPqmp8Fg4HRGCBAMlXUeT8S-a5TrqlieeZp2bCm5Bov2FsYK6lOvc6T-AJeNhQw-mjmYL4ERhXplQY6X4TeiTdaCrnWE0UoNXHDXSpGA0jAIWqAP5QiV197-LsPwhJpOuxBHihn9AqJXYF7cEtBlii2SUH6_ieV_41eThUmdMe253gTVGCLL-6VQucyjKEQX9lKZZQgnFdR5LVtefEZAPuqZp9f1hWehPZ8CT6CfaThOHpxyt8QYMs8-1eg-TZ3hs8Um_KhnClHRvIhbCr2LTlJD6QRZZRLyPG4dq6hhTnn1GN5Rdg","expires_in":3600,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmNGQ5ODUxYi0yMzk3LTQyYWEtODE0My1hYWQyNzM2ZWMxOGUifQ.eyJleHAiOjE3MzIxMzYxNzUsImlhdCI6MTczMjEzNDM3NSwianRpIjoiMmI1MWEwMDYtMDJjNS00ZmI1LThlNDQtYmI3NTVlMGQzZGEyIiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6Imh0dHBzOi8vcWEuc2F1ZGllc3BvcnRzLnNhL2F1dGgvcmVhbG1zL2N1c3RfZXNwb3J0cy5jb20iLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoiV0VCIiwic2Vzc2lvbl9zdGF0ZSI6ImM2MzNmMzBlLTJkNmYtNGNjYi04YmIzLWM4ZWUyZmVkY2E3ZSIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6ImM2MzNmMzBlLTJkNmYtNGNjYi04YmIzLWM4ZWUyZmVkY2E3ZSJ9.kXvdVP-8-va8S1oH30Ehkg-2RepKYCVovHmM70RvQMA","token_type":"Bearer","not-before-policy":0,"session_state":"c633f30e-2d6f-4ccb-8bb3-c8ee2fedca7e","scope":"email profile"} 
+ </msg>
+<msg time="2024-11-20T22:26:16.736414" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>loginSessions</arg>
+<arg>${Login_Service_Url}</arg>
+<arg>data=${body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:16.078843" elapsed="0.657571"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-20T22:26:16.738411" level="INFO">${esport_token} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzUsImlhdCI6MTczMjEzNDM3NSwianRpIjoiNWQ5Y2U3NTUtM2I1OC00NTM4LTg3NzAt...</msg>
+<var>${esport_token}</var>
+<arg>${response.json()}[access_token]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-20T22:26:16.736414" elapsed="0.001997"/>
+</kw>
+<return>
+<value>${esport_token}</value>
+<status status="PASS" start="2024-11-20T22:26:16.738411" elapsed="0.001005"/>
+</return>
+<msg time="2024-11-20T22:26:16.739416" level="INFO">${bearerToken} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzUsImlhdCI6MTczMjEzNDM3NSwianRpIjoiNWQ5Y2U3NTUtM2I1OC00NTM4LTg3NzAt...</msg>
+<var>${bearerToken}</var>
+<arg>${adminUserName}</arg>
+<arg>${adminPassword}</arg>
+<status status="PASS" start="2024-11-20T22:26:16.075827" elapsed="0.663589"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-20T22:26:16.740415" level="INFO">${penality_filter_url} = /api/penalty/v1/penalty?searchableValue=testing update Salwa club Owner</msg>
+<var>${penality_filter_url}</var>
+<arg>${penality_url}?searchableValue=${penality_filterBy}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-20T22:26:16.740415" elapsed="0.001099"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:16.742429" level="INFO">Creating Session using : alias=PenalitySessions, url=https://qa.saudiesports.sa, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>PenalitySessions</arg>
+<arg>${esport_base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:16.741514" elapsed="0.000915"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:16.743422" level="INFO">${headers} = {'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzUsImlhdCI6MTczMjEzNDM3NSwianRpIjoiNWQ5Y2...</msg>
+<var>${headers}</var>
+<arg>Authorization=Bearer ${bearerToken}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:16.743422" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:17.590645" level="INFO">GET Request : url=https://qa.saudiesports.sa/api/penalty/v1/penalty?searchableValue=testing%20update%20Salwa%20club%20Owner 
+ path_url=/api/penalty/v1/penalty?searchableValue=testing%20update%20Salwa%20club%20Owner 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzUsImlhdCI6MTczMjEzNDM3NSwianRpIjoiNWQ5Y2U3NTUtM2I1OC00NTM4LTg3NzAtNjI3ODNkNDlkZTM4IiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJXRUIiLCJzZXNzaW9uX3N0YXRlIjoiYzYzM2YzMGUtMmQ2Zi00Y2NiLThiYjMtYzhlZTJmZWRjYTdlIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDX1VQX1ZfTyIsIkNfUl9WQVNfTyIsIkNfVF9VQVJfTyIsIkNfVV9CTF9PIiwiQ19JTkRfTF9PIiwiQ19DTF9NUF9PIiwiQ19UX1VBTF9PIiwiQ19BV0FSRF9TRF9PIiwiQ19SX1NEX08iLCJDX09fRV9PIiwiQ19JTlJfRV9PIiwiQ19FVl9MX08iLCJDX0lOQ19TRF9PIiwiQ19VUF9EX08iLCJDX1BBUl9DQU5fTyIsIkNfVENfRV9PIiwiQ19DTF9FTVlfTyIsIkNfUE5FX0xfTyIsIkNfQ1JRX0VfTyIsIkNfVF9WX08iLCJDX1BBUl9FX0xfTyIsIkNfQVdBUkRfRV9PIiwiQ19VX0RfTyIsIkNfQ0xfVk1ZX08iLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkNfUEFSX0VfTyIsIkNfSU5VX0xfTyIsIkNfQVdBUkRfVkRfTyIsIkNfVV9SU01fTyIsIkNfVF9NVEFfTyIsIkNfREFTX1ZfTyIsIkNfSU5DX1JBU19PIiwiQ19FVlJfRV9PIiwiQ19JTlRfTF9PIiwiQ19NRV9CTF9PIiwiQ19UX0RTX08iLCJDX0NMX01BX08iLCJDX0NPUl9FX08iLCJDX1RXX0VfTyIsIkNfTUVfVU5CX08iLCJDX01FX0RTX08iLCJDX0FQUl9FX08iLCJDX1ZfQVNfTyIsImRlZmF1bHQtcm9sZXMtY3VzdF9lc3BvcnRzLmNvbSIsIkNfQUxfRVhQX08iLCJDX0NMX1ZfTyIsIkNfVF9BX08iLCJDX0VWX0VYUF9PIiwiQ19SX1ZBTF9PIiwiQ19FVl9FX08iLCJDX1RfQVJfTyIsIkNfVF9FX08iLCJDX0NMX0VYUF9PIiwiQ19DTF9FQUxfTyIsIkNfQVdBUkRfVkFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19PX1ZfTyIsIkNfTUVfRVhQX08iLCJDX1JTX0VfTyIsIkNfVV9VQkxfTyIsIkVTUE9SVCIsIkNfQ0xfVUJMX08iLCJDX1VfRVhQX08iLCJDX1VfQV9PIiwiQ19QTkVfRV9PIiwiQ19SX1JBU19PIiwiQ19UX1JDX08iLCJDX1BORV9BX08iLCJDX0lOUF9MX08iLCJDX1BORV9DX08iLCJDX1BBUl9MX08iLCJDX0lOQV9MX08iLCJDX09CQ19BX08iLCJDX1RfRVhQX08iLCJDX0NMX0JMX08iLCJDX1BBUl9JU1VfTyIsIkNfQVdBUkRfUkFTX08iLCJDX01FX0VBUF9PIiwiQ19DTF9DQUxfTyIsIkNfTUVfVkVSX08iLCJDX1VfVl9PIiwiQ19NRV9NQV9PIiwiQ19BUkNfRV9PIiwiQ19NRV9WQUxfTyIsIkNfQ0xfRFNfTyIsIkNfRVZfQ0FOX08iLCJDX1RfQVJMX08iLCJDX05SX0VfTyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6ImM2MzNmMzBlLTJkNmYtNGNjYi04YmIzLWM4ZWUyZmVkY2E3ZSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1bGlkIjoiNzc1MzFhMGYtOTc3NC00YmU5LTkxN2EtNTI0ZjUxYTJmMzEyIiwibmFtZSI6IlNFRiIsInByZWZlcnJlZF91c2VybmFtZSI6Iis5NjY1NTM5ODkzMzMiLCJsb2NhbGUiOiJlbiIsInJpZCI6ImN1c3RfZXNwb3J0cy5jb20iLCJnaXZlbl9uYW1lIjoiU0VGIiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6ImFkbWluQHNhdWRpZXNwb3J0cy5jb20iLCJrZXkiOiJjdXN0X2VzcG9ydHMuY29tX0tFWSIsImNpZCI6IjFfU1RDU19DVVNUIn0.ZVYuC1sz0KlS1-Ce-5-66GS_rLEkB9r_67oAmPqmp8Fg4HRGCBAMlXUeT8S-a5TrqlieeZp2bCm5Bov2FsYK6lOvc6T-AJeNhQw-mjmYL4ERhXplQY6X4TeiTdaCrnWE0UoNXHDXSpGA0jAIWqAP5QiV197-LsPwhJpOuxBHihn9AqJXYF7cEtBlii2SUH6_ieV_41eThUmdMe253gTVGCLL-6VQucyjKEQX9lKZZQgnFdR5LVtefEZAPuqZp9f1hWehPZ8CT6CfaThOHpxyt8QYMs8-1eg-TZ3hs8Um_KhnClHRvIhbCr2LTlJD6QRZZRLyPG4dq6hhTnn1GN5Rdg', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-11-20T22:26:17.591708" level="INFO">GET Response : url=https://qa.saudiesports.sa/api/penalty/v1/penalty?searchableValue=testing%20update%20Salwa%20club%20Owner 
+ status=200, reason= 
+ headers={'Date': 'Wed, 20 Nov 2024 20:26:16 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Content-Encoding': 'gzip'} 
+ body={"content":[{"systemId":"5ed1ac27-7656-48e5-b72f-7be38b007583","businessId":"P000000642","type":"WARNING","appealStatus":null,"penaltyStatus":null,"entity":"CLUB","entitySystemId":"ad159f4d-24af-493f-b5c7-2a069843dfba","entityName":"testing update Salwa club Owner","entityNameAr":"مالك نادي سلوي تستنج تحديث","reason":"salwaclubownertestingl@yopmail.com","duration":{"from":null,"to":null},"createdAt":1714651741000,"createdByName":null,"appealDeadline":0},{"systemId":"30f7e969-6f34-42d5-a6d5-8b36f26cac5a","businessId":"P000000640","type":"SUSPENSION","appealStatus":null,"penaltyStatus":null,"entity":"CLUB","entitySystemId":"ad159f4d-24af-493f-b5c7-2a069843dfba","entityName":"testing update Salwa club Owner","entityNameAr":"مالك نادي سلوي تستنج تحديث","reason":"salwaclubownertestingl@yopmail.com","duration":{"from":1715904000000,"to":1715904000000},"createdAt":1714651392000,"createdByName":null,"appealDeadline":1715904000000},{"systemId":"f4b90d5a-92f8-40bf-959d-46e135a87db2","businessId":"P000000631","type":"SUSPENSION","appealStatus":null,"penaltyStatus":null,"entity":"CLUB","entitySystemId":"ad159f4d-24af-493f-b5c7-2a069843dfba","entityName":"testing update Salwa club Owner","entityNameAr":"مالك نادي سلوي تستنج تحديث","reason":"salwaclubownertestingl@yopmail.com","duration":{"from":1717113600000,"to":1717113600000},"createdAt":1714563901000,"createdByName":null,"appealDeadline":1717113600000},{"systemId":"f522f01c-1aa0-4666-a8bc-7806378e3b97","businessId":"P000000628","type":"SUSPENSION","appealStatus":"APPROVED","penaltyStatus":null,"entity":"CLUB","entitySystemId":"ad159f4d-24af-493f-b5c7-2a069843dfba","entityName":"testing update Salwa club Owner","entityNameAr":"مالك نادي سلوي تستنج تحديث","reason":"salwaclubownertestingl@yopmail.com","duration":{"from":1715817600000,"to":1716422400000},"createdAt":1714563476000,"createdByName":null,"appealDeadline":1715299200000},{"systemId":"48906b3f-dfbe-4cfa-865d-e072b599a66d","businessId":"P000000619","type":"SUSPENSION","appealStatus":null,"penaltyStatus":null,"entity":"CLUB","entitySystemId":"ad159f4d-24af-493f-b5c7-2a069843dfba","entityName":"testing update Salwa club Owner","entityNameAr":"مالك نادي سلوي تستنج تحديث","reason":"salwaclubownertestingl@yopmail.com","duration":{"from":1714780800000,"to":1714780800000},"createdAt":1714558390000,"createdByName":null,"appealDeadline":1714780800000},{"systemId":"d4e8e3ec-6d0c-4e8a-b7dd-b095a27a142a","businessId":"P000000618","type":"SUSPENSION","appealStatus":null,"penaltyStatus":null,"entity":"CLUB","entitySystemId":"ad159f4d-24af-493f-b5c7-2a069843dfba","entityName":"testing update Salwa club Owner","entityNameAr":"مالك نادي سلوي تستنج تحديث","reason":"salwaclubownertestingl@yopmail.com","duration":{"from":1715126400000,"to":1715126400000},"createdAt":1714558303000,"createdByName":null,"appealDeadline":1714953600000},{"systemId":"da7f90da-74e8-4a54-9287-6310dd71462c","businessId":"P000000616","type":"SUSPENSION","appealStatus":"REJECTED","penaltyStatus":null,"entity":"CLUB","entitySystemId":"ad159f4d-24af-493f-b5c7-2a069843dfba","entityName":"testing update Salwa club Owner","entityNameAr":"مالك نادي سلوي تستنج تحديث","reason":"salwaclubownertestingl@yopmail.com","duration":{"from":1715299200000,"to":1715644800000},"createdAt":1714557635000,"createdByName":null,"appealDeadline":1714521600000},{"systemId":"701b2017-a651-46e6-ab53-faf20dcdd76f","businessId":"P000000615","type":"SUSPENSION","appealStatus":"SUBMITTED","penaltyStatus":null,"entity":"CLUB","entitySystemId":"ad159f4d-24af-493f-b5c7-2a069843dfba","entityName":"testing update Salwa club Owner","entityNameAr":"مالك نادي سلوي تستنج تحديث","reason":"salwaclubownertestingl","duration":{"from":1714608000000,"to":1714608000000},"createdAt":1714557200000,"createdByName":null,"appealDeadline":1714608000000},{"systemId":"84bb12f8-81d8-4bf3-99b9-8ad3c00d71c5","businessId":"P000000613","type":"SUSPENSION","appealStatus":"APPROVED","penaltyStatus":null,"entity":"CLUB","entitySystemId":"ad159f4d-24af-493f-b5c7-2a069843dfba","entityName":"testing update Salwa club Owner","entityNameAr":"مالك نادي سلوي تستنج تحديث","reason":"salwaclubownertesting","duration":{"from":1714521600000,"to":1714521600000},"createdAt":1714554752000,"createdByName":null,"appealDeadline":1714521600000},{"systemId":"c3f7a93f-78f0-4c98-8293-41220eb26492","businessId":"P000000029","type":"SUSPENSION","appealStatus":null,"penaltyStatus":null,"entity":"CLUB","entitySystemId":"ad159f4d-24af-493f-b5c7-2a069843dfba","entityName":"testing update Salwa club Owner","entityNameAr":"مالك نادي سلوي تستنج تحديث","reason":"1st Suspension Salwa Testing 1st Suspension Salwa Testing 1st Suspension Salwa Testing 1st Suspension Salwa Testing 1st Suspension Salwa Testing 1st Suspension Salwa Testing 1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Testing1st Suspension Salwa Salwa 1st Suspensions","duration":{"from":1710799200000,"to":1710972000000},"createdAt":1710837182000,"createdByName":null,"appealDeadline":1711317600000}],"pageable":{"sort":{"sorted":true,"unsorted":false,"empty":false},"offset":0,"pageNumber":0,"pageSize":10,"unpaged":false,"paged":true},"totalElements":11,"last":false,"totalPages":2,"sort":{"sorted":true,"unsorted":false,"empty":false},"size":10,"number":0,"numberOfElements":10,"first":true,"empty":false} 
+ </msg>
+<msg time="2024-11-20T22:26:17.591708" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>PenalitySessions</arg>
+<arg>${penality_filter_url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:16.744432" elapsed="0.847276"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-11-20T22:26:17.594728" level="INFO">${status_code} = 200</msg>
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-11-20T22:26:17.592726" elapsed="0.002002"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:17.595737" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code is : ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:17.596734" elapsed="0.001002"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Contents are : ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:17.598727" elapsed="0.003997"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Headers are : ${response.headers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:17.603826" elapsed="0.003014"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:16.075827" elapsed="1.531013"/>
+</test>
+<test id="s1-s2-t6" name="Get eSport Account-Details" line="75">
+<kw name="Login To Esport" owner="EsportKeywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:17.609856" level="INFO">${body} = {'username': 'admin@saudiesports.com', 'password': 'abc123', 'grant_type': 'password', 'client_id': 'WEB'}</msg>
+<var>${body}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<arg>grant_type=password</arg>
+<arg>client_id=WEB</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:17.608842" elapsed="0.001014"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:17.610854" level="INFO">${headers} = {'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'}</msg>
+<var>${headers}</var>
+<arg>Content-Type=application/x-www-form-urlencoded</arg>
+<arg>Connection=keep-alive</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:17.609856" elapsed="0.000998"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:17.610854" level="INFO">Creating Session using : alias=loginSessions, url=https://qa.saudiesports.sa, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>loginSessions</arg>
+<arg>${esport_base_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>disable_warnings=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:17.610854" elapsed="0.001000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:18.410558" level="INFO">POST Request : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ path_url=/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '83'} 
+ body=username=admin%40saudiesports.com&amp;password=abc123&amp;grant_type=password&amp;client_id=WEB 
+ </msg>
+<msg time="2024-11-20T22:26:18.410558" level="INFO">POST Response : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 20 Nov 2024 20:26:17 GMT', 'Content-Type': 'application/json', 'Content-Length': '3934', 'Connection': 'keep-alive', 'Referrer-Policy': 'no-referrer', 'X-Frame-Options': 'SAMEORIGIN', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Content-Type-Options': 'nosniff', 'Set-Cookie': 'KEYCLOAK_LOCALE=en; Version=1; Path=/auth/realms/cust_esports.com/; Secure; HttpOnly, KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0; Path=/auth/realms/cust_esports.com/; HttpOnly', 'Pragma': 'no-cache', 'X-XSS-Protection': '1; mode=block'} 
+ body={"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzcsImlhdCI6MTczMjEzNDM3NywianRpIjoiYmJjZGVhZWItNzdhYy00MWFjLWJlYzgtMTQxZmNiYmU5NjU4IiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJXRUIiLCJzZXNzaW9uX3N0YXRlIjoiZjg1YzAzODctZGRjNS00YWRiLTgyY2MtYTQ1MmU2YzE4YTA2IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDX1VQX1ZfTyIsIkNfUl9WQVNfTyIsIkNfVF9VQVJfTyIsIkNfVV9CTF9PIiwiQ19JTkRfTF9PIiwiQ19DTF9NUF9PIiwiQ19UX1VBTF9PIiwiQ19BV0FSRF9TRF9PIiwiQ19SX1NEX08iLCJDX09fRV9PIiwiQ19JTlJfRV9PIiwiQ19FVl9MX08iLCJDX0lOQ19TRF9PIiwiQ19VUF9EX08iLCJDX1BBUl9DQU5fTyIsIkNfVENfRV9PIiwiQ19DTF9FTVlfTyIsIkNfUE5FX0xfTyIsIkNfQ1JRX0VfTyIsIkNfVF9WX08iLCJDX1BBUl9FX0xfTyIsIkNfQVdBUkRfRV9PIiwiQ19VX0RfTyIsIkNfQ0xfVk1ZX08iLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkNfUEFSX0VfTyIsIkNfSU5VX0xfTyIsIkNfQVdBUkRfVkRfTyIsIkNfVV9SU01fTyIsIkNfVF9NVEFfTyIsIkNfREFTX1ZfTyIsIkNfSU5DX1JBU19PIiwiQ19FVlJfRV9PIiwiQ19JTlRfTF9PIiwiQ19NRV9CTF9PIiwiQ19UX0RTX08iLCJDX0NMX01BX08iLCJDX0NPUl9FX08iLCJDX1RXX0VfTyIsIkNfTUVfVU5CX08iLCJDX01FX0RTX08iLCJDX0FQUl9FX08iLCJDX1ZfQVNfTyIsImRlZmF1bHQtcm9sZXMtY3VzdF9lc3BvcnRzLmNvbSIsIkNfQUxfRVhQX08iLCJDX0NMX1ZfTyIsIkNfVF9BX08iLCJDX0VWX0VYUF9PIiwiQ19SX1ZBTF9PIiwiQ19FVl9FX08iLCJDX1RfQVJfTyIsIkNfVF9FX08iLCJDX0NMX0VYUF9PIiwiQ19DTF9FQUxfTyIsIkNfQVdBUkRfVkFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19PX1ZfTyIsIkNfTUVfRVhQX08iLCJDX1JTX0VfTyIsIkNfVV9VQkxfTyIsIkVTUE9SVCIsIkNfQ0xfVUJMX08iLCJDX1VfRVhQX08iLCJDX1VfQV9PIiwiQ19QTkVfRV9PIiwiQ19SX1JBU19PIiwiQ19UX1JDX08iLCJDX1BORV9BX08iLCJDX0lOUF9MX08iLCJDX1BORV9DX08iLCJDX1BBUl9MX08iLCJDX0lOQV9MX08iLCJDX09CQ19BX08iLCJDX1RfRVhQX08iLCJDX0NMX0JMX08iLCJDX1BBUl9JU1VfTyIsIkNfQVdBUkRfUkFTX08iLCJDX01FX0VBUF9PIiwiQ19DTF9DQUxfTyIsIkNfTUVfVkVSX08iLCJDX1VfVl9PIiwiQ19NRV9NQV9PIiwiQ19BUkNfRV9PIiwiQ19NRV9WQUxfTyIsIkNfQ0xfRFNfTyIsIkNfRVZfQ0FOX08iLCJDX1RfQVJMX08iLCJDX05SX0VfTyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6ImY4NWMwMzg3LWRkYzUtNGFkYi04MmNjLWE0NTJlNmMxOGEwNiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1bGlkIjoiNzc1MzFhMGYtOTc3NC00YmU5LTkxN2EtNTI0ZjUxYTJmMzEyIiwibmFtZSI6IlNFRiIsInByZWZlcnJlZF91c2VybmFtZSI6Iis5NjY1NTM5ODkzMzMiLCJsb2NhbGUiOiJlbiIsInJpZCI6ImN1c3RfZXNwb3J0cy5jb20iLCJnaXZlbl9uYW1lIjoiU0VGIiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6ImFkbWluQHNhdWRpZXNwb3J0cy5jb20iLCJrZXkiOiJjdXN0X2VzcG9ydHMuY29tX0tFWSIsImNpZCI6IjFfU1RDU19DVVNUIn0.MGSW52pEHf2gW4tFULMjMIpL0uaf8SKnX_v_h8kYL0dMCms-l5_cZ-Kdk6tclVXsCCP9j92DvEqIN1WTHSHoIJFPiWZ-5kecthjQA3hrVOAZPYCGc4ZWfq5aT1bV1hBeckWWL_bLf7AwMCmo6WK_LWjQdSMOLmaAcHUDiYh4_d8ESSmiquxUR3spivUcXwBrhN99o9e61aS2fde83m8JT9olLeivX_immZgnoSiq6ILTPBSF0aJzGcGnotQYHEyxucegkLn8BrUtTwaZd_IhnhThnd2pLlu2dhpAewnOsrKW1CStNnNTZUmmZuiWGO2R05eKxb3n1rizlcPyTRws-Q","expires_in":3600,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmNGQ5ODUxYi0yMzk3LTQyYWEtODE0My1hYWQyNzM2ZWMxOGUifQ.eyJleHAiOjE3MzIxMzYxNzcsImlhdCI6MTczMjEzNDM3NywianRpIjoiYzAzMmRjMmQtZDMyMS00MGE3LTkyNTYtNTQ0NjMxYjQxZmYwIiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6Imh0dHBzOi8vcWEuc2F1ZGllc3BvcnRzLnNhL2F1dGgvcmVhbG1zL2N1c3RfZXNwb3J0cy5jb20iLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoiV0VCIiwic2Vzc2lvbl9zdGF0ZSI6ImY4NWMwMzg3LWRkYzUtNGFkYi04MmNjLWE0NTJlNmMxOGEwNiIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6ImY4NWMwMzg3LWRkYzUtNGFkYi04MmNjLWE0NTJlNmMxOGEwNiJ9.vtusDtCs6RRVjjd1gtkMNvty4rbrn9uWbGm1ebJ9usY","token_type":"Bearer","not-before-policy":0,"session_state":"f85c0387-ddc5-4adb-82cc-a452e6c18a06","scope":"email profile"} 
+ </msg>
+<msg time="2024-11-20T22:26:18.411556" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>loginSessions</arg>
+<arg>${Login_Service_Url}</arg>
+<arg>data=${body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:17.611854" elapsed="0.799702"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-20T22:26:18.413558" level="INFO">${esport_token} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzcsImlhdCI6MTczMjEzNDM3NywianRpIjoiYmJjZGVhZWItNzdhYy00MWFjLWJlYzgt...</msg>
+<var>${esport_token}</var>
+<arg>${response.json()}[access_token]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-20T22:26:18.411556" elapsed="0.002002"/>
+</kw>
+<return>
+<value>${esport_token}</value>
+<status status="PASS" start="2024-11-20T22:26:18.413558" elapsed="0.000000"/>
+</return>
+<msg time="2024-11-20T22:26:18.414555" level="INFO">${bearerToken} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzcsImlhdCI6MTczMjEzNDM3NywianRpIjoiYmJjZGVhZWItNzdhYy00MWFjLWJlYzgt...</msg>
+<var>${bearerToken}</var>
+<arg>${adminUserName}</arg>
+<arg>${adminPassword}</arg>
+<status status="PASS" start="2024-11-20T22:26:17.608842" elapsed="0.805713"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:18.415562" level="INFO">Creating Session using : alias=accountDetailsSession, url=https://qa.saudiesports.sa, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>accountDetailsSession</arg>
+<arg>${esport_base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:18.414555" elapsed="0.001007"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:18.417558" level="INFO">${headers} = {'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzcsImlhdCI6MTczMjEzNDM3NywianRpIjoiYmJjZG...</msg>
+<var>${headers}</var>
+<arg>Authorization=Bearer ${bearerToken}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:18.416567" elapsed="0.000991"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:19.229669" level="INFO">GET Request : url=https://qa.saudiesports.sa/api/uaa/user/account-details 
+ path_url=/api/uaa/user/account-details 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzcsImlhdCI6MTczMjEzNDM3NywianRpIjoiYmJjZGVhZWItNzdhYy00MWFjLWJlYzgtMTQxZmNiYmU5NjU4IiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJXRUIiLCJzZXNzaW9uX3N0YXRlIjoiZjg1YzAzODctZGRjNS00YWRiLTgyY2MtYTQ1MmU2YzE4YTA2IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDX1VQX1ZfTyIsIkNfUl9WQVNfTyIsIkNfVF9VQVJfTyIsIkNfVV9CTF9PIiwiQ19JTkRfTF9PIiwiQ19DTF9NUF9PIiwiQ19UX1VBTF9PIiwiQ19BV0FSRF9TRF9PIiwiQ19SX1NEX08iLCJDX09fRV9PIiwiQ19JTlJfRV9PIiwiQ19FVl9MX08iLCJDX0lOQ19TRF9PIiwiQ19VUF9EX08iLCJDX1BBUl9DQU5fTyIsIkNfVENfRV9PIiwiQ19DTF9FTVlfTyIsIkNfUE5FX0xfTyIsIkNfQ1JRX0VfTyIsIkNfVF9WX08iLCJDX1BBUl9FX0xfTyIsIkNfQVdBUkRfRV9PIiwiQ19VX0RfTyIsIkNfQ0xfVk1ZX08iLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkNfUEFSX0VfTyIsIkNfSU5VX0xfTyIsIkNfQVdBUkRfVkRfTyIsIkNfVV9SU01fTyIsIkNfVF9NVEFfTyIsIkNfREFTX1ZfTyIsIkNfSU5DX1JBU19PIiwiQ19FVlJfRV9PIiwiQ19JTlRfTF9PIiwiQ19NRV9CTF9PIiwiQ19UX0RTX08iLCJDX0NMX01BX08iLCJDX0NPUl9FX08iLCJDX1RXX0VfTyIsIkNfTUVfVU5CX08iLCJDX01FX0RTX08iLCJDX0FQUl9FX08iLCJDX1ZfQVNfTyIsImRlZmF1bHQtcm9sZXMtY3VzdF9lc3BvcnRzLmNvbSIsIkNfQUxfRVhQX08iLCJDX0NMX1ZfTyIsIkNfVF9BX08iLCJDX0VWX0VYUF9PIiwiQ19SX1ZBTF9PIiwiQ19FVl9FX08iLCJDX1RfQVJfTyIsIkNfVF9FX08iLCJDX0NMX0VYUF9PIiwiQ19DTF9FQUxfTyIsIkNfQVdBUkRfVkFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19PX1ZfTyIsIkNfTUVfRVhQX08iLCJDX1JTX0VfTyIsIkNfVV9VQkxfTyIsIkVTUE9SVCIsIkNfQ0xfVUJMX08iLCJDX1VfRVhQX08iLCJDX1VfQV9PIiwiQ19QTkVfRV9PIiwiQ19SX1JBU19PIiwiQ19UX1JDX08iLCJDX1BORV9BX08iLCJDX0lOUF9MX08iLCJDX1BORV9DX08iLCJDX1BBUl9MX08iLCJDX0lOQV9MX08iLCJDX09CQ19BX08iLCJDX1RfRVhQX08iLCJDX0NMX0JMX08iLCJDX1BBUl9JU1VfTyIsIkNfQVdBUkRfUkFTX08iLCJDX01FX0VBUF9PIiwiQ19DTF9DQUxfTyIsIkNfTUVfVkVSX08iLCJDX1VfVl9PIiwiQ19NRV9NQV9PIiwiQ19BUkNfRV9PIiwiQ19NRV9WQUxfTyIsIkNfQ0xfRFNfTyIsIkNfRVZfQ0FOX08iLCJDX1RfQVJMX08iLCJDX05SX0VfTyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6ImY4NWMwMzg3LWRkYzUtNGFkYi04MmNjLWE0NTJlNmMxOGEwNiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1bGlkIjoiNzc1MzFhMGYtOTc3NC00YmU5LTkxN2EtNTI0ZjUxYTJmMzEyIiwibmFtZSI6IlNFRiIsInByZWZlcnJlZF91c2VybmFtZSI6Iis5NjY1NTM5ODkzMzMiLCJsb2NhbGUiOiJlbiIsInJpZCI6ImN1c3RfZXNwb3J0cy5jb20iLCJnaXZlbl9uYW1lIjoiU0VGIiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6ImFkbWluQHNhdWRpZXNwb3J0cy5jb20iLCJrZXkiOiJjdXN0X2VzcG9ydHMuY29tX0tFWSIsImNpZCI6IjFfU1RDU19DVVNUIn0.MGSW52pEHf2gW4tFULMjMIpL0uaf8SKnX_v_h8kYL0dMCms-l5_cZ-Kdk6tclVXsCCP9j92DvEqIN1WTHSHoIJFPiWZ-5kecthjQA3hrVOAZPYCGc4ZWfq5aT1bV1hBeckWWL_bLf7AwMCmo6WK_LWjQdSMOLmaAcHUDiYh4_d8ESSmiquxUR3spivUcXwBrhN99o9e61aS2fde83m8JT9olLeivX_immZgnoSiq6ILTPBSF0aJzGcGnotQYHEyxucegkLn8BrUtTwaZd_IhnhThnd2pLlu2dhpAewnOsrKW1CStNnNTZUmmZuiWGO2R05eKxb3n1rizlcPyTRws-Q', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-11-20T22:26:19.229669" level="INFO">GET Response : url=https://qa.saudiesports.sa/api/uaa/user/account-details 
+ status=200, reason= 
+ headers={'Date': 'Wed, 20 Nov 2024 20:26:18 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Content-Encoding': 'gzip'} 
+ body={"email":"admin@saudiesports.com","id":"b6ec98b6-8069-48e6-8e2f-b662d270dc76","requiredActions":null,"enabled":false,"firstName":"SEF","lastName":null,"profileId":null,"profileName":null,"profileNameAr":null,"mobileNo":"553989333","levelId":"77531a0f-9774-4be9-917a-524f51a2f312","preferredLanguage":null,"createdBy":null,"updatedBy":null,"updatedDate":1690315636183,"createdDate":null,"status":null,"message":null,"levelName":null,"levelNameAr":null,"note":null,"reserved":true,"type":null,"pendingAdminEmail":null,"pendingEmailCreationDate":null,"password":null,"nationalityId":168,"countryCode":"+966","gender":"MALE","internalType":null,"lockReason":"كلمه مرور غير صحيحه","lockedBy":"النظام","lockedDate":1691481091517,"createdByName":null,"updatedByName":null,"nationality":"Saudi","nationalityAr":"سعودي","nationalityCode":"sa","country":{"id":168,"name":"Saudi Arabia","nameAr":"المملكة العربية السعودية","nameFr":"Arabie Saoudite","code":"sa","dialCode":"+966","nationality":"Saudi","nationalityAr":"سعودي","regex":"^(5)(5|0|3|6|4|9|1|8|7)([0-9]{7})$","flag":"iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAYAAACaq43EAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxMzM1RkUxODE3ODcxMUUyQTcxNDlDNEFCRkNENzc2NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozMEE2MkM3MDE3ODcxMUUyQTcxNDlDNEFCRkNENzc2NiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjEzMzVGRTE2MTc4NzExRTJBNzE0OUM0QUJGQ0Q3NzY2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjEzMzVGRTE3MTc4NzExRTJBNzE0OUM0QUJGQ0Q3NzY2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+VDw2aQAAAwhJREFUeNrEVttOE1EUXdNO72ALvQqIQYSIxIA+GCMvPJEYLzH+gN/hZ/jAL2jiB/jkgw+YeEkkgsRE4w0UrLTFdnqbzrTj2jNtANMpwgOc5uScM3PmrL3X2nufKlic/QlgiF3D8bR+9k21PcGe8VjAPTihprq/UgCrxd505h7aaFm771qGM/WoznOl8017v8L9Hu+eb/a3Hh5btMpCgABqUwcaZfg9Ps4b8BpVhAOnEPH64eNaFfCWCbXVhMfUoXBUXAAP9pgHRoJR3Bu7jbA/grWdLyjUS0jzWc2oYDw6iunkFFa2P6CglxBUQ9DNOm6dncPH4g+8+LWC19+eA+HEIT02ahiLnsGNsXlcy8wgrgbxieDJSBLzo3McU1gmqBCr09tUMIYdsjLcfxpR7m1aZk+PvbiZecAx0O1lhbTlawUk6eVkfBJb5SyGQgMo8blFzWPU8XtxHWkaoelFvM2uYSSSQCw4gDfZVfyu5YnQ9eiGu8fUrUFP8vUixPY4NVWocZ36DYfjWBi+iqnUNLZqO8hW8gj7wrgzsYD10iY+k5nxwXOUyzyCxtQrfWoE9y/eRZJePnz3CDOJCVyKn8er7HtkqN3S1jIKZg0+o4y52BV4yMCzjZcwabBXIlpReuTM4mypa/FgWvhJk3gnducqOVtfP5nIlTaQolGbpD5AT0MEqdE7g9RqzIQ0dS5UttFQvG64mjuw5CEtR0Nz8tnfb7Ng5y9ph87nDCJ7n53vlpO3AiZ7mGr2HF3TSnPXWA6TQxko8Pc5oLKWYDEbzihgYpwcLmCyR+Zkwd4L6yiVq6O1jkFG6mhfBnXOmzTIah+oyI86tmhAjMaVzSq+Mrh0Fhi7oh2tZLZbi4WElF5nLkuFMuiZAEmXIJL1H+bvODW/nLiAp+tLeLL6GAgNol1HDxlce7UWD4RG0a1TqxXsats0oNC4EAPRSwY00V/pef9oB3ssh0sQSf+3/nYuBoJZjOpqNedQrAZcL4f/p3ofkAt1nYj2hHfXB7QTvY+1tsbH+ddH+yvAAIKJO5Z5g0J2AAAAAElFTkSuQmCC"},"profilePictureId":"","clubProfilePictureId":null,"typeId":1,"typeCode":"ADMIN","userType":null,"dateOfBirth":null,"nationalId":null,"code":null,"assignAnotherAdmin":null,"assignedToClub":null,"counts":null,"verified":null,"verificationType":null,"verificationStatus":null,"verificationRequestId":null,"clubDto":null,"verificationRequestSystemId":null} 
+ </msg>
+<msg time="2024-11-20T22:26:19.230754" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>accountDetailsSession</arg>
+<arg>${accountDetails_url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:18.417558" elapsed="0.813196"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-11-20T22:26:19.232670" level="INFO">${status_code} = 200</msg>
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-11-20T22:26:19.231666" elapsed="0.001998"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:19.233664" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code is : ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:19.234660" elapsed="0.002008"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Contents are : ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:19.236668" elapsed="0.005993"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Headers are : ${response.headers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:19.242661" elapsed="0.002279"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:17.607841" elapsed="1.637649"/>
+</test>
+<test id="s1-s2-t7" name="Get eSport CRM" line="88">
+<kw name="Login To Esport" owner="EsportKeywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:19.248519" level="INFO">${body} = {'username': 'admin@saudiesports.com', 'password': 'abc123', 'grant_type': 'password', 'client_id': 'WEB'}</msg>
+<var>${body}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<arg>grant_type=password</arg>
+<arg>client_id=WEB</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:19.247518" elapsed="0.001001"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:19.249519" level="INFO">${headers} = {'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'}</msg>
+<var>${headers}</var>
+<arg>Content-Type=application/x-www-form-urlencoded</arg>
+<arg>Connection=keep-alive</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:19.248519" elapsed="0.001000"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:19.249519" level="INFO">Creating Session using : alias=loginSessions, url=https://qa.saudiesports.sa, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Connection': 'keep-alive'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>loginSessions</arg>
+<arg>${esport_base_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>disable_warnings=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:19.249519" elapsed="0.001001"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:19.911447" level="INFO">POST Request : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ path_url=/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '83'} 
+ body=username=admin%40saudiesports.com&amp;password=abc123&amp;grant_type=password&amp;client_id=WEB 
+ </msg>
+<msg time="2024-11-20T22:26:19.912444" level="INFO">POST Response : url=https://qa.saudiesports.sa/auth/realms/cust_esports.com/protocol/openid-connect/token 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 20 Nov 2024 20:26:18 GMT', 'Content-Type': 'application/json', 'Content-Length': '3934', 'Connection': 'keep-alive', 'Referrer-Policy': 'no-referrer', 'X-Frame-Options': 'SAMEORIGIN', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'X-Content-Type-Options': 'nosniff', 'Set-Cookie': 'KEYCLOAK_LOCALE=en; Version=1; Path=/auth/realms/cust_esports.com/; Secure; HttpOnly, KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0; Path=/auth/realms/cust_esports.com/; HttpOnly', 'Pragma': 'no-cache', 'X-XSS-Protection': '1; mode=block'} 
+ body={"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzgsImlhdCI6MTczMjEzNDM3OCwianRpIjoiY2M4M2QyYWEtZjM0NS00NmE1LWE0ODMtZGEyZGExMWU4ODg0IiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJXRUIiLCJzZXNzaW9uX3N0YXRlIjoiNGYyYjM5ZTQtYzQ2Ni00MmEyLThiMjctOTU2YmExYjA5MjEwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDX1VQX1ZfTyIsIkNfUl9WQVNfTyIsIkNfVF9VQVJfTyIsIkNfVV9CTF9PIiwiQ19JTkRfTF9PIiwiQ19DTF9NUF9PIiwiQ19UX1VBTF9PIiwiQ19BV0FSRF9TRF9PIiwiQ19SX1NEX08iLCJDX09fRV9PIiwiQ19JTlJfRV9PIiwiQ19FVl9MX08iLCJDX0lOQ19TRF9PIiwiQ19VUF9EX08iLCJDX1BBUl9DQU5fTyIsIkNfVENfRV9PIiwiQ19DTF9FTVlfTyIsIkNfUE5FX0xfTyIsIkNfQ1JRX0VfTyIsIkNfVF9WX08iLCJDX1BBUl9FX0xfTyIsIkNfQVdBUkRfRV9PIiwiQ19VX0RfTyIsIkNfQ0xfVk1ZX08iLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkNfUEFSX0VfTyIsIkNfSU5VX0xfTyIsIkNfQVdBUkRfVkRfTyIsIkNfVV9SU01fTyIsIkNfVF9NVEFfTyIsIkNfREFTX1ZfTyIsIkNfSU5DX1JBU19PIiwiQ19FVlJfRV9PIiwiQ19JTlRfTF9PIiwiQ19NRV9CTF9PIiwiQ19UX0RTX08iLCJDX0NMX01BX08iLCJDX0NPUl9FX08iLCJDX1RXX0VfTyIsIkNfTUVfVU5CX08iLCJDX01FX0RTX08iLCJDX0FQUl9FX08iLCJDX1ZfQVNfTyIsImRlZmF1bHQtcm9sZXMtY3VzdF9lc3BvcnRzLmNvbSIsIkNfQUxfRVhQX08iLCJDX0NMX1ZfTyIsIkNfVF9BX08iLCJDX0VWX0VYUF9PIiwiQ19SX1ZBTF9PIiwiQ19FVl9FX08iLCJDX1RfQVJfTyIsIkNfVF9FX08iLCJDX0NMX0VYUF9PIiwiQ19DTF9FQUxfTyIsIkNfQVdBUkRfVkFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19PX1ZfTyIsIkNfTUVfRVhQX08iLCJDX1JTX0VfTyIsIkNfVV9VQkxfTyIsIkVTUE9SVCIsIkNfQ0xfVUJMX08iLCJDX1VfRVhQX08iLCJDX1VfQV9PIiwiQ19QTkVfRV9PIiwiQ19SX1JBU19PIiwiQ19UX1JDX08iLCJDX1BORV9BX08iLCJDX0lOUF9MX08iLCJDX1BORV9DX08iLCJDX1BBUl9MX08iLCJDX0lOQV9MX08iLCJDX09CQ19BX08iLCJDX1RfRVhQX08iLCJDX0NMX0JMX08iLCJDX1BBUl9JU1VfTyIsIkNfQVdBUkRfUkFTX08iLCJDX01FX0VBUF9PIiwiQ19DTF9DQUxfTyIsIkNfTUVfVkVSX08iLCJDX1VfVl9PIiwiQ19NRV9NQV9PIiwiQ19BUkNfRV9PIiwiQ19NRV9WQUxfTyIsIkNfQ0xfRFNfTyIsIkNfRVZfQ0FOX08iLCJDX1RfQVJMX08iLCJDX05SX0VfTyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjRmMmIzOWU0LWM0NjYtNDJhMi04YjI3LTk1NmJhMWIwOTIxMCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1bGlkIjoiNzc1MzFhMGYtOTc3NC00YmU5LTkxN2EtNTI0ZjUxYTJmMzEyIiwibmFtZSI6IlNFRiIsInByZWZlcnJlZF91c2VybmFtZSI6Iis5NjY1NTM5ODkzMzMiLCJsb2NhbGUiOiJlbiIsInJpZCI6ImN1c3RfZXNwb3J0cy5jb20iLCJnaXZlbl9uYW1lIjoiU0VGIiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6ImFkbWluQHNhdWRpZXNwb3J0cy5jb20iLCJrZXkiOiJjdXN0X2VzcG9ydHMuY29tX0tFWSIsImNpZCI6IjFfU1RDU19DVVNUIn0.fAiPZNxnWRxMdp0GUN_zKyTdCn_kdXgMQtVH8hylf1ecB1qgESXiDOAYrQTOeYrjII8MiBdm-MITMHpoq-H9A8CM-NhklCgQwzlCeMhrroE-GJvp0Qppe-I-JbiHsCxZk6VfZLdJJHMyu_EoT0xq4CawmDf6zKmB-Y6wm-ococjMzTMZDaWJJOL8wWMCtnhuszuwwyQjTj4smN9n3ibYfudU44d4i5tCfmZGYoHt7BCR0lv3Xufs2QgjhgeQCTc_ySHWW_1MCq9R3LhEbyYCnPq9-bdxv2uev_whgrDoM7VHLBlvonaSavnLNzcYFnDgOJE5CrA2u9tAdW8vJe-AEg","expires_in":3600,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmNGQ5ODUxYi0yMzk3LTQyYWEtODE0My1hYWQyNzM2ZWMxOGUifQ.eyJleHAiOjE3MzIxMzYxNzgsImlhdCI6MTczMjEzNDM3OCwianRpIjoiYWM4NGYwOWUtY2NjMC00Nzk0LWIwMjAtY2JjOWJmZGM2MWIwIiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6Imh0dHBzOi8vcWEuc2F1ZGllc3BvcnRzLnNhL2F1dGgvcmVhbG1zL2N1c3RfZXNwb3J0cy5jb20iLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoiV0VCIiwic2Vzc2lvbl9zdGF0ZSI6IjRmMmIzOWU0LWM0NjYtNDJhMi04YjI3LTk1NmJhMWIwOTIxMCIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjRmMmIzOWU0LWM0NjYtNDJhMi04YjI3LTk1NmJhMWIwOTIxMCJ9.RuJIqxMYeNiYhHkvfka_jzIJoPkP8v7RdQrm1vEDGko","token_type":"Bearer","not-before-policy":0,"session_state":"4f2b39e4-c466-42a2-8b27-956ba1b09210","scope":"email profile"} 
+ </msg>
+<msg time="2024-11-20T22:26:19.912444" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>loginSessions</arg>
+<arg>${Login_Service_Url}</arg>
+<arg>data=${body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:19.250520" elapsed="0.661924"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-20T22:26:19.914446" level="INFO">${esport_token} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzgsImlhdCI6MTczMjEzNDM3OCwianRpIjoiY2M4M2QyYWEtZjM0NS00NmE1LWE0ODMt...</msg>
+<var>${esport_token}</var>
+<arg>${response.json()}[access_token]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-20T22:26:19.913449" elapsed="0.000997"/>
+</kw>
+<return>
+<value>${esport_token}</value>
+<status status="PASS" start="2024-11-20T22:26:19.914446" elapsed="0.001001"/>
+</return>
+<msg time="2024-11-20T22:26:19.915447" level="INFO">${bearerToken} = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzgsImlhdCI6MTczMjEzNDM3OCwianRpIjoiY2M4M2QyYWEtZjM0NS00NmE1LWE0ODMt...</msg>
+<var>${bearerToken}</var>
+<arg>${adminUserName}</arg>
+<arg>${adminPassword}</arg>
+<status status="PASS" start="2024-11-20T22:26:19.246518" elapsed="0.668929"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:19.916449" level="INFO">Creating Session using : alias=CRMSession, url=https://qa.saudiesports.sa, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>CRMSession</arg>
+<arg>${esport_base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-11-20T22:26:19.916449" elapsed="0.001002"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-11-20T22:26:19.918449" level="INFO">${headers} = {'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzgsImlhdCI6MTczMjEzNDM3OCwianRpIjoiY2M4M2...</msg>
+<var>${headers}</var>
+<arg>Authorization=Bearer ${bearerToken}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-11-20T22:26:19.917451" elapsed="0.000998"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-11-20T22:26:20.507969" level="INFO">GET Request : url=https://qa.saudiesports.sa/api/team-club/v1/requests/status 
+ path_url=/api/team-club/v1/requests/status 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJma1JPclNrWFZZT3FSTFl2UnNOUXdiZHFuTmoxQk1JSHMtNkVsUl9ybEswIn0.eyJleHAiOjE3MzIxMzc5NzgsImlhdCI6MTczMjEzNDM3OCwianRpIjoiY2M4M2QyYWEtZjM0NS00NmE1LWE0ODMtZGEyZGExMWU4ODg0IiwiaXNzIjoiaHR0cHM6Ly9xYS5zYXVkaWVzcG9ydHMuc2EvYXV0aC9yZWFsbXMvY3VzdF9lc3BvcnRzLmNvbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJiNmVjOThiNi04MDY5LTQ4ZTYtOGUyZi1iNjYyZDI3MGRjNzYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJXRUIiLCJzZXNzaW9uX3N0YXRlIjoiNGYyYjM5ZTQtYzQ2Ni00MmEyLThiMjctOTU2YmExYjA5MjEwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDX1VQX1ZfTyIsIkNfUl9WQVNfTyIsIkNfVF9VQVJfTyIsIkNfVV9CTF9PIiwiQ19JTkRfTF9PIiwiQ19DTF9NUF9PIiwiQ19UX1VBTF9PIiwiQ19BV0FSRF9TRF9PIiwiQ19SX1NEX08iLCJDX09fRV9PIiwiQ19JTlJfRV9PIiwiQ19FVl9MX08iLCJDX0lOQ19TRF9PIiwiQ19VUF9EX08iLCJDX1BBUl9DQU5fTyIsIkNfVENfRV9PIiwiQ19DTF9FTVlfTyIsIkNfUE5FX0xfTyIsIkNfQ1JRX0VfTyIsIkNfVF9WX08iLCJDX1BBUl9FX0xfTyIsIkNfQVdBUkRfRV9PIiwiQ19VX0RfTyIsIkNfQ0xfVk1ZX08iLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkNfUEFSX0VfTyIsIkNfSU5VX0xfTyIsIkNfQVdBUkRfVkRfTyIsIkNfVV9SU01fTyIsIkNfVF9NVEFfTyIsIkNfREFTX1ZfTyIsIkNfSU5DX1JBU19PIiwiQ19FVlJfRV9PIiwiQ19JTlRfTF9PIiwiQ19NRV9CTF9PIiwiQ19UX0RTX08iLCJDX0NMX01BX08iLCJDX0NPUl9FX08iLCJDX1RXX0VfTyIsIkNfTUVfVU5CX08iLCJDX01FX0RTX08iLCJDX0FQUl9FX08iLCJDX1ZfQVNfTyIsImRlZmF1bHQtcm9sZXMtY3VzdF9lc3BvcnRzLmNvbSIsIkNfQUxfRVhQX08iLCJDX0NMX1ZfTyIsIkNfVF9BX08iLCJDX0VWX0VYUF9PIiwiQ19SX1ZBTF9PIiwiQ19FVl9FX08iLCJDX1RfQVJfTyIsIkNfVF9FX08iLCJDX0NMX0VYUF9PIiwiQ19DTF9FQUxfTyIsIkNfQVdBUkRfVkFMX08iLCJDX1RfRUFMX08iLCJDX1VQX0VfTyIsIkNfVVBfQV9PIiwib2ZmbGluZV9hY2Nlc3MiLCJDX0NMX0FTX08iLCJDX1VfRV9PIiwiQ19PX1ZfTyIsIkNfTUVfRVhQX08iLCJDX1JTX0VfTyIsIkNfVV9VQkxfTyIsIkVTUE9SVCIsIkNfQ0xfVUJMX08iLCJDX1VfRVhQX08iLCJDX1VfQV9PIiwiQ19QTkVfRV9PIiwiQ19SX1JBU19PIiwiQ19UX1JDX08iLCJDX1BORV9BX08iLCJDX0lOUF9MX08iLCJDX1BORV9DX08iLCJDX1BBUl9MX08iLCJDX0lOQV9MX08iLCJDX09CQ19BX08iLCJDX1RfRVhQX08iLCJDX0NMX0JMX08iLCJDX1BBUl9JU1VfTyIsIkNfQVdBUkRfUkFTX08iLCJDX01FX0VBUF9PIiwiQ19DTF9DQUxfTyIsIkNfTUVfVkVSX08iLCJDX1VfVl9PIiwiQ19NRV9NQV9PIiwiQ19BUkNfRV9PIiwiQ19NRV9WQUxfTyIsIkNfQ0xfRFNfTyIsIkNfRVZfQ0FOX08iLCJDX1RfQVJMX08iLCJDX05SX0VfTyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjRmMmIzOWU0LWM0NjYtNDJhMi04YjI3LTk1NmJhMWIwOTIxMCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1bGlkIjoiNzc1MzFhMGYtOTc3NC00YmU5LTkxN2EtNTI0ZjUxYTJmMzEyIiwibmFtZSI6IlNFRiIsInByZWZlcnJlZF91c2VybmFtZSI6Iis5NjY1NTM5ODkzMzMiLCJsb2NhbGUiOiJlbiIsInJpZCI6ImN1c3RfZXNwb3J0cy5jb20iLCJnaXZlbl9uYW1lIjoiU0VGIiwiZmFtaWx5X25hbWUiOiIiLCJlbWFpbCI6ImFkbWluQHNhdWRpZXNwb3J0cy5jb20iLCJrZXkiOiJjdXN0X2VzcG9ydHMuY29tX0tFWSIsImNpZCI6IjFfU1RDU19DVVNUIn0.fAiPZNxnWRxMdp0GUN_zKyTdCn_kdXgMQtVH8hylf1ecB1qgESXiDOAYrQTOeYrjII8MiBdm-MITMHpoq-H9A8CM-NhklCgQwzlCeMhrroE-GJvp0Qppe-I-JbiHsCxZk6VfZLdJJHMyu_EoT0xq4CawmDf6zKmB-Y6wm-ococjMzTMZDaWJJOL8wWMCtnhuszuwwyQjTj4smN9n3ibYfudU44d4i5tCfmZGYoHt7BCR0lv3Xufs2QgjhgeQCTc_ySHWW_1MCq9R3LhEbyYCnPq9-bdxv2uev_whgrDoM7VHLBlvonaSavnLNzcYFnDgOJE5CrA2u9tAdW8vJe-AEg', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-11-20T22:26:20.507969" level="INFO">GET Response : url=https://qa.saudiesports.sa/api/team-club/v1/requests/status 
+ status=200, reason= 
+ headers={'Date': 'Wed, 20 Nov 2024 20:26:19 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Content-Encoding': 'gzip'} 
+ body=[{"id":1,"name":"New","nameAr":"جديد","code":"NEW"},{"id":2,"name":"Approved","nameAr":"تمت الموافقة","code":"APPROVED"},{"id":3,"name":"Required action","nameAr":"يتطلب إجراء","code":"REQUIRED_ACTION"},{"id":4,"name":"Action taken","nameAr":"تم اتخاذ إجراء","code":"ACTION_TAKEN"},{"id":5,"name":"Rejected","nameAr":"تم الرفض","code":"REJECTED"},{"id":6,"name":"Cancelled","nameAr":"تم الالغاء","code":"CANCELLED"},{"id":7,"name":"In progress","nameAr":"قيد التنفيذ","code":"IN_PROGRESS"},{"id":8,"name":"Completed","nameAr":"مكتمل","code":"COMPLETED"},{"id":9,"name":"Pending","nameAr":"قيد التنفيذ","code":"PENDING"}] 
+ </msg>
+<msg time="2024-11-20T22:26:20.507969" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>CRMSession</arg>
+<arg>${crm_requests_url}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-11-20T22:26:19.919446" elapsed="0.588523"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-11-20T22:26:20.511383" level="INFO">${status_code} = 200</msg>
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-11-20T22:26:20.509361" elapsed="0.002022"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-20T22:26:20.512239" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code is : ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:20.513280" elapsed="0.001908"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Contents are : ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:20.515622" elapsed="0.002137"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response Headers are : ${response.headers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-20T22:26:20.518647" elapsed="0.001086"/>
+</kw>
+<status status="PASS" start="2024-11-20T22:26:19.246518" elapsed="1.275122"/>
+</test>
+<status status="PASS" start="2024-11-20T22:26:09.619637" elapsed="10.906005"/>
+</suite>
+<status status="PASS" start="2024-11-20T22:26:00.337847" elapsed="20.190800"/>
+</suite>
+<statistics>
+<total>
+<stat pass="13" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="13" fail="0" skip="0" id="s1" name="BookingSuite &amp; eSportSuite">BookingSuite &amp; eSportSuite</stat>
+<stat pass="6" fail="0" skip="0" id="s1-s1" name="BookingSuite">BookingSuite &amp; eSportSuite.BookingSuite</stat>
+<stat pass="7" fail="0" skip="0" id="s1-s2" name="eSportSuite">BookingSuite &amp; eSportSuite.eSportSuite</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-11-20T22:26:00.490481" level="WARN">Error in file 'C:\Users\DELL\Desktop\Automation-RF\STCS_API_RB_Nov19\Keywords\BookingKeywords.robot' on line 20: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-11-20T22:26:00.491533" level="WARN">Error in file 'C:\Users\DELL\Desktop\Automation-RF\STCS_API_RB_Nov19\Keywords\BookingKeywords.robot' on line 40: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-11-20T22:26:00.491533" level="WARN">Error in file 'C:\Users\DELL\Desktop\Automation-RF\STCS_API_RB_Nov19\Keywords\BookingKeywords.robot' on line 56: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-11-20T22:26:09.937815" level="WARN">Error in file 'C:\Users\DELL\Desktop\Automation-RF\STCS_API_RB_Nov19\Keywords\EsportKeywords.robot' on line 21: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>

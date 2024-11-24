@@ -1,0 +1,6 @@
+datasources:6fc20637250802e91f5faf2ef9cfef2fb0441158
+commandlineoptions:9f8598a690c7367accf83ead504756ddd374acc9
+suitesfrom:no-suites-from-option
+file:c27f39e21d141b9d8215af7c0afb453c36597c2f
+--suite Suites.BookingSuite
+--suite Suites.eSportSuite
